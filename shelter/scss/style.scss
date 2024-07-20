@@ -16,14 +16,14 @@ ul {
   color: #F1CDB3;
   font-family: Georgia;
   font-size: 32px;
-  letter-spacing: 6%;
+  letter-spacing: 2px;
 }
 
 .main__title-goal {
   color: #FFFFFF;
   font-size: 13px;
   font-family: Arial;
-  letter-spacing: 6%;
+  letter-spacing: 1px;
 }
 
 .main__title {
@@ -64,21 +64,21 @@ ul {
   margin-top: 30px;
 }
 
-.main__hipage {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 1440px;
+.hi__baground {
+  width: 100%;
   height: 908px;
-  background-image: url(/images/hipage/hipage__background.jpg);
+  background-image: url(/shelter/images/hipage/hipage__background.jpg);
   background-size: cover;
+  position: absolute;
+  z-index: -1;
+  top: 0px;
 }
+
 
 .hipage__picture {
   width: 698px;
   height: 728px;
-  background-image: url(/images/hipage/hipage__dog.png);
+  background-image: url(/shelter/images/hipage/hipage__dog.png);
 }
 
 .text__title-word {
@@ -86,7 +86,7 @@ ul {
   color: #FFFFFF;
   font-family: Georgia;
   line-height: 57.2px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 }
 
 .text__description-word {
@@ -101,7 +101,7 @@ ul {
   font-size: 17px;
   color: #292929;
   font-family: Georgia;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 
 }
 
@@ -113,6 +113,8 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none; 
+  outline: none;
 
 }
 
@@ -126,24 +128,24 @@ ul {
 
 .main__hipage-block {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0px 40px;
-  margin-top: 180px;
+  gap: 42px;
+  margin-top: 90px;
 }
 
 .about__picture {
   width: 300px;
   height: 408px;
-  margin-top: 898px;
-  background-image: url(/images/aboutshelter/about-pets.png);
+  margin-top: 80px;
+  background-image: url(/shelter/images/aboutshelter/about-pets.png);
 }
 
 .about__text-title {
   font-size: 35px;
   color: #545454;
   font-family: Georgia;
-  margin-top: 912px;
+  margin-top: 80px;
   line-height: 45.5px;
 }
 
@@ -157,9 +159,9 @@ ul {
 
 .main__about-block {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row;
-  padding: 0px 175px;
+  gap: 120px;
 }
 
 .description__title-textfirst {
@@ -167,14 +169,14 @@ ul {
   font-size: 35px;
   font-family: Georgia;
   margin-top: 80px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 }
 
 .description__title-textsecond {
   color: #545454;
   font-size: 35px;
   font-family: Georgia;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 }
 
 .description__title {
@@ -185,21 +187,20 @@ ul {
 }
 
 .main__description-block {
-  width: 1440px;
   height: 877px;
   background-color: #F6F6F6;
   margin-top: 80px;
 }
 
 .table__pet {
-  width: 270px;
-  height: 435px;
+  margin-top: 60px;
   background-color: #FAFAFA;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border-radius: 9px;
+  padding-bottom: 30px;
 }
 
 .table__pet-picture img {
@@ -213,7 +214,7 @@ ul {
   margin-top: 30px;
   font-family: Georgia;
   color: #545454;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 }
 
 .table__pet-button {
@@ -228,7 +229,8 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
+  background-color: #FAFAFA;
 }
 
 .desription__arrow {
@@ -239,21 +241,23 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #F6F6F6;
 }
 
 .desription__tables {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 100px;
 }
 
 .description__pets {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px 80px;
+  justify-content: center;
   margin-top: 105px;
+  gap: 53px;
 }
 
 .description__button {
@@ -269,7 +273,9 @@ ul {
   justify-content: center;
   align-items: center;
   margin-top: 60px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
+  border: none; 
+  outline: none;
 }
 
 .can__title-textfirst {
@@ -277,7 +283,7 @@ ul {
   font-size: 35px;
   font-family: Georgia;
   margin-top: 80px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 
 }
 
@@ -285,7 +291,7 @@ ul {
   color: #545454;
   font-size: 35px;
   font-family: Georgia;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 }
 
 .can__title {
@@ -305,7 +311,7 @@ ul {
   font-family: Georgia;
   color: #545454;
   margin-top: 30px;
-  letter-spacing: 6%;
+  letter-spacing: 1px;
 }
 
 .can__option-block {
@@ -316,7 +322,7 @@ ul {
 }
 
 .can__option {
-  width: 1026px;
+  padding: 0px 70px;
   height: 281px;
   margin-top: 60px;
   margin: auto;
@@ -324,21 +330,14 @@ ul {
 
 .can__option-firstline {
   display: flex;
-  align-items: center;
-  gap: 119px;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 60px;
+  gap: 120px;
 }
 
-.can__option-secondline {
-  margin-top: 55px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 .main__donation-block {
-  width: 1440px;
-  height: 462px;
   background-color: #F6F6F6;
   margin-top: 80px;
   display: flex;
@@ -349,7 +348,7 @@ ul {
 }
 
 .donation__picture {
-  background-image: url(/images/donation/donation-dog.png);
+  background-image: url(/shelter/images/donation/donation-dog.png);
   width: 505px;
   height: 261px;
 }
@@ -358,7 +357,7 @@ ul {
   font-size: 35px;
   font-family: Georgia;
   line-height: 45.5px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
   color: #545454;
 }
 
@@ -366,7 +365,7 @@ ul {
   font-size: 15px;
   font-family: Georgia;
   line-height: 16.5px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
   color: #545454;
 }
 
@@ -379,19 +378,19 @@ ul {
   font-size: 20px;
   font-family: Georgia;
   line-height: 23px;
-  letter-spacing: 6%;
+  letter-spacing: 2px;
   color: #545454;
 }
 
 .donation__text-cards {
-  width: 320px;
+  width: 349px;
   height: 43px;
   background-color: #F1CDB3;
   border-radius: 9px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px 20px;
+  justify-content: center;
+  gap: 15px;
 }
 
 .donation__text-description {
@@ -410,9 +409,7 @@ ul {
 }
 
 .footer__main-block {
-  width: 1440px;
-  height: 350px;
-  background-image: url(/images/footer/footer-gradient-background.png);
+  background-image: url(/shelter/images/footer/footer-gradient-background.png);
   background-size: cover;
 }
 
@@ -420,7 +417,7 @@ ul {
   font-size: 35px;
   font-family: Georgia;
   line-height: 45.5px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
   color: #FFFFFF;
 }
 
@@ -428,7 +425,6 @@ ul {
   width: 251px;
   height: 32px;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 20px;
 }
@@ -437,15 +433,12 @@ ul {
   font-size: 20px;
   font-family: Georgia;
   line-height: 23px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
   color: #F1CDB3;
 }
 
 .footer__questions-number {
-  width: 251px;
-  height: 32px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -453,15 +446,16 @@ ul {
   font-size: 20px;
   font-family: Georgia;
   line-height: 23px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
   color: #F1CDB3;
+  margin-left: 20px;
 }
 
 .footer__visit-title {
   font-size: 35px;
   font-family: Georgia;
   line-height: 45.5px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
   color: #FFFFFF;
 }
 
@@ -469,7 +463,7 @@ ul {
   font-size: 20px;
   font-family: Georgia;
   line-height: 23px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
   color: #F1CDB3;
 }
 
@@ -478,16 +472,15 @@ ul {
   font-size: 20px;
   font-family: Georgia;
   line-height: 23px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
   color: #F1CDB3;
 }
 
 .footer__visit-place {
-  width: 302px;
   height: 46px;
   display: flex;
-  justify-content:space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .questions__email-picture img {
@@ -503,7 +496,7 @@ ul {
 .footer__picture {
   width: 300px;
   height: 310px;
-  background-image: url(/images/footer/footer-puppy.png);
+  background-image: url(/shelter/images/footer/footer-puppy.png);
   margin-top: 40px;
 }
 
@@ -551,18 +544,17 @@ ul {
   color: #545454;
   font-family: Georgia;
   font-size: 32px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 }
 
 .main__title-goal2 {
   color: #292929;
   font-size: 13px;
   font-family: Arial;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 }
 
 .main__looking-block {
-  width: 1440px;
   height: 1342px;
   background-color: #F6F6F6;
   margin-top: 40px;
@@ -596,14 +588,14 @@ ul {
   font-size: 35px;
   font-family: Georgia;
   margin-top: 50px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 }
 
 .looking__title-textsecond {
   color: #545454;
   font-size: 35px;
   font-family: Georgia;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
 }
 
 .pets__slider-doubleleft {
@@ -615,6 +607,7 @@ ul {
   justify-content: center;
   align-items: center;
   color: #CDCDCD;
+  background-color: #FFFFFF;
 }
 
 .pets__slider-left {
@@ -626,6 +619,8 @@ ul {
   justify-content: center;
   align-items: center;
   color: #CDCDCD;
+  background-color: #FFFFFF;
+
 }
 
 .pets__slider-page {
@@ -647,6 +642,8 @@ ul {
   justify-content: center;
   align-items: center;
   color: #292929;
+  background-color: #FFFFFF;
+
 }
 
 .pets__slider-doubleright {
@@ -658,11 +655,13 @@ ul {
   justify-content: center;
   align-items: center;
   color: #292929;
+  background-color: #FFFFFF;
+
 }
 
 .pets__slider-text {
   font-size: 20px;
-  letter-spacing: 6%;
+  letter-spacing: 3px;
   color: #292929;
   font-family: Georgia;
 }
@@ -673,4 +672,82 @@ ul {
   align-items: center;
   gap: 20px;
   margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .main__hipage-block {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hipage__picture  {
+    width: 569px;
+    height: 595px;
+    background-size: cover;
+  }
+  .hi__baground {
+    width: 100%;
+    height: 1165px;
+  }
+  .hipage__text {
+    margin-top: 20px;
+  }
+  .hipage__text-button{
+    margin: auto;
+  }
+  .main__about-block {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 80px;
+  }
+  .desription__tables {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+  }
+
+  .desription__tables .table__pet:nth-child(3){
+    display: none;
+  }
+  .description__pets {
+    gap: 12px;
+  }
+  .can__option-firstline {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 69px;
+    gap: 51px;
+  }
+  .main__donation-block {
+    margin-top: 300px;
+  
+  }
+
+  .can__option-block {
+    width: 170px;
+    height: 113px;
+  }
+  .main__donation-block {
+    flex-direction: column-reverse;
+  }
+
+  .donation__text {
+    margin-top: 80px;
+  }
+  .donation__picture {
+    margin-bottom: 100px;
+  }
+  .footer__text {
+    display: flex;
+    gap: 60px;
+    margin-top: 30px;
+  }
+  .footer__main-block {
+    flex-direction: column;
+    gap: 65px;
+  }
+
 }
