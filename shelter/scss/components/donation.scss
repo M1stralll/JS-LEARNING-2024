@@ -1,0 +1,81 @@
+@import 'mixin';
+.donation-block {
+  background-color: #F6F6F6;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 150px;
+  @include tablet {
+    flex-direction: column-reverse;
+  }
+}
+
+.donation__picture {
+  background-image: url(/shelter/images/donation/donation-dog.png);
+  width: 505px;
+  height: 261px;
+  @include tablet {
+    margin-bottom: 100px;
+  }
+}
+
+.donation__text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  @include tablet {
+    margin-top: 80px;
+  }
+}
+
+.donation__text-title {
+  font-size: 35px;
+  font-family: Georgia;
+  line-height: 45.5px;
+  letter-spacing: 3px;
+  color: #545454;
+}
+
+.donation__text-account {
+  font-size: 15px;
+  font-family: Georgia;
+  line-height: 16.5px;
+  letter-spacing: 3px;
+  color: #545454;
+}
+
+.donation__text-cards {
+  width: 349px;
+  height: 43px;
+  background-color: #F1CDB3;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.text__cards-picture {
+  width: 30px;
+  height: 23px;
+}
+
+.text__cards-text {
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  letter-spacing: 2px;
+  color: #545454;
+}
+
+.donation__text-description {
+  font-size: 12px;
+  font-family: Arial;
+  font-style: italic;
+  line-height: 18px;
+  color: #B2B2B2;
+}

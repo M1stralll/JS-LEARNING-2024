@@ -1,0 +1,62 @@
+@import 'mixin';
+.can__title-textfirst {
+  color: #545454;
+  font-size: 35px;
+  font-family: Georgia;
+  margin-top: 80px;
+  letter-spacing: 3px;
+
+}
+
+.can__title-textsecond {
+  color: #545454;
+  font-size: 35px;
+  font-family: Georgia;
+  letter-spacing: 3px;
+}
+
+.can__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.can__option-picture {
+  width: 60px;
+  height: 60px;
+}
+
+.can__option-title {
+  font-size: 20px;
+  font-family: Georgia;
+  color: #545454;
+  margin-top: 30px;
+  letter-spacing: 1px;
+}
+
+.can__option {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  gap: 120px;
+   @include tablet {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 69px;
+    gap: 51px;
+   }
+}
+
+.can__option-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include tablet {
+    width: 170px;
+    height: 113px;
+  }
+}

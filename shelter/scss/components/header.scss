@@ -1,0 +1,74 @@
+@import 'mixin';
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+}
+
+.header__title-name {
+  color: #F1CDB3;
+  font-family: Georgia;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+.header__title-goal {
+  color: #FFFFFF;
+  font-size: 13px;
+  font-family: Arial;
+  letter-spacing: 1px;
+}
+
+.header__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link__word {
+  display: flex;
+  gap: 30.7px;
+  font-family: Arial;
+  color: #CDCDCD;
+  font-size: 16px;
+}
+
+.page-select {
+  color: #FAFAFA;
+  font-size: 15px;
+}
+
+.line-select {
+  width: 114px;
+  height: 3px;
+  margin-top: 5px;
+  background-color: #F1CDB3;
+}
+
+.burger {
+  display: none;
+}
+
+.header__menu {
+  @include phone {
+    display: none;
+  }
+}
+
+.burger {
+  @include phone {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.burger__line {
+  @include phone {
+    width: 28px;
+    border: 1px solid #F1CDB3;
+  }
+}

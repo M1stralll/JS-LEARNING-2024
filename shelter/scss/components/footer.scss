@@ -1,0 +1,124 @@
+@import 'mixin';
+.footer-block {
+  background-image: url(/shelter/images/footer/footer-gradient-background.png);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 160px;
+  @include tablet {
+    flex-direction: column;
+    gap: 65px;
+  }
+}
+
+.footer__questions-title {
+  font-size: 35px;
+  font-family: Georgia;
+  line-height: 45.5px;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+}
+
+.footer__questions-email {
+  width: 251px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.questions__email-text {
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  letter-spacing: 3px;
+  color: #F1CDB3;
+}
+
+.footer__questions-number {
+  display: flex;
+  align-items: center;
+}
+
+.questions__number-text {
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  letter-spacing: 3px;
+  color: #F1CDB3;
+  margin-left: 20px;
+}
+
+.footer__visit-title {
+  font-size: 35px;
+  font-family: Georgia;
+  line-height: 45.5px;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+}
+
+.visit__place-text {
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  letter-spacing: 3px;
+  color: #F1CDB3;
+}
+
+.visit__place-textsecond {
+  margin-right: 25px;
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  letter-spacing: 3px;
+  color: #F1CDB3;
+}
+
+.footer__visit-place {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.questions__email-picture img {
+  width: 40px;
+  height: 32px;
+}
+
+.questions__enumber-picture img {
+  width: 40px;
+  height: 32px;
+}
+
+.footer__picture {
+  width: 300px;
+  height: 310px;
+  background-image: url(/shelter/images/footer/footer-puppy.png);
+  margin-top: 40px;
+}
+
+.footer__text {
+  padding-top: 50px;
+  display: flex;
+  gap: 160px;
+  @include tablet { 
+    display: flex;
+    gap: 60px;
+    margin-top: 30px;
+  }
+}
+
+.footer__questions {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer__visit {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}

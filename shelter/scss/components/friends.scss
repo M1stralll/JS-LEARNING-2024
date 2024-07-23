@@ -1,0 +1,123 @@
+@import 'mixin';
+.description-block {
+  height: auto;
+  background-color: #F6F6F6;
+  margin-top: 80px;
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+
+.description__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #545454;
+  font-size: 35px;
+  font-family: Georgia;
+  margin-top: 80px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.description__pets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 105px;
+  gap: 53px;
+  @include tablet { 
+    gap: 12px;
+  }
+}
+
+.desription__arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+}
+
+.table__pet {
+  margin-top: 60px;
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 9px;
+  padding-bottom: 30px;
+}
+
+.table__pet-picture img {
+  margin-top: -80px;
+  width: 270px;
+  height: 270px;
+}
+
+.table__pet-name {
+  font-size: 20px;
+  margin-top: 30px;
+  font-family: Georgia;
+  color: #545454;
+  letter-spacing: 3px;
+}
+
+.table__pet-button {
+  width: 187px;
+  height: 52px;
+  margin-top: 30px;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  color: #292929;
+  font-family: Georgia;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+  background-color: #FAFAFA;
+}
+
+.description__button {
+  width: 261px;
+  height: 52px;
+  font-size: 17px;
+  font-family: Georgia;
+  color: #292929;
+  border-radius: 100px;
+  background-color: #F1CDB3;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  letter-spacing: 3px;
+  border: none;
+  outline: none;
+}
+
+.desription__tables {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px;
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 40px;
+
+    .table__pet:nth-child(3) {
+      display: none;
+    }
+  }
+}
