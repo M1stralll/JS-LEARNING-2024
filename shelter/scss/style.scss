@@ -1,0 +1,48 @@
+@import 'components/index';
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+.adaptiveresolution {
+  display: none;
+}
+
+.desription__arrow--adaptive {
+  display: none;
+}
+
+@media (max-width: 320px) {
+
+  .normalresolution {
+    display: none;
+  }
+  .adaptiveresolution {
+    display: inline;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .desription__arrow {
+    display: none;
+  }
+  .desription__arrow--adaptive {
+    display: inline;
+  }
+  .normalresolution {
+    display: none;
+  }
+  .adaptiveresolution {
+    display: inline;
+  }
+}
