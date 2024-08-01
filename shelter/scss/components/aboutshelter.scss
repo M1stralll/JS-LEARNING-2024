@@ -1,4 +1,4 @@
-@import 'mixin';
+@import 'mixin/breakpoints.mixin';
 .about-block {
   display: flex;
   justify-content: center;
@@ -24,7 +24,7 @@
   font-family: Georgia;
   margin-top: 80px;
   line-height: 45.5px;
-  @include phone {
+  @include phonemax {
     text-align: center;
   }
 }
@@ -35,11 +35,9 @@
   font-family: Arial;
   margin-top: 30px;
   line-height: 24px;
-  @include phone {
-    width: 278px;
-    text-align: center;
+  @include phonemax {
+    text-align: justify;;
     margin: 0px 25px;
-    margin-top: 23px;
-    white-space: nowrap;
+    margin-top: 25px;
   }
 }

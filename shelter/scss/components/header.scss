@@ -1,4 +1,4 @@
-@import 'mixin';
+@import 'mixin/breakpoints.mixin';
 .header {
   display: flex;
   justify-content: space-between;
@@ -50,24 +50,23 @@
 
 .burger {
   display: none;
-}
-
-.header__menu {
-  @include phone {
-    display: none;
-  }
-}
-
-.burger {
-  @include phone {
+  z-index: 11;
+  @include fold {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
 }
 
+.header__menu {
+  @include fold {
+    display: none;
+  }
+}
+
+
 .burger__line {
-  @include phone {
+  @include fold {
     width: 28px;
     border: 1px solid #F1CDB3;
   }

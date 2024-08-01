@@ -1,0 +1,30 @@
+
+@mixin tablet { 
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone { 
+    @media (max-width: 320px) {
+        @content;
+    }
+}
+
+@mixin fold { 
+    @media (max-width: 700px) {
+        @content;
+    }
+}
+
+@mixin phonemax { 
+    @media (max-width: 400px) {
+        @content;
+    }
+}
+
+@mixin foldmax { 
+    @media (max-width: 1277px) {
+        @content;
+    }
+}

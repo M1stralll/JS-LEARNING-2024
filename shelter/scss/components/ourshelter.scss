@@ -1,18 +1,17 @@
-@import 'mixin';
-.can__title-textfirst {
+@import 'mixin/breakpoints.mixin';
+
+.description__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   color: #545454;
-  font-size: 35px;
+  font-size: 25px;
   font-family: Georgia;
   margin-top: 80px;
-  letter-spacing: 3px;
-
-}
-
-.can__title-textsecond {
-  color: #545454;
-  font-size: 35px;
-  font-family: Georgia;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  text-align: center;
+  
 }
 
 .can__title {
@@ -25,6 +24,10 @@
 .can__option-picture {
   width: 60px;
   height: 60px;
+  @include phonemax {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .can__option-title {
@@ -33,6 +36,9 @@
   color: #545454;
   margin-top: 30px;
   letter-spacing: 1px;
+  @include phonemax {
+    font-size: 15px;
+  }
 }
 
 .can__option {
@@ -48,7 +54,12 @@
     margin-top: 69px;
     gap: 51px;
    }
+   @include phonemax {
+    margin-top: 42px;
+    gap: 30px;
+   }
 }
+
 
 .can__option-block {
   display: flex;
@@ -58,5 +69,9 @@
   @include tablet {
     width: 170px;
     height: 113px;
+  }
+  @include phonemax {
+    width: 130px;
+    height: 87px;
   }
 }

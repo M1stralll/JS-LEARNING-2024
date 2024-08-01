@@ -1,11 +1,10 @@
-@import 'mixin';
+@import 'mixin/breakpoints.mixin';
 .hipage__baground {
   background-image: url(/shelter/images/hipage/hipage__background.jpg);
   background-size: cover;
   padding-top: 30px;
-  @include phone  {
+  @include phonemax  {
     width: 100%;
-    height: 823px;
   }
 }
 
@@ -19,7 +18,7 @@
     flex-direction: column;
     align-items: center;
   }
-  @include phone { 
+  @include phonemax { 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,9 +30,9 @@
 .hipage__text {
   display: flex;
   flex-direction: column;
-  //использую gap
   gap: 45px;
   margin-top: -110px;
+  padding-left: 50px;
   @include tablet {
     .hipage__text {
       margin-top: 20px;
@@ -48,7 +47,7 @@
   line-height: 57.2px;
   letter-spacing: 3px;
   margin-top: 50px;
-    @include phone {
+    @include phonemax {
     font-size: 25px;
     text-align: center;
     line-height: 32.5px;
@@ -66,6 +65,16 @@
     height: 595px;
     background-size: cover;
   }
+  @include fold {
+    width: 390px;
+    height: 406px;
+    margin-top: 46px;
+  }
+  @include phonemax {
+    width: 270px;
+    height: 281.77px;
+    margin-top: 46px;
+  }
   @include phone {
     width: 260px;
     height: 271.77px;
@@ -78,7 +87,7 @@
   color: #CDCDCD;
   font-family: Arial;
   line-height: 24px;
-  @include phone {
+  @include phonemax {
     text-align: center;
   }
 }

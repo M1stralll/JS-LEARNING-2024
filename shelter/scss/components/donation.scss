@@ -1,4 +1,4 @@
-@import 'mixin';
+@import 'mixin/breakpoints.mixin';
 .donation-block {
   background-color: #F6F6F6;
   padding-top: 80px;
@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   gap: 100px;
+  flex-wrap: wrap-reverse;
   margin-top: 150px;
   @include tablet {
     flex-direction: column-reverse;
@@ -17,8 +18,21 @@
   background-image: url(/shelter/images/donation/donation-dog.png);
   width: 505px;
   height: 261px;
+  background-size: cover;
   @include tablet {
     margin-bottom: 100px;
+  }
+  @include fold {
+    width: 320px;
+    height: 177.8px;
+    background-size: contain;
+        background-repeat: no-repeat;
+    
+  }
+  @include phonemax {
+    width: 260px;
+    height: 135.2px;
+    
   }
 }
 
@@ -38,6 +52,9 @@
   line-height: 45.5px;
   letter-spacing: 3px;
   color: #545454;
+  @include phonemax {
+    text-align: center;
+  }
 }
 
 .donation__text-account {
@@ -46,6 +63,11 @@
   line-height: 16.5px;
   letter-spacing: 3px;
   color: #545454;
+  @include phonemax {
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  
 }
 
 .donation__text-cards {
@@ -57,6 +79,15 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
+  @include fold {
+    width: 325px;
+  }
+  @include phonemax {
+    letter-spacing: 1px;
+    gap: 10px;
+    padding-left: 5px;
+    margin: auto;
+  }
 }
 
 .text__cards-picture {
@@ -70,6 +101,11 @@
   line-height: 23px;
   letter-spacing: 2px;
   color: #545454;
+  @include fold {
+    width: 325px;
+    letter-spacing: 1px;
+  }
+  
 }
 
 .donation__text-description {
@@ -78,4 +114,10 @@
   font-style: italic;
   line-height: 18px;
   color: #B2B2B2;
+  @include phonemax {
+    letter-spacing: 1px;
+    text-align: justify;
+    margin: 0px 15px;
+  }
+  
 }

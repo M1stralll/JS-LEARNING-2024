@@ -1,4 +1,4 @@
-@import 'mixin';
+@import 'mixin/breakpoints.mixin';
 .description-block {
   height: auto;
   background-color: #F6F6F6;
@@ -13,10 +13,10 @@
   align-items: center;
   flex-direction: column;
   color: #545454;
-  font-size: 35px;
+  font-size: 25px;
   font-family: Georgia;
   margin-top: 80px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-align: center;
 }
 
@@ -29,6 +29,19 @@
   @include tablet { 
     gap: 12px;
   }
+  @include phonemax {
+    display: flex;
+    flex-direction: column;
+  }
+  @include foldmax {
+    gap: 30px;
+  }
+}
+
+.arrow--adaptive {
+  display: flex;
+  gap: 80px;
+  margin-top: 20px;
 }
 
 .desription__arrow {
@@ -41,7 +54,16 @@
   align-items: center;
   background-color: #F6F6F6;
 }
-
+.desription__arrow--adaptive {
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+}
 .table__pet {
   margin-top: 60px;
   background-color: #FAFAFA;
@@ -105,7 +127,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 100px;
 
   @include tablet {
@@ -116,7 +137,16 @@
     flex-wrap: nowrap;
     gap: 40px;
 
+    
+  }
+  @include foldmax {
+    gap: 30px;
     .table__pet:nth-child(3) {
+      display: none;
+    }
+  }
+  @include fold {
+    .table__pet:nth-child(2) {
       display: none;
     }
   }

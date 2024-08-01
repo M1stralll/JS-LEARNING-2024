@@ -1,4 +1,4 @@
-@import 'mixin';
+@import 'mixin/breakpoints.mixin';
 .footer-block {
   background-image: url(/shelter/images/footer/footer-gradient-background.png);
   background-size: cover;
@@ -6,10 +6,14 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 160px;
+  gap: 100px;
   @include tablet {
+    background-image: url(/shelter/images/footer/footer-gradient-background-adaptive.png);
     flex-direction: column;
     gap: 65px;
+  }
+  @include phonemax {
+    background-image: url(/shelter/images/footer/footer-gradient-background-adaptive.png);
   }
 }
 
@@ -27,6 +31,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  
 }
 
 .questions__email-text {
@@ -103,11 +108,17 @@
 .footer__text {
   padding-top: 50px;
   display: flex;
+  
   gap: 160px;
   @include tablet { 
     display: flex;
     gap: 60px;
     margin-top: 30px;
+  }
+  @include fold {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -115,10 +126,15 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-top: 30px;
+  padding-left: 20px;
 }
 
 .footer__visit {
   display: flex;
   flex-direction: column;
+  margin-left: 30px;
   gap: 28px;
+  margin-top: 30px;
+  padding-right: 20px;
 }

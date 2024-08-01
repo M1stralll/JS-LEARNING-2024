@@ -17,6 +17,10 @@ ul {
   display: none;
 }
 
+.desription__arrow--adaptive {
+  display: none;
+}
+
 @media (max-width: 320px) {
 
   .normalresolution {
@@ -26,4 +30,19 @@ ul {
     display: inline;
   }
 
+}
+
+@media (max-width: 400px) {
+  .desription__arrow {
+    display: none;
+  }
+  .desription__arrow--adaptive {
+    display: inline;
+  }
+  .normalresolution {
+    display: none;
+  }
+  .adaptiveresolution {
+    display: inline;
+  }
 }
