@@ -1,0 +1,144 @@
+@import 'mixin/breakpoints.mixin';
+
+.footer-block {
+  background-image: url(/shelter/images/footer/footer-gradient-background.png);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+
+  // @include phone {
+  //   background-image: url(/shelter/images/footer/footer-gradient-background-adaptive.png);
+  //   flex-direction: column;
+  //   gap: 65px;
+  // }
+
+  // @include phonemax {
+  //   background-image: url(/shelter/images/footer/footer-gradient-background-adaptive.png);
+  // }
+}
+
+.footer__questions-title {
+  font-size: 35px;
+  font-family: Georgia;
+  line-height: 45px;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+}
+
+.footer__questions-email {
+  width: 250px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.questions__email-text {
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  letter-spacing: 3px;
+  color: #F1CDB3;
+}
+
+.footer__questions-number {
+  display: flex;
+  align-items: center;
+}
+
+.questions__number-text {
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  letter-spacing: 3px;
+  color: #F1CDB3;
+  margin-left: 20px;
+}
+
+.footer__visit-title {
+  font-size: 35px;
+  font-family: Georgia;
+  line-height: 45px;
+  letter-spacing: 3px;
+  color: #FFFFFF;
+}
+
+.visit__place-text {
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  letter-spacing: 3px;
+  color: #F1CDB3;
+}
+
+.visit__place-textsecond {
+  margin-right: 25px;
+  font-size: 20px;
+  font-family: Georgia;
+  line-height: 23px;
+  letter-spacing: 3px;
+  color: #F1CDB3;
+}
+
+.footer__visit-place {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.questions__email-picture img {
+  width: 40px;
+  height: 32px;
+}
+
+.questions__enumber-picture img {
+  width: 40px;
+  height: 32px;
+}
+
+.footer__picture {
+  width: 300px;
+  height: 310px;
+  background-image: url(/shelter/images/footer/footer-puppy.png);
+  margin-top: 40px;
+}
+
+.footer__text {
+  padding-top: 50px;
+  display: flex;
+  gap: 160px;
+
+  @include phone {
+    display: flex;
+    gap: 60px;
+    margin-top: 30px;
+  }
+
+  @include phone {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.footer__questions {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 30px;
+  padding-left: 20px;
+}
+
+.footer__visit {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  gap: 28px;
+  margin-top: 30px;
+  padding-right: 20px;
+}

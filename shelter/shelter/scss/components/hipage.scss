@@ -1,0 +1,121 @@
+@import 'mixin/breakpoints.mixin';
+@import 'mixin/hover.mixin';
+
+.hipage__background {
+  background-image: url(/shelter/images/hipage/hipage__background.jpg);
+  background-size: cover;
+  padding-top: 30px;
+
+  @include phone {
+    width: 100%;
+  }
+}
+
+.hipage-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
+  margin-top: 120px;
+
+  @include laptop {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+  }
+}
+
+.hipage__text {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  margin-top: -110px;
+
+  @include phone {
+    .hipage__text {
+      margin-top: 20px;
+    }
+  }
+}
+
+.text__title-word {
+  font-size: 44px;
+  color: #FFFFFF;
+  font-family: Georgia;
+  line-height: 57px;
+  letter-spacing: 3px;
+  margin-top: 50px;
+
+  @include phone {
+    font-size: 35px;
+    text-align: center;
+    line-height: 32px;
+    margin-top: 120px;
+  }
+
+}
+
+.hipage__picture {
+  width: 698px;
+  height: 728px;
+  background-image: url(/shelter/images/hipage/hipage__dog.png);
+
+  @include laptop {
+    margin-top: 30px;
+    width: 569px;
+    height: 595px;
+    background-size: cover;
+  }
+
+  @include phone {
+    width: 260px;
+    height: 271px;
+    margin-top: 46px;
+  }
+}
+
+.text__description-word {
+  font-size: 15px;
+  color: #CDCDCD;
+  font-family: Arial;
+  line-height: 24px;
+  max-width: 460px;
+
+  @include phone {
+    text-align: center;
+  }
+}
+
+.hipage__text-button {
+  width: 206px;
+  height: 52px;
+  background-color: #F1CDB3;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+
+  @include laptop {
+    margin: auto;
+  }
+
+  @include buttonhover;
+}
+
+.text__button-word {
+  font-size: 17px;
+  color: #292929;
+  font-family: Georgia;
+  letter-spacing: 3px;
+}
