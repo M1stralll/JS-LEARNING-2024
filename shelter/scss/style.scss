@@ -1,8 +1,12 @@
 @import 'components/index';
+@import 'componentsourpets/indexourpets';
 
 * {
   padding: 0px;
   margin: 0px;
+}
+h1, h2, h3 {
+  font-weight: normal;
 }
 
 a {
@@ -12,37 +16,4 @@ a {
 
 ul {
   list-style: none;
-}
-.adaptiveresolution {
-  display: none;
-}
-
-.desription__arrow--adaptive {
-  display: none;
-}
-
-@media (max-width: 320px) {
-
-  .normalresolution {
-    display: none;
-  }
-  .adaptiveresolution {
-    display: inline;
-  }
-
-}
-
-@media (max-width: 400px) {
-  .desription__arrow {
-    display: none;
-  }
-  .desription__arrow--adaptive {
-    display: inline;
-  }
-  .normalresolution {
-    display: none;
-  }
-  .adaptiveresolution {
-    display: inline;
-  }
 }
