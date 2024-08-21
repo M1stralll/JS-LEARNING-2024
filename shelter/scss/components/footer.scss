@@ -1,4 +1,5 @@
 @import 'mixin/breakpoints.mixin';
+
 .footer-block {
   background-image: url(/shelter/images/footer/footer-gradient-background.png);
   background-size: cover;
@@ -7,31 +8,24 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 100px;
-  @include tablet {
-    background-image: url(/shelter/images/footer/footer-gradient-background-adaptive.png);
-    flex-direction: column;
-    gap: 65px;
-  }
-  @include phonemax {
-    background-image: url(/shelter/images/footer/footer-gradient-background-adaptive.png);
-  }
+
 }
 
 .footer__questions-title {
   font-size: 35px;
   font-family: Georgia;
-  line-height: 45.5px;
+  line-height: 45px;
   letter-spacing: 3px;
   color: #FFFFFF;
 }
 
 .footer__questions-email {
-  width: 251px;
-  height: 32px;
+  width: 250px;
+  height: 35px;
   display: flex;
   align-items: center;
   gap: 20px;
-  
+
 }
 
 .questions__email-text {
@@ -59,8 +53,9 @@
 .footer__visit-title {
   font-size: 35px;
   font-family: Georgia;
-  line-height: 45.5px;
+  line-height: 45px;
   letter-spacing: 3px;
+  min-width: 320px;
   color: #FFFFFF;
 }
 
@@ -85,6 +80,7 @@
   height: 46px;
   display: flex;
   align-items: center;
+  min-width: 320px;
   gap: 20px;
 }
 
@@ -108,14 +104,14 @@
 .footer__text {
   padding-top: 50px;
   display: flex;
-  
-  gap: 160px;
-  @include tablet { 
+
+  @include phone {
     display: flex;
     gap: 60px;
     margin-top: 30px;
   }
-  @include fold {
+
+  @include phone {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -133,7 +129,7 @@
 .footer__visit {
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
+  margin-left: 80px;
   gap: 28px;
   margin-top: 30px;
   padding-right: 20px;

@@ -7,18 +7,22 @@
     <meta name="X-UA-Compatible" content="ie=edge">
     <title>SH</title>
     <link rel="stylesheet" href="/shelter/css/style.css">
+    <script defer type="module" src="/shelter/javascript/hamburger.js"></script>
+    <script defer type="module" src="/shelter/javascript/slider.js"></script>
+    <script defer type="module" src="/shelter/javascript/variables/const.js"></script>
+    <script defer type="module" src="/shelter/javascript/popup.js"></script>
 </head>
 
 <body>
     <main>
         <div class="hipage__background">
             <header class="header">
-                <img src="/shelter/images/header/Logo.png" alt="Header-logo">
+                <img src="/shelter/images/header/Logo.png" alt="HeaderLogo">
                 <div class="header__menu">
                     <nav>
                         <ul class="header__link-word">
                             <li class="header__page-select">
-                                <a href="/shelter/index.html">About the shelter</a>
+                                <a href="index.html">About the shelter</a>
                             </li>
                             <li><a href="/shelter/pageourpets/index2.html">Our pets</a></li>
                             <li><a href="">Help the shelter</a></li>
@@ -26,13 +30,13 @@
                         </ul>
                     </nav>
                 </div>
-                <img class="burger" src="/shelter/images/header/Burger.svg" alt="Burger-menu">
+                <img class="burger" src="/shelter/images/header/Burger.svg" alt="BurgerMenu">
                 <div class="burger__menu">
                     <div class="burger__link">
                         <nav>
                             <ul class="burger__word">
                                 <li class="header__page-select--burger">
-                                    <a href="/shelter/index.html" class="burger__links">About the shelter</a>
+                                    <a href="index.html" class="burger__links">About the shelter</a>
                                 </li>
                                 <li><a href="/shelter/pageourpets/index2.html" class="burger__links">Our pets</a></li>
                                 <li><a href="" class="burger__links">Help the shelter</a></li>
@@ -71,7 +75,7 @@
         </div>
         <section class="about">
             <div class="about-block">
-                <img class="about__picture" src="/shelter/images/aboutshelter/about-pets.png" alt="Picture-about">
+                <img class="about__picture" src="/shelter/images/aboutshelter/about-pets.png" alt="PictureAbout">
                 <div class="about__text">
                     <h2 class="about__text-title">
                         About the shelter <br>
@@ -103,10 +107,10 @@
                 <div class="description__pets">
                         
                     <button class="desription__arrow-left">
-                        <img src="/shelter/images/description/Arrow-2.svg" alt="Arrow-left">
+                        <img src="/shelter/images/description/Arrow-2.svg" alt="ArrowLeft">
                     </button>
                     <button class="desription__arrow-right">
-                        <img src="/shelter/images/description/Arrow.svg" alt="Arrow-right">
+                        <img src="/shelter/images/description/Arrow.svg" alt="ArrowRight">
                     </button>
 
                     <div class="desription__tables">
@@ -504,13 +508,13 @@
         </section>
         <section class="donation">
             <div class="donation-block">
-                <img src="/shelter/images/donation/donation-dog.png" alt="Dog-donation">
+                <img class="donation__image" src="/shelter/images/donation/donation-dog.png" alt="DogDonation">
                 <div class="donation__text">
                     <h2 class="donation__text-title">
                         You can also <br>
                         make a donation
                     </h2>
-                    <h3>
+                    <h3 class="donation__text-subtitle">
                         Name of the bank / Type of bank account
                     </h3>
                     <div class="donation__text-cards">
@@ -544,14 +548,14 @@
                         </h2>
                         <div class="footer__questions-email">
                             <img class="questions__email-picture" src="/shelter/images/footer/icon-email.svg"
-                                alt="footer-questions">
+                                alt="footerQuestions">
                             <p class="questions__email-text">
                                 email@shelter.com
                             </p>
                         </div>
                         <div class="footer__questions-number">
                             <img class="questions__number-picture" src="/shelter/images/footer/phone.svg"
-                                alt="footer-number">
+                                alt="footerNumber">
                             <p class="questions__number-text">
                                 +13 674 567 75 54
                             </p>
@@ -563,7 +567,7 @@
                             for your visit
                         </h2>
                         <div class="footer__visit-place">
-                            <img class="visit__place-picture" src="/shelter/images/footer/pin.svg" alt="footer-pets">
+                            <img class="visit__place-picture" src="/shelter/images/footer/pin.svg" alt="footerPets">
                             <p class="visit__place-text">
                                 1 Central Street, Boston <br>
                                 (entrance from the store)
@@ -586,9 +590,7 @@
         </section>
         
     </footer>
-    <script src="/shelter/javascript/hamburger.js"></script>
-    <script src="/shelter/javascript/slider.js"></script>
-    <script src="/shelter/javascript/pagination&popup.js"></script>
+
 </body>
 
 </html>

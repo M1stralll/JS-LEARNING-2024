@@ -1,9 +1,12 @@
 @import 'mixin/breakpoints.mixin';
-.hipage__baground {
+@import 'mixin/hover.mixin';
+
+.hipage__background {
   background-image: url(/shelter/images/hipage/hipage__background.jpg);
   background-size: cover;
   padding-top: 30px;
-  @include phonemax  {
+
+  @include phone {
     width: 100%;
   }
 }
@@ -13,12 +16,14 @@
   justify-content: center;
   align-items: center;
   gap: 42px;
-  margin-top: 121px;
-  @include tablet {
+  margin-top: 120px;
+
+  @include laptop {
     flex-direction: column;
     align-items: center;
   }
-  @include phonemax { 
+
+  @include phone {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,8 +37,8 @@
   flex-direction: column;
   gap: 45px;
   margin-top: -110px;
-  padding-left: 50px;
-  @include tablet {
+
+  @include phone {
     .hipage__text {
       margin-top: 20px;
     }
@@ -44,15 +49,16 @@
   font-size: 44px;
   color: #FFFFFF;
   font-family: Georgia;
-  line-height: 57.2px;
+  line-height: 57px;
   letter-spacing: 3px;
   margin-top: 50px;
-    @include phonemax {
-    font-size: 25px;
+
+  @include phone {
+    font-size: 35px;
     text-align: center;
-    line-height: 32.5px;
+    line-height: 32px;
     margin-top: 120px;
-    }
+  }
 
 }
 
@@ -60,24 +66,17 @@
   width: 698px;
   height: 728px;
   background-image: url(/shelter/images/hipage/hipage__dog.png);
-  @include tablet {
+
+  @include laptop {
+    margin-top: 30px;
     width: 569px;
     height: 595px;
     background-size: cover;
   }
-  @include fold {
-    width: 390px;
-    height: 406px;
-    margin-top: 46px;
-  }
-  @include phonemax {
-    width: 270px;
-    height: 281.77px;
-    margin-top: 46px;
-  }
+
   @include phone {
     width: 260px;
-    height: 271.77px;
+    height: 270px;
     margin-top: 46px;
   }
 }
@@ -87,13 +86,15 @@
   color: #CDCDCD;
   font-family: Arial;
   line-height: 24px;
-  @include phonemax {
+  max-width: 460px;
+
+  @include phone {
     text-align: center;
   }
 }
 
 .hipage__text-button {
-  width: 207px;
+  width: 206px;
   height: 52px;
   background-color: #F1CDB3;
   border-radius: 100px;
@@ -102,10 +103,14 @@
   align-items: center;
   border: none;
   outline: none;
-  @include tablet {
-      margin: auto;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+
+  @include laptop {
+    margin: auto;
   }
 
+  @include buttonhover;
 }
 
 .text__button-word {

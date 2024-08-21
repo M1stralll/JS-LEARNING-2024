@@ -1,5 +1,5 @@
 const menuIcon = document.querySelector(".burger");
-let element = document.querySelector('.burger__menu');
+const element = document.querySelector('.burger__menu');
 
 menuIcon.addEventListener("click", toggleMobileMenu);
 

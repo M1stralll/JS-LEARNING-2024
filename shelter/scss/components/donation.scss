@@ -1,4 +1,5 @@
 @import 'mixin/breakpoints.mixin';
+
 .donation-block {
   background-color: #F6F6F6;
   padding-top: 80px;
@@ -8,31 +9,16 @@
   justify-content: center;
   gap: 100px;
   flex-wrap: wrap-reverse;
-  margin-top: 150px;
-  @include tablet {
+
+  @include laptop {
     flex-direction: column-reverse;
   }
 }
 
-.donation__picture {
-  background-image: url(/shelter/images/donation/donation-dog.png);
-  width: 505px;
-  height: 261px;
-  background-size: cover;
-  @include tablet {
-    margin-bottom: 100px;
-  }
-  @include fold {
-    width: 320px;
-    height: 177.8px;
-    background-size: contain;
-        background-repeat: no-repeat;
-    
-  }
-  @include phonemax {
+.donation__image {
+  @include phone {
     width: 260px;
-    height: 135.2px;
-    
+    height: 135px;
   }
 }
 
@@ -40,52 +26,60 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
-  @include tablet {
-    margin-top: 80px;
-  }
+
 }
 
 .donation__text-title {
   font-size: 35px;
   font-family: Georgia;
-  line-height: 45.5px;
+  line-height: 45px;
   letter-spacing: 3px;
   color: #545454;
-  @include phonemax {
+
+  @include phone {
     text-align: center;
+    font-size: 25px;
+  }
+}
+
+.donation__text-subtitle {
+  @include phone {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
   }
 }
 
 .donation__text-account {
   font-size: 15px;
   font-family: Georgia;
-  line-height: 16.5px;
+  line-height: 16px;
   letter-spacing: 3px;
   color: #545454;
-  @include phonemax {
+
+  @include phone {
     letter-spacing: 1px;
     text-align: center;
   }
-  
+
 }
 
 .donation__text-cards {
-  width: 349px;
-  height: 43px;
+  width: 350px;
+  height: 42px;
   background-color: #F1CDB3;
   border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
-  @include fold {
-    width: 325px;
-  }
-  @include phonemax {
+
+  @include phone {
+    width: 280px;
     letter-spacing: 1px;
     gap: 10px;
-    padding-left: 5px;
     margin: auto;
   }
 }
@@ -93,19 +87,22 @@
 .text__cards-picture {
   width: 30px;
   height: 23px;
+  margin-left: 10px;
 }
 
-.text__cards-text {
+.text__creditcards-text {
   font-size: 20px;
   font-family: Georgia;
   line-height: 23px;
   letter-spacing: 2px;
   color: #545454;
-  @include fold {
+
+  @include phone {
     width: 325px;
     letter-spacing: 1px;
+    font-size: 15px;
   }
-  
+
 }
 
 .donation__text-description {
@@ -114,10 +111,14 @@
   font-style: italic;
   line-height: 18px;
   color: #B2B2B2;
-  @include phonemax {
+  max-width: 380px;
+
+  @include phone {
     letter-spacing: 1px;
-    text-align: justify;
-    margin: 0px 15px;
+    text-align: center;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
   }
-  
+
 }

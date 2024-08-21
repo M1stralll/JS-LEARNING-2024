@@ -1,0 +1,10 @@
+@mixin petscards {
+  margin-top: 60px;
+  background-color: #FAFAFA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 9px;
+  padding-bottom: 30px;
+}

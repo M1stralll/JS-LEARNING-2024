@@ -1,4 +1,5 @@
 @import 'mixin/breakpoints.mixin';
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -6,31 +7,10 @@
   padding: 0px 40px;
 }
 
-.header__title-name {
-  color: #F1CDB3;
-  font-family: Georgia;
-  font-size: 32px;
-  letter-spacing: 2px;
-}
 
-.header__title-goal {
-  color: #FFFFFF;
-  font-size: 13px;
-  font-family: Arial;
-  letter-spacing: 1px;
-}
-
-.header__title {
+.header__link-word {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.link__word {
-  display: flex;
-  gap: 30.7px;
+  gap: 30px;
   font-family: Arial;
   color: #CDCDCD;
   font-size: 16px;
@@ -39,19 +19,15 @@
 .page-select {
   color: #FAFAFA;
   font-size: 15px;
-}
-
-.line-select {
-  width: 114px;
-  height: 3px;
-  margin-top: 5px;
-  background-color: #F1CDB3;
+  border-bottom: 3px solid #F1CDB3;
+  padding-bottom: 3px;
 }
 
 .burger {
   display: none;
-  z-index: 11;
-  @include fold {
+  z-index: 3;
+
+  @include phone {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -59,15 +35,29 @@
 }
 
 .header__menu {
-  @include fold {
+  @include phone {
     display: none;
   }
 }
 
 
 .burger__line {
-  @include fold {
+  @include phone {
     width: 28px;
     border: 1px solid #F1CDB3;
   }
+}
+
+.header__page-select {
+  color: #FAFAFA;
+  font-size: 15px;
+  border-bottom: 3px solid #F1CDB3;
+  padding-bottom: 3px;
+}
+
+.header__page-select--burger {
+  color: #FAFAFA;
+  font-size: 32px;
+  border-bottom: 3px solid #F1CDB3;
+  padding-bottom: 3px;
 }
