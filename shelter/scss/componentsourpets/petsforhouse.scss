@@ -13,6 +13,14 @@
   gap: 40px;
   margin-top: 60px;
   flex-wrap: wrap;
+  height: 1030px;
+  @include phone {
+    height: 1030px;
+  }
+
+  @include laptop {
+    height: 1565px;
+  }
 }
 
 
@@ -146,150 +154,11 @@
   padding-top: 50px;
 }
 
-.table__pet-katrine {
+.table__pet {
   @include petscards;
 }
 
-.table__pet-jennifer {
-  @include petscards;
-}
-
-.table__pet-woody {
-  @include petscards;
-}
-
-.table__pet-sophia {
-  @include petscards;
-}
-
-.table__pet-timmy {
-  @include petscards;
-}
-
-.table__pet-charly {
-  @include petscards;
-}
-
-.table__pet-scralett {
-  @include petscards;
-}
-
-.table__pet-freddie {
-  @include petscards;
-}
-
-.disabled {
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-
-.table__pet-popup-woody {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #29292999;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  display: none;
-  overflow: hidden;
-}
-
-.table__pet-popup-sophia {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #29292999;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  display: none;
-  overflow: hidden;
-}
-
-.table__pet-popup-katrine {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #29292999;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  display: none;
-  overflow: hidden;
-}
-
-.table__pet-popup-jennifer {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #29292999;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  display: none;
-  overflow: hidden;
-}
-
-.table__pet-popup-scralett {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #29292999;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  display: none;
-  overflow: hidden;
-}
-
-.table__pet-popup-timmy {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #29292999;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  display: none;
-  overflow: hidden;
-}
-
-.table__pet-popup-charly {
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #29292999;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  display: none;
-  overflow: hidden;
-}
-
-.table__pet-popup-freddie {
+.table__pet-popup {
   position: fixed;
   left: 0;
   top: 0;
@@ -317,6 +186,7 @@
   margin-left: 930px;
   transition: background-color 0.3s linear;
   transition: border-color 0.3s linear;
+
 
   @include laptop {
     margin-left: 660px;

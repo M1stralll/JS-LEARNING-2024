@@ -23,10 +23,10 @@
 }
 
 .description__pets {
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 30px;
   margin-top: 40px;
   gap: 25px;
 
@@ -37,6 +37,7 @@
   @include phone {
     display: flex;
     flex-direction: column;
+    height: 650px;
   }
 
 }
@@ -99,30 +100,32 @@
   }
 }
 
-
-
-.table__pet-first {
+.table__pet {
   @include petscards;
 }
 
-.table__pet-second {
-  @include petscards;
 
-  @include phone {
-    display: none;
-  }
-}
+// .table__pet-first {
+//   @include petscards;
+// }
 
-.table__pet-third {
-  @include petscards;
+// .table__pet-second {
+//   @include petscards;
 
-  @include laptop {
-    display: none;
-  }
-}
+//   @include phone {
+//     display: none;
+//   }
+// }
 
+// .table__pet-third {
+//   @include petscards;
 
-.table__pet-name-first {
+//   @include laptop {
+//     display: none;
+//   }
+// }
+
+.table__pet-name {
   font-size: 20px;
   margin-top: 30px;
   font-family: Georgia;
@@ -130,21 +133,29 @@
   letter-spacing: 3px;
 }
 
-.table__pet-name-second {
-  font-size: 20px;
-  margin-top: 30px;
-  font-family: Georgia;
-  color: #545454;
-  letter-spacing: 3px;
-}
+// .table__pet-name-first {
+//   font-size: 20px;
+//   margin-top: 30px;
+//   font-family: Georgia;
+//   color: #545454;
+//   letter-spacing: 3px;
+// }
 
-.table__pet-name-third {
-  font-size: 20px;
-  margin-top: 30px;
-  font-family: Georgia;
-  color: #545454;
-  letter-spacing: 3px;
-}
+// .table__pet-name-second {
+//   font-size: 20px;
+//   margin-top: 30px;
+//   font-family: Georgia;
+//   color: #545454;
+//   letter-spacing: 3px;
+// }
+
+// .table__pet-name-third {
+//   font-size: 20px;
+//   margin-top: 30px;
+//   font-family: Georgia;
+//   color: #545454;
+//   letter-spacing: 3px;
+// }
 
 .table__pet-button {
   width: 187px;
@@ -167,68 +178,68 @@
   @include buttonhover;
 }
 
-.table__pet-button-first {
-  width: 187px;
-  height: 52px;
-  margin-top: 30px;
-  border: 2px solid #F1CDB3;
-  border-radius: 100px;
-  color: #292929;
-  font-family: Georgia;
-  font-size: 17px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 3px;
-  background-color: #FAFAFA;
-  cursor: pointer;
-  transition: background-color 0.3s linear;
-  transition: border-color 0.3s linear;
+// .table__pet-button-first {
+//   width: 187px;
+//   height: 52px;
+//   margin-top: 30px;
+//   border: 2px solid #F1CDB3;
+//   border-radius: 100px;
+//   color: #292929;
+//   font-family: Georgia;
+//   font-size: 17px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   letter-spacing: 3px;
+//   background-color: #FAFAFA;
+//   cursor: pointer;
+//   transition: background-color 0.3s linear;
+//   transition: border-color 0.3s linear;
 
-  @include buttonhover;
-}
+//   @include buttonhover;
+// }
 
-.table__pet-button-second {
-  width: 187px;
-  height: 52px;
-  margin-top: 30px;
-  border: 2px solid #F1CDB3;
-  border-radius: 100px;
-  color: #292929;
-  font-family: Georgia;
-  font-size: 17px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 3px;
-  background-color: #FAFAFA;
-  cursor: pointer;
-  transition: background-color 0.3s linear;
-  transition: border-color 0.3s linear;
+// .table__pet-button-second {
+//   width: 187px;
+//   height: 52px;
+//   margin-top: 30px;
+//   border: 2px solid #F1CDB3;
+//   border-radius: 100px;
+//   color: #292929;
+//   font-family: Georgia;
+//   font-size: 17px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   letter-spacing: 3px;
+//   background-color: #FAFAFA;
+//   cursor: pointer;
+//   transition: background-color 0.3s linear;
+//   transition: border-color 0.3s linear;
 
-  @include buttonhover;
-}
+//   @include buttonhover;
+// }
 
-.table__pet-button-third {
-  width: 187px;
-  height: 52px;
-  margin-top: 30px;
-  border: 2px solid #F1CDB3;
-  border-radius: 100px;
-  color: #292929;
-  font-family: Georgia;
-  font-size: 17px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 3px;
-  background-color: #FAFAFA;
-  cursor: pointer;
-  transition: background-color 0.3s linear;
-  transition: border-color 0.3s linear;
+// .table__pet-button-third {
+//   width: 187px;
+//   height: 52px;
+//   margin-top: 30px;
+//   border: 2px solid #F1CDB3;
+//   border-radius: 100px;
+//   color: #292929;
+//   font-family: Georgia;
+//   font-size: 17px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   letter-spacing: 3px;
+//   background-color: #FAFAFA;
+//   cursor: pointer;
+//   transition: background-color 0.3s linear;
+//   transition: border-color 0.3s linear;
 
-  @include buttonhover;
-}
+//   @include buttonhover;
+// }
 
 .description__button {
   width: 261px;

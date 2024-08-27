@@ -75,8 +75,10 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
+  margin-left: 40px;
 
   @include phone {
+    margin-left: 0px;
     width: 280px;
     letter-spacing: 1px;
     gap: 10px;
@@ -112,8 +114,10 @@
   line-height: 18px;
   color: #B2B2B2;
   max-width: 380px;
+  margin-left: 70px;
 
   @include phone {
+    margin-left: 0px;
     letter-spacing: 1px;
     text-align: center;
     max-width: 280px;

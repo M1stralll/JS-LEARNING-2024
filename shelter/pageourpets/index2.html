@@ -11,8 +11,8 @@
     <script defer type="module" src="/shelter/javascript/pagination.js"></script>
     <script defer type="module" src="/shelter/javascript/variables/const.js"></script>
     <script defer type="module" src="/shelter/javascript/utils/random.js"></script>
-    <script defer type="module" src="/shelter/javascript/popuppageoutpets.js"></script>
-    
+    <script defer type="module" src="/shelter/javascript/popup.js"></script>
+
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             <nav class="header__link-group">
                 <ul class="header__linkword-ourpets">
                     <li>
-                        <a href="index.html">About the shelter</a>
+                        <a href="/shelter/index.html">About the shelter</a>
                     </li>
                     <li class="header__pageselect-ourpets">
                         <a href="/shelter/pageourpets/index2.html">Our pets</a>
@@ -40,7 +40,7 @@
                 <nav>
                     <ul class="burger__word">
                         <li>
-                            <a href="index.html" class="burger__links">About the shelter</a>
+                            <a href="/shelter/index.html" class="burger__links">About the shelter</a>
                         </li>
                         <li class="header__pageselect-ourpets--burger"><a href="/shelter/pageourpets/index2.html"
                                 class="burger__links">Our pets</a></li>
@@ -63,357 +63,53 @@
                 </div>
 
                 <div class="looking__pets-firstline">
-                    <div class="table__pet-katrine">
+                    <div class="table__pet">
                         <img class="table__pet-picture" src="/shelter/imagesourpets/looking/pets-katrine.png" alt="Pet">
                         <h3 class="table__pet-name">
-                            Katrine
+
                         </h3>
                         <button class="table__pet-button">
-                            Learn more
-                        </button>
-                    </div>
-                    <div class="table__pet-jennifer">
-                        <img class="table__pet-picture" src="/shelter/imagesourpets/looking/pets-jennifer.png"
-                            alt="Pet">
-                        <h3 class="table__pet-name">
-                            Jennifer
-                        </h3>
-                        <button class="table__pet-button">
-                            Learn more
-                        </button>
-                    </div>
-                    <div class="table__pet-woody">
-                        <img class="table__pet-picture" src="/shelter/imagesourpets/looking/pets-woody.png" alt="Pet">
-                        <h3 class="table__pet-name">
-                            Woody
-                        </h3>
-                        <button class="table__pet-button">
-                            Learn more
-                        </button>
 
+                        </button>
                     </div>
 
-                    <div class="table__pet-sophia">
-                        <img class="table__pet-picture" src="/shelter/imagesourpets/looking/pets-sophia.png" alt="Pet">
-                        <h3 class="table__pet-name">
-                            Sophia
-                        </h3>
-                        <button class="table__pet-button">
-                            Learn more
-                        </button>
-                    </div>
-                    <div class="table__pet-timmy">
-                        <img src="/shelter/imagesourpets/looking/pets-timmy.png" alt="Pet">
-                        <h3 class="table__pet-name">
-                            Timmy
-                        </h3>
-                        <button class="table__pet-button">
-                            Learn more
-                        </button>
-                    </div>
-                    <div class="table__pet-charly">
-                        <img class="table__pet-picture" src="/shelter/imagesourpets/looking/pets-charly.png" alt="Pet">
-                        <h3 class="table__pet-name">
-                            Charly
-                        </h3>
-                        <button class="table__pet-button">
-                            Learn more
-                        </button>
-                    </div>
-                    <div class="table__pet-scralett">
-                        <img class="table__pet-picture" src="/shelter/imagesourpets/looking/pets-scralett.png"
-                            alt="Pet">
-                        <h3 class="table__pet-name">
-                            Scarlett
-                        </h3>
-                        <button class="table__pet-button">
-                            Learn more
-                        </button>
-                    </div>
-                    <div class="table__pet-freddie">
-                        <img class="table__pet-picture" src="/shelter/imagesourpets/looking/pets-freddie.png" alt="Pet">
-                        <p class="table__pet-name">
-                            Freddie
-                        </p>
-                        <button class="table__pet-button">
-                            Learn more
-                        </button>
-                    </div>
+
                 </div>
 
-                <div class="table__pet-popup-woody">
+                <div class="table__pet-popup">
                     <div class="table__pet-popup-buttoncancel">
-                        <img src="/shelter/images/popum/Vector.svg" alt="Cancel">
+                        <img class="table__pet-popup-buttoncancel-img" src="/shelter/images/popum/Vector.svg"
+                            alt="Cancel">
                     </div>
                     <div class="table__pet-popup-block">
-                        <img class="table__pet-popup-image" src="/shelter/imagesourpets/looking/pets-woody.png"
-                            alt="Pet">
+                        <img class="table__pet-popup-image" src="" alt="Pet">
                         <div class="table__pet-popup-content">
                             <h2 class="table__pet-popup-name">
-                                Woody
+
                             </h2>
                             <h3 class="table__pet-popup-breed">
-                                Dog - Golden Retriever
+                                <span class="table__pet-popup-animal"></span> - <span class="table__pet-popup-type">
+                                </span>
                             </h3>
                             <p class="table__pet-popup-description">
-                                Woody is a handsome 3 1/2 year old boy.
-                                Woody does know basic commands and is a smart pup.
-                                Since he is on the stronger side, he will learn a lot
-                                from your training. Woody will be happier when he finds
-                                a new family that can spend a lot of time with him.
-
                             </p>
                             <ul class="table__pet-popup-inforamation">
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Age:</span>3 years 6
-                                    months</li>
+                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Age:</span> <span
+                                        class="table__pet-popup-age">
+                                    </span></li>
                                 <li class="table__pet-popup-inforamation-color"> <span class="bold">Inoculations:</span>
-                                    adenovirus, distemper</li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold">Diseases:</span>right
-                                    back leg mobility reduced</li>
+                                    <span class="table__pet-popup-inoculations"> </span>
+                                </li>
+                                <li class="table__pet-popup-inforamation-color"><span class="bold">Diseases:</span>
+                                    <span class="table__pet-popup-diseases"> </span>
+                                </li>
                                 <li class="table__pet-popup-inforamation-color"><span class="bold"> Parasites:</span>
-                                    none</li>
+                                    <span class="table__pet-popup-parasites"></span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="table__pet-popup-sophia">
-                    <div class="table__pet-popup-buttoncancel">
-                        <img src="/shelter/images/popum/Vector.svg" alt="Cancel">
-                    </div>
-                    <div class="table__pet-popup-block">
-                        <img class="table__pet-popup-image" src="/shelter/imagesourpets/looking/pets-sophia.png"
-                            alt="Pet">
-                        <div class="table__pet-popup-content">
-                            <h2 class="table__pet-popup-name">
-                                Sophia
-                            </h2>
-                            <h3 class="table__pet-popup-breed">
-                                Dog - Shih tzu
-                            </h3>
-                            <p class="table__pet-popup-description">
-                                Sophia here and I'm looking for my forever home to live out the best years
-                                of my life. I am full of energy. Everyday I'm learning new things, like how
-                                to walk on a leash, go potty outside, bark and play with toys and I still need
-                                some practice.
-                            </p>
-                            <ul class="table__pet-popup-inforamation">
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Age:</span>1 month
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Inoculations:</span>
-                                    parvovirus</li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold">Diseases:</span>none
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold"> Parasites:</span>
-                                    none</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="table__pet-popup-katrine">
-                    <div class="table__pet-popup-buttoncancel">
-                        <img src="/shelter/images/popum/Vector.svg" alt="Cancel">
-                    </div>
-                    <div class="table__pet-popup-block">
-                        <img class="table__pet-popup-image" src="/shelter/imagesourpets/looking/pets-katrine.png"
-                            alt="Pet">
-                        <div class="table__pet-popup-content">
-                            <h2 class="table__pet-popup-name">
-                                Katrine
-                            </h2>
-                            <h3 class="table__pet-popup-breed">
-                                Cat - British Shorthair
-                            </h3>
-                            <p class="table__pet-popup-description">
-                                "Katrine is a beautiful girl. She is as soft as the finest velvet with a thick lush fur.
-                                Will love you until the last breath she takes as long as you are the one. She is picky
-                                about
-                                her affection. She loves cuddles and to stretch into your hands for a deeper
-                                relaxations.",
-                            </p>
-                            <ul class="table__pet-popup-inforamation">
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Age:</span>6 months
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Inoculations:</span>
-                                    panleukopenia</li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold">Diseases:</span>none
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold"> Parasites:</span>
-                                    none</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="table__pet-popup-jennifer">
-                    <div class="table__pet-popup-buttoncancel">
-                        <img src="/shelter/images/popum/Vector.svg" alt="Cancel">
-                    </div>
-                    <div class="table__pet-popup-block">
-                        <img class="table__pet-popup-image" src="/shelter/imagesourpets/looking/pets-jennifer.png"
-                            alt="Pet">
-                        <div class="table__pet-popup-content">
-                            <h2 class="table__pet-popup-name">
-                                Jennifer
-                            </h2>
-                            <h3 class="table__pet-popup-breed">
-                                Dog - Labrador
-                            </h3>
-                            <p class="table__pet-popup-description">
-                                Jennifer is a sweet 2 months old Labrador that is patiently
-                                waiting to find a new forever home. This girl really enjoys
-                                being able to go outside to run and play, but won't hesitate
-                                to play up a storm in the house if she has all of her favorite toys.
-                            </p>
-                            <ul class="table__pet-popup-inforamation">
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Age:</span>2 months
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Inoculations:</span>
-                                    none</li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold">Diseases:</span>none
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold"> Parasites:</span>
-                                    none</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="table__pet-popup-scralett">
-                    <div class="table__pet-popup-buttoncancel">
-                        <img src="/shelter/images/popum/Vector.svg" alt="Cancel">
-                    </div>
-                    <div class="table__pet-popup-block">
-                        <img class="table__pet-popup-image" src="/shelter/imagesourpets/looking/pets-scralett.png"
-                            alt="Pet">
-                        <div class="table__pet-popup-content">
-                            <h2 class="table__pet-popup-name">
-                                Scarlett
-                            </h2>
-                            <h3 class="table__pet-popup-breed">
-                                Dog - Jack Russell Terrier
-                            </h3>
-                            <p class="table__pet-popup-description">
-                                Scarlett is a happy, playful girl who will make you laugh and smile.
-                                She forms a bond quickly and will make a loyal companion and a wonderful
-                                family dog or a good companion for a single individual too since she likes
-                                to hang out and be with her human.
-                            </p>
-                            <ul class="table__pet-popup-inforamation">
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Age:</span>3 months
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Inoculations:</span>
-                                    parainfluenza</li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold">Diseases:</span>none
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold"> Parasites:</span>
-                                    none</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="table__pet-popup-timmy">
-                    <div class="table__pet-popup-buttoncancel">
-                        <img src="/shelter/images/popum/Vector.svg" alt="Cancel">
-                    </div>
-                    <div class="table__pet-popup-block">
-                        <img class="table__pet-popup-image" src="/shelter/imagesourpets/looking/pets-timmy.png"
-                            alt="Pet">
-                        <div class="table__pet-popup-content">
-                            <h2 class="table__pet-popup-name">
-                                Timmy
-                            </h2>
-                            <h3 class="table__pet-popup-breed">
-                                Cat - British Shorthair
-                            </h3>
-                            <p class="table__pet-popup-description">
-                                Timmy is an adorable grey british shorthair male. He loves
-                                to play and snuggle. He is neutered and up to date on age
-                                appropriate vaccinations. He can be chatty and enjoys being held.
-                                Timmy has a lot to say and wants a person to share his thoughts with.
-
-
-
-                            </p>
-                            <ul class="table__pet-popup-inforamation">
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Age:</span>3 months
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Inoculations:</span>
-                                    parainfluenza</li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold">Diseases:</span>none
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold"> Parasites:</span>
-                                    none</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="table__pet-popup-charly">
-                    <div class="table__pet-popup-buttoncancel">
-                        <img src="/shelter/images/popum/Vector.svg" alt="Cancel">
-                    </div>
-                    <div class="table__pet-popup-block">
-                        <img class="table__pet-popup-image" src="/shelter/imagesourpets/looking/pets-charly.png"
-                            alt="Pet">
-                        <div class="table__pet-popup-content">
-                            <h2 class="table__pet-popup-name">
-                                Charly
-                            </h2>
-                            <h3 class="table__pet-popup-breed">
-                                Dog - Jack Russell Terrier
-                            </h3>
-                            <p class="table__pet-popup-description">
-                                This cute boy, Charly, is three years old and he likes
-                                adults and kids. He isn’t fond of many other dogs, so he
-                                might do best in a single dog home. Charly has lots of
-                                energy, and loves to run and play. We think a fenced
-                                yard would make him very happy.
-                            </p>
-                            <ul class="table__pet-popup-inforamation">
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Age:</span>3 months
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Inoculations:</span>
-                                    parainfluenza</li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold">Diseases:</span>none
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold"> Parasites:</span>
-                                    none</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="table__pet-popup-freddie">
-                    <div class="table__pet-popup-buttoncancel">
-                        <img src="/shelter/images/popum/Vector.svg" alt="Cancel">
-                    </div>
-                    <div class="table__pet-popup-block">
-                        <img class="table__pet-popup-image" src="/shelter/imagesourpets/looking/pets-freddie.png"
-                            alt="Pet">
-                        <div class="table__pet-popup-content">
-                            <h2 class="table__pet-popup-name">
-                                Freddie
-                            </h2>
-                            <h3 class="table__pet-popup-breed">
-                                Cat - British Shorthair
-                            </h3>
-                            <p class="table__pet-popup-description">
-                                Freddie is a little shy at first, but very sweet when
-                                he warms up. He likes playing with shoe strings and bottle caps.
-                                He is quick to learn the rhythms of his human’s daily life.
-                                Freddie has bounced around a lot in his life, and is looking to find his forever home.
-
-                            </p>
-                            <ul class="table__pet-popup-inforamation">
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Age:</span>2 months
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"> <span class="bold">Inoculations:</span>
-                                    rabies</li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold">Diseases:</span>none
-                                </li>
-                                <li class="table__pet-popup-inforamation-color"><span class="bold"> Parasites:</span>
-                                    none</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="looking__pets-slider">
                     <button class="pets__slider-doubleleft">
                         <img src="/shelter/imagesourpets/looking/arrowleftdouble.svg" alt="ArrowleftDouble">

@@ -45,7 +45,7 @@ function displayItems(page) {
 
     itemsToDisplay.forEach(pet => {
         const petCardElement = document.createElement('div');
-        petCardElement.className = `table__pet-${pet.title.toLowerCase()}`;
+        petCardElement.className = `table__pet`;
 
         petCardElement.innerHTML = `
             <img class="table__pet-picture" src="${pet.img}" alt="${pet.title}">
@@ -143,6 +143,6 @@ function updateButtonsState() {
     document.querySelector('.pets__slider-doubleleft').classList.toggle('disabled', isFirstPage);
 
     // Обновляем состояние кнопок для перехода вправо
-    document.querySelector('.pets__slider-right').classList.toggle('disabled', isLastPage);
-    document.querySelector('.pets__slider-doubleright').classList.toggle('disabled', isLastPage);
+    document.querySelector('.pets__slider-right').classList.toggleAttribute(disabled, isLastPage);
+    document.querySelector('.pets__slider-doubleright').classList.toggleAttribute('disabled', isLastPage);
 }
