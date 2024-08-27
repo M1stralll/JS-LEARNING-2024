@@ -1,0 +1,14 @@
+@mixin petspopup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #29292999;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    overflow: hidden;
+}

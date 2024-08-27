@@ -1,0 +1,63 @@
+@import 'mixin/breakpoints.mixin';
+
+
+.burger__menu {
+  width: 100%;
+  right: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: #292929;
+  padding-top: 46px;
+  right: -100%;
+  overflow: hidden;
+  display: none;
+  transition: right 0.9s ease-in-out;
+}
+
+.show {
+  display: block;
+  right: 0;
+}
+
+
+.burger__word {
+  gap: 30px;
+  font-family: Arial;
+  color: #CDCDCD;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 250px;
+}
+
+.burger__none {
+  display: block;
+}
+
+.burger {
+  display: none;
+}
+
+.header__menu {
+  @include phone {
+    display: none;
+  }
+}
+
+.burger {
+  @include phone {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.burger__line {
+  @include phone {
+    width: 28px;
+    border: 1px solid #F1CDB3;
+  }
+}
