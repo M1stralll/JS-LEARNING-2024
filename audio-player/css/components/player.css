@@ -48,18 +48,20 @@
 }
 .toggle-play.play {
   cursor: pointer;
+  background-image: url(/audio-player/images/utilities/play.png);
   position: relative;
   width: 50px;
   height: 50px;
-  background-image: url(/audio-player/images/utilities/play.png);
+  background-image: url();
   background-size: cover;
 }
 .toggle-play.pause {
   cursor: pointer;
+  background-image: url(/audio-player/images/utilities/pause.png);
   position: relative;
   width: 50px;
   height: 50px;
-  background-image: url(/audio-player/images/utilities/pause.png);
+  background-image: url();
   background-size: cover;
 }
 

@@ -51,7 +51,7 @@
   position: relative;
   width: 50px;
   height: 50px;
-  background-image: url(/images/utilities/play.png);
+  background-image: url(/audio-player/images/utilities/play.png);
   background-size: cover;
 }
 .toggle-play.pause {
@@ -59,7 +59,7 @@
   position: relative;
   width: 50px;
   height: 50px;
-  background-image: url(/images/utilities/pause.png);
+  background-image: url(/audio-player/images/utilities/pause.png);
   background-size: cover;
 }
 
