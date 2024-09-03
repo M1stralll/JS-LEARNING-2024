@@ -1,0 +1,124 @@
+
+.bacground-player {
+    filter: blur(5px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+ }
+
+ .player {
+    display: flex;
+    justify-content: center;
+    padding-top: 190px;
+ }
+
+ .player-container { 
+    z-index: 1;
+    border-radius: 9px;
+   
+ }
+
+ .player-covers {
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+    width: 340px;
+    height: 280px;
+    box-shadow: 3px -3px 9px #000000, -3px 0px 9px #000000;
+ }
+ 
+ .player-utilities {
+    width: 340px;
+    height: 140px;
+    margin-top: -15px;
+    box-shadow: 3px 0px 9px #000000, -3px 3px 9px #000000;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    background: linear-gradient(to right, rgb(82, 80, 80), rgb(160, 156, 156));
+ }
+
+ .toggle-play {
+
+      margin-top: 30px;
+      margin-left: 30px;
+
+      &.play {
+        cursor: pointer;
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-image: url(/audio-player/images/utilities/play.png);
+        background-size: cover;
+      }
+      &.pause {
+         cursor: pointer;
+         position: relative;
+         width: 50px;
+         height: 50px;
+         background-image: url(/audio-player/images/utilities/pause.png);
+         background-size: cover;
+      }
+    }
+
+ .backward {
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+    margin-left: 20px;
+ }
+
+ .forward {
+    width: 30px;
+    height: 30px;
+    margin-top: 55px;
+    margin-left: -30px;
+ }
+
+.utilites-button {
+    display: flex;
+}
+
+.name {
+    margin-top: 30px;
+    margin-left: 20px;
+    min-width: 170px;
+    font-size: 20px;
+    color: white;
+}
+
+.author-song {
+    color: rgb(193, 255, 6);
+    font-weight: bold;
+}
+
+.bar {
+    width: 218px;
+    height: 5px;
+    background-color: #000000;
+    border-radius: 9px;
+    margin-left: 62px;
+}
+
+.full-time {
+    color: rgb(193, 255, 6);
+    margin-left: 250px;
+}
+
+.real-time {
+    margin-left: 60px;
+    color: #ffffff;
+}
+
+.bar-scrolling {
+    width: 7px;
+    height: 15px;
+    background-color: beige;
+
+}
+
+.progress {
+   border-radius: 9px;
+   background: rgb(193, 255, 6);
+   width: 0%;
+   height: 100%;
+   transition: 0.25s;
+ }
