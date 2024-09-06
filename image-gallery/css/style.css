@@ -13,6 +13,7 @@ h3 {
 .result img {
   width: 380px;
   height: 214px;
+  border-radius: 9px;
 }
 
 .header {
@@ -29,10 +30,9 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  padding: 0px 120px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 30px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;

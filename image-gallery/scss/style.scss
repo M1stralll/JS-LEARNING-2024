@@ -13,6 +13,8 @@ h3 {
 .result img {
    width: 380px;
    height: 214px;
+   border-radius: 9px;
+
 }
 
 .header {
@@ -23,8 +25,7 @@ h3 {
 
 .search-results {
    display: flex;
-   justify-content: start;
-   padding: 0px 120px;
+   justify-content: center;
    gap: 30px;
    flex-wrap: wrap;
 }
