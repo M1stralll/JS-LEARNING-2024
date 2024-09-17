@@ -1,0 +1,106 @@
+.download-title {
+    font-size: 60px;
+    color: #403F3D;
+    font-family: "Inter", sans-serif;
+    max-width: 550px;
+    @include tablet {
+        max-width: 688px;
+    }
+    @include phone {
+        font-size: 32px;
+        max-width: 316px;
+    }
+}
+
+.download-title-word {
+    color: #B0907A;
+    font-style: italic;
+}
+
+.download-description {
+    font-size: 16px;
+    color: #403F3D;
+    font-family: "Inter", sans-serif;
+    max-width: 750px;
+    @include tablet {
+        max-width: 688px;
+    }
+    @include phone {
+        max-width: 316px;
+    }
+}
+
+.download {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    @include tablet {
+        flex-direction: column;
+        
+    }
+}
+
+.download-block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include phone {
+        margin-left: 8px;
+    }
+}
+
+.download-button {
+    background-color: #E1D4C9;
+    border: 1px solid #665F55;
+    border-radius: 100px;
+    width: 200px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 20px;
+}
+
+.apple {
+    background-color: #E1D4C9;
+}
+
+.download-available {
+    font-size: 10px;
+    color: #403F3D;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: start;
+}
+
+.download-application {
+    font-size: 16px;
+    color: #403F3D;
+    font-family: "Inter", sans-serif;
+}
+
+.download-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.download-service {
+    display: flex;
+    gap: 20px;
+    @include phone {
+        flex-direction: column;
+    }
+}
+
+.download-picture {
+    margin-top: 100px;
+    width: 348px;
+    height: 348px;
+    @include phone {
+        width: 304px;
+        height: 304px;
+        margin-top: 40px;
+    }
+}
+

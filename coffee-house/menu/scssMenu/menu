@@ -1,0 +1,64 @@
+@import 'menuMixin/breakpoints.mixin';
+.header-menu {
+    border-bottom: 2px solid #403F3D;
+}
+
+.menu-title {
+    font-size: 60px;
+    color: #403F3D;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    max-width: 780px;
+    margin: 0px auto;
+    margin-top: 20px;
+    @include tablet {
+        max-width: 610px;
+    }
+    @include phone {
+        font-size: 32px;
+        max-width: 316px;
+    }
+}
+
+.menu-title-word {
+    color: #B0907A;
+    font-style: italic;
+}
+
+.menu-coffee {
+    width: 115px;
+    height: 46px;
+    border-radius: 100px;
+    background-color: #665F55;
+    border: 1px solid #665F55;
+}
+
+.menu-tea {
+    width: 90px;
+    height: 46px;
+    border-radius: 100px;
+    background-color: #E1D4C9;
+    border: 1px solid #C1B6AD;
+}
+
+.menu-dessert {
+    width: 115px;
+    height: 46px;
+    border-radius: 100px;
+    background-color: #E1D4C9;
+    border: 1px solid #C1B6AD;
+}
+
+.menu-products {
+    font-size: 16px;
+    color: #403F3D;
+    font-family: "Inter", sans-serif;
+
+}
+
+.menu-active {
+    width: 30px;
+    height: 30px;
+    background-color: background: #E1D4C9;
+    ;
+}
