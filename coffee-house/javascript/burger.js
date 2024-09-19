@@ -13,6 +13,7 @@ function toggleMobileMenu() {
         burger.classList.remove('header-burgerMenu-noactive');
         document.querySelector(".header-burgerMenu").classList.toggle("header-burgerMenu-active");
         window.addEventListener('scroll', scrollToTop);
+        
     } else {
         window.removeEventListener('scroll', scrollToTop);
         burger.classList.remove('header-burgerMenu-active');

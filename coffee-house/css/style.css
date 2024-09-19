@@ -341,7 +341,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 20px;
-  max-width: 316px;
+  height: 670px;
 }
 
 .favorite-slider {
@@ -372,13 +372,6 @@
   background-color: #C1B6AD;
 }
 
-.controls-selected {
-  width: 40px;
-  height: 4px;
-  border-radius: 100px;
-  background-color: #665F55;
-}
-
 .favorite-controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -401,6 +394,88 @@
   }
 }
 
+.favorite-coffe-leave {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: 0.71s show ease;
+          animation: 0.71s show ease;
+}
+
+@keyframes show {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: -400%;
+  }
+}
+.favorite-coffe-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: 0.7s page ease;
+          animation: 0.7s page ease;
+}
+
+@keyframes page {
+  from {
+    margin-right: -400%;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+.favorite-coffe-leave-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: 0.71s slidein ease;
+          animation: 0.71s slidein ease;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-right: -400%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-right: -400%;
+  }
+}
+.favorite-coffe-active-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: 0.7s active ease;
+          animation: 0.7s active ease;
+}
+
+@-webkit-keyframes active {
+  from {
+    margin-left: -400%;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes active {
+  from {
+    margin-left: -400%;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
 .place-photo {
   margin-top: 40px;
   display: -webkit-box;

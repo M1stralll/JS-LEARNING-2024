@@ -11,7 +11,8 @@
     <script defer type="module" src="/shelter/javascript/slider.js"></script>
     <script defer type="module" src="/shelter/javascript/variables/const.js"></script> -->
     <script defer type="module" src="/coffee-house/javascript/burger.js"></script>
-    
+    <script defer type="module" src="/coffee-house/javascript/slider.js"></script>
+
     <link rel="stylesheet" href="/coffee-house/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,10 +24,10 @@
         <img class="header-logo" src="/coffee-house/images/header/logo.svg" alt="header-logo">
 
         <ul class="header-pages">
-            <li><a href="index.html">Favorite coffee</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Mobile app</a></li>
-            <li><a href="">Contact us</a></li>
+            <li><a href="#favorite-coffe">Favorite coffee</a></li>
+            <li><a href="/coffee-house/index.html">About</a></li>
+            <li><a href="#download">Mobile app</a></li>
+            <li><a href="#contact">Contact us</a></li>
         </ul>
 
         <div class="header-menu">
@@ -42,21 +43,21 @@
 
         <div class="header-burgerMenu">
 
-            <h2 class="burger-link">
+            <a href="/coffee-house/index.html" class="burger-link">
                 Favorite coffee
-            </h2>
+            </a>
 
-            <h2 class="burger-link">
+            <a href="/coffee-house/index.html" class="burger-link">
                 About
-            </h2>
+            </a>
 
-            <h2 class="burger-link">
+            <a href="/coffee-house/index.html" class="burger-link">
                 Mobile app
-            </h2>
-            <h2 class="burger-link">
+            </a>
+            <a href="/coffee-house/index.html" class="burger-link">
                 Contact us
-            </h2>
-            <div class="burger-menu">
+            </a>
+            <a href="/coffee-house/menu/menu.html" class="burger-menu">
                 
                 <h2 class="burger-link">
                     Menu
@@ -64,7 +65,7 @@
 
                 <img src="/coffee-house/images/header/coffee-cup.svg" alt="menu-logo">
 
-            </div>
+            </a>
         </div>
 
     </header>
@@ -72,7 +73,7 @@
         <section class="hipage">
             <div class="hipage-block">
                 
-            <h2 class="hipage-title">
+            <h2 id="about" class="hipage-title">
                <span class="hipage-title-word">Enjoy</span> premium coffee at our charming cafe
             </h2>
 
@@ -91,7 +92,7 @@
 
         <section class="favorite">
 
-            <h2 class="favorite-title">
+            <h2 class="favorite-title" id="favorite-coffe">
                 Choose your <span class="favorite-title-word">favorite</span> coffee
             </h2>
 
@@ -101,22 +102,9 @@
                     <img src="/coffee-house/images/favorite/arrow-left.svg" alt="arrowLeft">
                 </button>
 
-                <div class="favorite-coffe">
+                <div class="favorite-coffeee">
 
-                    <img class="favorite-picture" src="/coffee-house/images/favorite/coffee-slider-1.png" alt="favoriteCoffe">
-
-                    <h3 class="favorite-name">
-                        S’mores Frappuccino
-                    </h3>
-
-                    <p class="favorite-description">
-                        This new drink takes an espresso and mixes it with brown sugar 
-                        and cinnamon before being topped with oat milk.
-                    </p>
-
-                    <h3 class="favorite-price">
-                        $5.50
-                    </h3>
+                   
 
                 </div>
 
@@ -127,7 +115,7 @@
              </div>
 
              <div class="favorite-controls">
-                <div class="controls-selected"></div>
+                <div class="controls"></div>
                 <div class="controls"></div>
                 <div class="controls"></div>
              </div>
@@ -158,7 +146,7 @@
 
         <section class="download">
             <div class="download-block">
-                <h2 class="download-title">
+                <h2 id="download" class="download-title">
                    <span class="download-title-word">Download</span> our apps to start ordering
                 </h2>
 
@@ -210,7 +198,7 @@
 
     </main>
     <footer class="footer">
-        <div class="footer-block">
+        <div id="contact" class="footer-block">
             <h2 class="footer-title">
                 Sip, Savor, Smile.
                 <span class="footer-title-word">It’s coffee time!</span>
