@@ -6,12 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="X-UA-Compatible" content="ie=edge">
     <title>SH</title>
-    <!-- <link rel="stylesheet" href="/shelter/css/style.css">
-    <script defer type="module" src="/shelter/javascript/hamburger.js"></script>
-    <script defer type="module" src="/shelter/javascript/slider.js"></script>
-    <script defer type="module" src="/shelter/javascript/variables/const.js"></script>
-    <script defer type="module" src="/shelter/javascript/popup.js"></script> -->
     <script defer type="module" src="/coffee-house/javascript/burger.js"></script>
+    <script defer type="module" src="/coffee-house/javascript/menu.js"></script>
     <link rel="stylesheet" href="/coffee-house/css/style.css">
     <link rel="stylesheet" href="/coffee-house/menu/cssMenu/menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +18,7 @@
 </head>
 
 <body>
-    <header class="header"> 
+    <header class="header">
         <img class="header-logo" src="/coffee-house/images/header/logo.svg" alt="header-logo">
 
         <ul class="header-pages">
@@ -34,13 +30,13 @@
 
         <div class="header-menu">
 
-            <a href="/coffee-house/menu/menu.html" >Menu</a>
+            <a href="/coffee-house/menu/menu.html">Menu</a>
             <img href="/coffee-house/menu/menu.html" src="/coffee-house/images/header/coffee-cup.svg" alt="menu-logo">
         </div>
 
         <button class="header-burger">
-            <img src="/coffee-house/images/header/burgerLine.svg" alt="burgerLine">
-            <img src="/coffee-house/images/header/burgerLine.svg" alt="burgerLine">
+            <img class="line" src="/coffee-house/images/header/burgerLine.svg" alt="burgerLine">
+            <img class="line" src="/coffee-house/images/header/burgerLine.svg" alt="burgerLine">
         </button>
 
         <div class="header-burgerMenu">
@@ -60,7 +56,7 @@
                 Contact us
             </a>
             <a href="/coffee-house/menu/menu.html" class="burger-menu">
-                
+
                 <h2 class="burger-link">
                     Menu
                 </h2>
@@ -82,22 +78,28 @@
 
 
                 <button class="menu-coffee">
-                    <div class="menu-active"></div>
-                    <h3 class="menu-categories">
+                    <div class="menu-coffee-active">
+                        <img src="/coffee-house/menu/imageMenu/menu/menuCoffee.png" alt="Menu">
+                    </div>
+                    <h3 class="menu-coffee-categories">
                         Coffee
                     </h3>
                 </button>
 
                 <button class="menu-tea">
-                    <div class="menu-active"></div>
-                    <h3 class="menu-categories">
+                    <div class="menu-tea-active">
+                        <img src="/coffee-house/menu/imageMenu/menu/menuTea.png" alt="Menu">
+                    </div>
+                    <h3 class="menu-tea-categories">
                         Tea
                     </h3>
                 </button>
 
                 <button class="menu-dessert">
-                    <div class="menu-active"></div>
-                    <h3 class="menu-categories">
+                    <div class="menu-dessert-active">
+                        <img src="/coffee-house/menu/imageMenu/menu/menuDessert.png" alt="Menu">
+                    </div>
+                    <h3 class="menu-dessert-categories">
                         Dessert
                     </h3>
                 </button>
@@ -105,88 +107,12 @@
 
             <div class="menu-products">
 
-                <div class="menu-card">
-
-                    <img class="menu-card-img" src="/coffee-house/menu/imageMenu/coffee/coffee-1.png" alt="menuCoffee">
-
-                    <h2 class="menu-item">
-                        Irish coffee
-                    </h2>
-
-                    <h3 class="menu-description">
-                        Fragrant black coffee with
-                        Jameson Irish whiskey and
-                        whipped milk
-                    </h3>
-
-                    <p class="menu-price">
-                        $7.00
-                    </p>
-
-                </div>
-
-                <div class="menu-card">
-
-                    <img class="menu-card-img" src="/coffee-house/menu/imageMenu/coffee/coffee-1.png" alt="menuCoffee">
-
-                    <h2 class="menu-item">
-                        Irish coffee
-                    </h2>
-
-                    <h3 class="menu-description">
-                        Fragrant black coffee with
-                        Jameson Irish whiskey and
-                        whipped milk
-                    </h3>
-
-                    <p class="menu-price">
-                        $7.00
-                    </p>
-
-                </div>
-
-                <div class="menu-card">
-
-                    <img class="menu-card-img" src="/coffee-house/menu/imageMenu/coffee/coffee-1.png" alt="menuCoffee">
-
-                    <h2 class="menu-item">
-                        Irish coffee
-                    </h2>
-
-                    <h3 class="menu-description">
-                        Fragrant black coffee with
-                        Jameson Irish whiskey and
-                        whipped milk
-                    </h3>
-
-                    <p class="menu-price">
-                        $7.00
-                    </p>
-
-                </div>
-
-                <div class="menu-card">
-
-                    <img class="menu-card-img" src="/coffee-house/menu/imageMenu/coffee/coffee-1.png" alt="menuCoffee">
-
-                    <h2 class="menu-item">
-                        Irish coffee
-                    </h2>
-
-                    <h3 class="menu-description">
-                        Fragrant black coffee with
-                        Jameson Irish whiskey and
-                        whipped milk
-                    </h3>
-
-                    <p class="menu-price">
-                        $7.00
-                    </p>
-
-                </div>
-
 
             </div>
+
+            <button class="menu-more">
+                <img src="/coffee-house/menu/imageMenu/refresh/refresh.svg" alt="menuRefresh">
+            </button>
 
         </section>
 

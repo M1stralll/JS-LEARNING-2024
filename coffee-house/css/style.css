@@ -139,6 +139,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute;
   -webkit-animation: 1s show ease;
           animation: 1s show ease;
 }
@@ -185,9 +186,21 @@
     margin-left: 100%;
   }
 }
+.line-bottom {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+}
+
+.line-top {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+}
+
 .hipage {
   height: 644px;
-  background-image: url(/coffee-house/images/hipage/hipagepicture.png);
+  background-image: url(/coffee-house/video/videoCoffee.gif);
   background-size: cover;
   border-radius: 40px;
   margin: 0px 40px;
@@ -365,11 +378,32 @@
   }
 }
 
-.controls {
+.controls-first {
   width: 40px;
   height: 4px;
   border-radius: 100px;
   background-color: #C1B6AD;
+}
+
+.controls-second {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #C1B6AD;
+}
+
+.controls-third {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #C1B6AD;
+}
+
+.controls-selected {
+  width: 40px;
+  height: 4px;
+  border-radius: 100px;
+  background-color: #665F55;
 }
 
 .favorite-controls {
@@ -398,11 +432,20 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: 0.71s show ease;
-          animation: 0.71s show ease;
+  -webkit-animation: 0.71s leave ease;
+          animation: 0.71s leave ease;
 }
 
-@keyframes show {
+@-webkit-keyframes leave {
+  from {
+    margin-left: 0%;
+  }
+  to {
+    margin-left: -400%;
+  }
+}
+
+@keyframes leave {
   from {
     margin-left: 0%;
   }
@@ -414,11 +457,20 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: 0.7s page ease;
-          animation: 0.7s page ease;
+  -webkit-animation: 0.7s active ease;
+          animation: 0.7s active ease;
 }
 
-@keyframes page {
+@-webkit-keyframes active {
+  from {
+    margin-right: -400%;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes active {
   from {
     margin-right: -400%;
   }
@@ -430,11 +482,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: 0.71s slidein ease;
-          animation: 0.71s slidein ease;
+  -webkit-animation: 0.71s leaveleft ease;
+          animation: 0.71s leaveleft ease;
 }
 
-@-webkit-keyframes slidein {
+@-webkit-keyframes leaveleft {
   from {
     margin-left: 0%;
   }
@@ -443,7 +495,7 @@
   }
 }
 
-@keyframes slidein {
+@keyframes leaveleft {
   from {
     margin-left: 0%;
   }
@@ -455,11 +507,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: 0.7s active ease;
-          animation: 0.7s active ease;
+  -webkit-animation: 0.7s activeleft ease;
+          animation: 0.7s activeleft ease;
 }
 
-@-webkit-keyframes active {
+@-webkit-keyframes activeleft {
   from {
     margin-left: -400%;
   }
@@ -468,7 +520,7 @@
   }
 }
 
-@keyframes active {
+@keyframes activeleft {
   from {
     margin-left: -400%;
   }

@@ -85,20 +85,34 @@
     }
 }
 
-.controls {
+.controls-first {
     width: 40px;
     height: 4px;
     border-radius: 100px;
     background-color: #C1B6AD;
 }
 
-// .controls-selected {
-//     width: 40px;
-//     height: 4px;
-//     border-radius: 100px;
-//     background-color: #665F55;
+.controls-second {
+    width: 40px;
+    height: 4px;
+    border-radius: 100px;
+    background-color: #C1B6AD;
+}
 
-// }
+.controls-third {
+    width: 40px;
+    height: 4px;
+    border-radius: 100px;
+    background-color: #C1B6AD;
+}
+
+.controls-selected {
+    width: 40px;
+    height: 4px;
+    border-radius: 100px;
+    background-color: #665F55;
+
+}
 
 .favorite-controls {
     display: flex;

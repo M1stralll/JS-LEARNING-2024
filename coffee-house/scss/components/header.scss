@@ -103,6 +103,7 @@
 
 .header-burgerMenu-active {
     display: flex;
+    position: absolute;
     animation: 1s show ease;
 }
 
@@ -121,3 +122,12 @@
     from { margin-left: 0px; }
     to { margin-left:  100%;}
   }
+
+
+.line-bottom {
+    transform: rotate(45deg); position: absolute;
+}
+
+.line-top {
+    transform: rotate(-45deg); position: absolute;
+}

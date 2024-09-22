@@ -1,4 +1,4 @@
-@import 'menuMixin/breakpoints.mixin';
+@import 'breakpoints.mixin';
 
 .header-menu {
     border-bottom: 2px solid #403F3D;
@@ -64,23 +64,63 @@
     gap: 8px;
 }
 
-.menu-categories {
+.menu-selected {
+    background-color: #665F55;
+    border: 1px solid #665F55;
+    color: #E1D4C9;
+}
+
+.menu-coffee-categories {
     font-size: 16px;
     color: #403F3D;
     font-family: "Inter", sans-serif;
-
 }
 
-.menu-active {
+.menu-tea-categories {
+    font-size: 16px;
+    color: #403F3D;
+    font-family: "Inter", sans-serif;
+}
+
+
+.menu-dessert-categories {
+    font-size: 16px;
+    color: #403F3D;
+    font-family: "Inter", sans-serif;
+}
+
+
+.menu-coffee-active {
     width: 30px;
     height: 30px;
     background-color: #C1B6AD;
+    border: 1px solid #C1B6AD;
     border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.menu-active {
+.menu-tea-active {
+    width: 30px;
+    height: 30px;
     background-color: #C1B6AD;
     border: 1px solid #C1B6AD;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-dessert-active {
+    width: 30px;
+    height: 30px;
+    background-color: #C1B6AD;
+    border: 1px solid #C1B6AD;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -99,18 +139,6 @@
         gap: 5px;
     }
 }
-
-.menu-selected {
-    background-color: #665F55;
-    border: 1px solid #665F55;
-    color: #E1D4C9;
-}
-
-.menu-active-selected {
-    background-color: #E1D4C9;
-    border: 1px solid #E1D4C9;
-}
-
 .menu-card-img {
     border-radius: 40px;
 
@@ -126,7 +154,14 @@
     display: flex;
     justify-content: start;
     flex-direction: column;
+    height: 506px;
     width: 310px;
+
+    @include tablet {
+        &:nth-child(1n+5) {
+            display: none;
+        }
+    }
 }
 
 .menu-item {
@@ -154,8 +189,11 @@
     font-family: "Inter", sans-serif;
     font-weight: bold;
     margin-left: 20px;
-    margin-top: 12px;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: end;
+    margin-top: 456px;
+    position: absolute;
+
 }
 
 .menu-products {
@@ -165,4 +203,22 @@
     gap: 30px;
     flex-wrap: wrap;
     margin-top: 40px;
+        
+}
+
+.menu-more {
+    width: 60px;
+    height: 60px;
+    background-color: #E1D4C9;
+    border: 1px solid #665F55;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    margin-top: 40px;
+    display: none;
+    @include tablet {
+        display: flex;
+    }
 }
