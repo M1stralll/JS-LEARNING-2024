@@ -22,7 +22,7 @@ const arrFavotiteCoffe = [
 
 let coffeeNumber = -1;
 
-const container = document.querySelector('.favorite-coffeee');
+const container = document.querySelector('.favorite__coffee-bloack');
 container.innerHTML = '';
 
 function card(slot) {
@@ -51,8 +51,8 @@ function card(slot) {
 
 card(0);
 
-const arrowLeft = document.querySelector(".favorite-arrow-left");
-const arrowRight = document.querySelector(".favorite-arrow-right");
+const arrowLeft = document.querySelector(".favorite__arrow-left");
+const arrowRight = document.querySelector(".favorite__arrow-right");
 
 
 arrowLeft.addEventListener("click", () => switchOrder("left"));
@@ -143,7 +143,7 @@ let stopRecursion = true;
 document.addEventListener('click', function (event) {
     if (event.target.classList.length > 0) {
         let clickedClass = event.target.className;
-        if (clickedClass === "favorite-arrow-left" || clickedClass === "favorite-arrow-right" || clickedClass === "controls-first" || clickedClass === "controls-second" || clickedClass === "controls-third") {
+        if (clickedClass === "favorite__arrow-left" || clickedClass === "favorite__arrow-right" || clickedClass === "controls-first" || clickedClass === "controls-second" || clickedClass === "controls-third") {
             stopRecursion = false;
         }
     }

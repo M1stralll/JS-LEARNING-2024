@@ -1,12 +1,12 @@
-.header-logo {
+.header__logo {
   z-index: 2;
 }
-.header-logo img {
+.header__logo img {
   width: 100px;
   height: 60px;
 }
 
-.header-pages {
+.header__pages {
   font-size: 16px;
   font-family: "Inter", sans-serif;
   color: #403F3D;
@@ -16,12 +16,12 @@
   gap: 40px;
 }
 @media (max-width: 767px) {
-  .header-pages {
+  .header__pages {
     display: none;
   }
 }
 
-.header-menu {
+.header__menu {
   font-size: 16px;
   font-family: "Inter", sans-serif;
   color: #403F3D;
@@ -32,9 +32,15 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
+  border-bottom: 2px solid #E1D4C9;
+  -webkit-transition: border-bottom 0.3s linear;
+  transition: border-bottom 0.3s linear;
+}
+.header__menu:hover {
+  border-bottom: 2px solid #403F3D;
 }
 @media (max-width: 767px) {
-  .header-menu {
+  .header__menu {
     display: none;
   }
 }
@@ -58,12 +64,12 @@
   }
 }
 
-.header-burger {
+.header__burger {
   background-color: #E1D4C9;
   display: none;
 }
 @media (max-width: 767px) {
-  .header-burger {
+  .header__burger {
     width: 44px;
     height: 44px;
     border: 1px solid #665F55;
@@ -86,7 +92,7 @@
   }
 }
 
-.header-burgerMenu {
+.header__burgerMenu {
   background: #E1D4C9;
   position: fixed;
   width: 100%;
@@ -135,7 +141,7 @@
   font-family: "Inter", sans-serif;
 }
 
-.header-burgerMenu-active {
+.header__burgerMenu-active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -161,7 +167,7 @@
     margin-left: 0px;
   }
 }
-.header-burgerMenu-noactive {
+.header__burgerMenu-noactive {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -198,7 +204,7 @@
   position: absolute;
 }
 
-.hipage {
+.about {
   height: 644px;
   background-image: url(/coffee-house/video/videoCoffee.gif);
   background-size: cover;
@@ -207,13 +213,13 @@
   margin-top: 20px;
 }
 @media (max-width: 767px) {
-  .hipage {
+  .about {
     height: 550px;
     margin: 0px 16px;
   }
 }
 
-.hipage-title {
+.about__title {
   font-size: 72px;
   font-family: "Inter", sans-serif;
   color: #E1D4C9;
@@ -221,18 +227,18 @@
   font-style: bold;
 }
 @media (max-width: 767px) {
-  .hipage-title {
+  .about__title {
     font-size: 32px;
     max-width: 316px;
   }
 }
 
-.hipage-title-word {
+.about__title-word {
   color: #B0907A;
   font-style: italic;
 }
 
-.hipage-description {
+.about__description {
   font-size: 16px;
   font-family: "Inter", sans-serif;
   color: #E1D4C9;
@@ -242,12 +248,12 @@
   margin-bottom: 40px;
 }
 @media (max-width: 767px) {
-  .hipage-description {
+  .about__description {
     max-width: 316px;
   }
 }
 
-.hipage-button {
+.about__button {
   font-size: 16px;
   color: #403F3D;
   border-radius: 100px;
@@ -255,20 +261,35 @@
   height: 64px;
   background-color: #E1D4C9;
   border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
-.hipage-block {
+.about__block {
   padding-top: 60px;
   padding-left: 60px;
   margin-top: 20px;
 }
 @media (max-width: 767px) {
-  .hipage-block {
+  .about__block {
     padding-left: 16px;
   }
 }
 
-.favorite-title {
+.about__button-img {
+  display: none;
+}
+
+.favorite__title {
   font-size: 60px;
   color: #403F3D;
   font-family: "Inter", sans-serif;
@@ -277,38 +298,60 @@
   text-align: center;
 }
 @media (max-width: 767px) {
-  .favorite-title {
+  .favorite__title {
     font-size: 32px;
   }
 }
 
-.favorite-title-word {
+.favorite__title-word {
   color: #B0907A;
   font-style: italic;
 }
 
-.favorite-arrow-left {
+.favorite__arrow-left {
   width: 60px;
   height: 60px;
   border-radius: 100px;
   border: 1px solid #665F55;
   background: none;
+  background-image: url(/coffee-house/images/favorite/arrow-left.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+.favorite__arrow-left:hover {
+  background-color: #665F55;
+  background-image: url(/coffee-house/images/favorite/arrow-hover.svg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 @media (max-width: 767px) {
-  .favorite-arrow-left {
+  .favorite__arrow-left {
     display: none;
   }
 }
 
-.favorite-arrow-right {
+.favorite__arrow-right {
   width: 60px;
   height: 60px;
   border-radius: 100px;
   border: 1px solid #665F55;
   background: none;
+  background-image: url(/coffee-house/images/favorite/arrow-right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+.favorite__arrow-right:hover {
+  background-color: #665F55;
+  background-image: url(/coffee-house/images/favorite/arrow-hover.svg);
 }
 @media (max-width: 767px) {
-  .favorite-arrow-right {
+  .favorite__arrow-right {
     display: none;
   }
 }
@@ -357,7 +400,7 @@
   height: 670px;
 }
 
-.favorite-slider {
+.favorite__slider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -370,7 +413,7 @@
   padding: 0px 44px;
 }
 @media (max-width: 767px) {
-  .favorite-slider {
+  .favorite__slider {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -406,7 +449,7 @@
   background-color: #665F55;
 }
 
-.favorite-controls {
+.favorite__controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -528,7 +571,7 @@
     margin-left: 0px;
   }
 }
-.place-photo {
+.place__photo {
   margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -539,7 +582,7 @@
           justify-content: center;
 }
 @media (max-width: 1439px) {
-  .place-photo {
+  .place__photo {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -553,7 +596,7 @@
   }
 }
 
-.place-column {
+.place__column {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -564,30 +607,30 @@
   gap: 40px;
 }
 
-.photo-bigger {
+.photo__bigger {
   border-radius: 20px;
   width: 660px;
   height: 590px;
 }
 @media (max-width: 767px) {
-  .photo-bigger {
+  .photo__bigger {
     width: 304px;
     height: 470px;
   }
 }
 
-.photo-smaller {
+.photo__smaller {
   border-radius: 20px;
   width: 660px;
   height: 430px;
 }
 @media (max-width: 1439px) {
-  .photo-smaller {
+  .photo__smaller {
     display: none;
   }
 }
 
-.place-title {
+.place__title {
   font-size: 60px;
   color: #403F3D;
   font-family: "Inter", sans-serif;
@@ -597,59 +640,59 @@
   margin-top: 100px;
 }
 @media (max-width: 1439px) {
-  .place-title {
+  .place__title {
     width: 688px;
     text-align: justify;
   }
 }
 @media (max-width: 767px) {
-  .place-title {
+  .place__title {
     font-size: 32px;
     max-width: 304px;
   }
 }
 
-.place-title-word {
+.place__title-word {
   color: #B0907A;
   font-style: italic;
 }
 
-.download-title {
+.download__title {
   font-size: 60px;
   color: #403F3D;
   font-family: "Inter", sans-serif;
   max-width: 550px;
 }
 @media (max-width: 1439px) {
-  .download-title {
+  .download__title {
     max-width: 688px;
   }
 }
 @media (max-width: 767px) {
-  .download-title {
+  .download__title {
     font-size: 32px;
     max-width: 316px;
   }
 }
 
-.download-title-word {
+.download__title-word {
   color: #B0907A;
   font-style: italic;
 }
 
-.download-description {
+.download__description {
   font-size: 16px;
   color: #403F3D;
   font-family: "Inter", sans-serif;
   max-width: 750px;
 }
 @media (max-width: 1439px) {
-  .download-description {
+  .download__description {
     max-width: 688px;
   }
 }
 @media (max-width: 767px) {
-  .download-description {
+  .download__description {
     max-width: 316px;
   }
 }
@@ -675,7 +718,7 @@
   }
 }
 
-.download-block {
+.download__block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -686,12 +729,12 @@
   gap: 40px;
 }
 @media (max-width: 767px) {
-  .download-block {
+  .download__block {
     margin-left: 8px;
   }
 }
 
-.download-button {
+.download__button {
   background-color: #E1D4C9;
   border: 1px solid #665F55;
   border-radius: 100px;
@@ -705,13 +748,30 @@
           align-items: center;
   gap: 5px;
   padding-left: 20px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+.download__button:hover {
+  background-color: #665F55;
+}
+.download__button:hover h2, .download__button:hover h3 {
+  color: #E1D4C9;
+}
+.download__button:hover img {
+  background-color: #665F55;
 }
 
 .apple {
   background-color: #E1D4C9;
+  -webkit-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear;
+}
+.apple:hover {
+  background-color: #665F55;
 }
 
-.download-available {
+.download__available {
   font-size: 10px;
   color: #403F3D;
   font-family: "Inter", sans-serif;
@@ -723,13 +783,13 @@
           justify-content: start;
 }
 
-.download-application {
+.download__application {
   font-size: 16px;
   color: #403F3D;
   font-family: "Inter", sans-serif;
 }
 
-.download-text {
+.download__text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -739,14 +799,14 @@
           flex-direction: column;
 }
 
-.download-service {
+.download__service {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
 @media (max-width: 767px) {
-  .download-service {
+  .download__service {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -754,13 +814,13 @@
   }
 }
 
-.download-picture {
+.download__picture {
   margin-top: 100px;
   width: 348px;
   height: 348px;
 }
 @media (max-width: 767px) {
-  .download-picture {
+  .download__picture {
     width: 304px;
     height: 304px;
     margin-top: 40px;
@@ -800,34 +860,35 @@
   }
 }
 
-.footer-title {
+.footer__title {
   font-size: 60px;
   font-family: "Inter", sans-serif;
   color: #E1D4C9;
   max-width: 500px;
 }
 @media (max-width: 767px) {
-  .footer-title {
+  .footer__title {
     margin-left: -56px;
     font-size: 28px;
     max-width: 316px;
   }
 }
 
-.footer-title-word {
+.footer__title-word {
   color: #B0907A;
   font-style: italic;
 }
 
-.footer-button {
+.footer__social-button {
   background-color: #665F55;
   width: 60px;
   height: 60px;
   border-radius: 100px;
   border: 1px solid #C1B6AD;
+  cursor: pointer;
 }
 
-.footer-social {
+.footer__social {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -835,12 +896,12 @@
   margin-bottom: 100px;
 }
 @media (max-width: 767px) {
-  .footer-social {
+  .footer__social {
     margin-left: -56px;
   }
 }
 
-.connection-text {
+.connection__text {
   font-size: 16px;
   font-family: "Inter", sans-serif;
   color: #E1D4C9;
@@ -851,15 +912,22 @@
   display: -ms-flexbox;
   display: flex;
   gap: 8px;
+  border-bottom: 2px solid #665F55;
+  cursor: pointer;
+}
+.connection:hover {
+  margin: auto;
+  margin-left: 0px;
+  border-bottom: 2px solid #E1D4C9;
 }
 
-.connection-title {
+.connection__title {
   font-size: 24px;
   font-family: "Inter", sans-serif;
   color: #E1D4C9;
 }
 
-.connection-block {
+.connection__block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -870,7 +938,7 @@
   gap: 16px;
 }
 
-.footer-connection {
+.footer__connection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -881,17 +949,17 @@
   gap: 40px;
 }
 @media (max-width: 1439px) {
-  .footer-connection {
+  .footer__connection {
     margin-left: -250px;
   }
 }
 @media (max-width: 767px) {
-  .footer-connection {
+  .footer__connection {
     margin-left: -80px;
   }
 }
 
-.footer-block {
+.footer__block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -904,18 +972,18 @@
   margin-left: 100px;
 }
 @media (max-width: 767px) {
-  .footer-block {
+  .footer__block {
     margin-left: 80px;
     max-width: 316px;
   }
 }
 
-.footer-contact {
+.footer__contact {
   margin-top: 130px;
   margin-left: 100px;
 }
 @media (max-width: 1439px) {
-  .footer-contact {
+  .footer__contact {
     margin-top: 0px;
     margin-bottom: 100px;
   }

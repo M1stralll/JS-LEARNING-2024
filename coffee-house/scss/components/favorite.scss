@@ -1,38 +1,62 @@
-.favorite-title {
+.favorite__title {
     font-size: 60px;
     color: #403F3D;
     font-family: "Inter", sans-serif;
     margin-top: 100px;
     margin-bottom: 40px;
     text-align: center;
+
     @include phone {
         font-size: 32px;
     }
 }
 
-.favorite-title-word {
+.favorite__title-word {
     color: #B0907A;
     font-style: italic;
 }
 
-.favorite-arrow-left {
+.favorite__arrow-left {
     width: 60px;
     height: 60px;
     border-radius: 100px;
     border: 1px solid #665F55;
     background: none;
+    background-image: url(/coffee-house/images/favorite/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+
+    &:hover {
+        background-color: #665F55;
+        background-image: url(/coffee-house/images/favorite/arrow-hover.svg);
+        transform: rotate(180deg);
+    }
+
     @include phone {
         display: none;
     }
 
 }
 
-.favorite-arrow-right {
+.favorite__arrow-right {
     width: 60px;
     height: 60px;
     border-radius: 100px;
     border: 1px solid #665F55;
     background: none;
+    background-image: url(/coffee-house/images/favorite/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+
+    &:hover {
+        background-color: #665F55;
+        background-image: url(/coffee-house/images/favorite/arrow-hover.svg);
+    }
+
     @include phone {
         display: none;
     }
@@ -52,10 +76,11 @@
     font-size: 16px;
     max-width: 450px;
     text-align: center;
-        @include phone {
-            font-size: 12px;
-            max-width: 280px;
-        }
+
+    @include phone {
+        font-size: 12px;
+        max-width: 280px;
+    }
 
 }
 
@@ -74,11 +99,12 @@
     height: 670px;
 }
 
-.favorite-slider {
+.favorite__slider {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 44px;
+
     @include phone {
         justify-content: center;
         padding: 0px 16px;
@@ -114,7 +140,7 @@
 
 }
 
-.favorite-controls {
+.favorite__controls {
     display: flex;
     gap: 12px;
     justify-content: center;
@@ -124,34 +150,45 @@
 .favorite-picture {
     width: 480px;
     height: 480px;
+
     @include phone {
         width: 316px;
         height: 316px;
     }
-    
+
 }
 
 
- 
+
 .favorite-coffe-leave {
     display: flex;
     animation: 0.71s leave ease;
 }
 
 @keyframes leave {
-    from { margin-left: 0% }
-    to { margin-left: -400%; }
-  }
+    from {
+        margin-left: 0%
+    }
 
-   
+    to {
+        margin-left: -400%;
+    }
+}
+
+
 .favorite-coffe-active {
     display: flex;
     animation: 0.7s active ease;
 }
 
 @keyframes active {
-  from { margin-right: -400% }
-  to { margin-left: 0px; }
+    from {
+        margin-right: -400%
+    }
+
+    to {
+        margin-left: 0px;
+    }
 }
 
 
@@ -163,17 +200,27 @@
 }
 
 @keyframes leaveleft {
-    from { margin-left: 0% }
-    to { margin-right: -400%; }
-  }
+    from {
+        margin-left: 0%
+    }
 
-   
+    to {
+        margin-right: -400%;
+    }
+}
+
+
 .favorite-coffe-active-left {
     display: flex;
     animation: 0.7s activeleft ease;
 }
 
 @keyframes activeleft {
-  from { margin-left: -400% }
-  to { margin-left: 0px; }
+    from {
+        margin-left: -400%
+    }
+
+    to {
+        margin-left: 0px;
+    }
 }

@@ -8,6 +8,7 @@
     <title>SH</title>
     <script defer type="module" src="/coffee-house/javascript/burger.js"></script>
     <script defer type="module" src="/coffee-house/javascript/menu.js"></script>
+    <script defer type="module" src="/coffee-house/javascript/popup.js"></script>
     <link rel="stylesheet" href="/coffee-house/css/style.css">
     <link rel="stylesheet" href="/coffee-house/menu/cssMenu/menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,40 +20,40 @@
 
 <body>
     <header class="header">
-        <img class="header-logo" src="/coffee-house/images/header/logo.svg" alt="header-logo">
+        <img class="header__logo" src="/coffee-house/images/header/logo.svg" alt="header__logo">
 
-        <ul class="header-pages">
-            <li><a href="/coffee-house/index.html">Favorite coffee</a></li>
-            <li><a href="/coffee-house/index.html">About</a></li>
-            <li><a href="/coffee-house/index.html">Mobile app</a></li>
-            <li><a href="/coffee-house/index.html">Contact us</a></li>
+        <ul class="header__pages">
+            <li><a href="/index.html">Favorite coffee</a></li>
+            <li><a href="/index.html">About</a></li>
+            <li><a href="/index.html">Mobile app</a></li>
+            <li><a href="/index.html">Contact us</a></li>
         </ul>
 
-        <div class="header-menu">
+        <div class="header__menu">
 
             <a href="/coffee-house/menu/menu.html">Menu</a>
             <img href="/coffee-house/menu/menu.html" src="/coffee-house/images/header/coffee-cup.svg" alt="menu-logo">
         </div>
 
-        <button class="header-burger">
+        <button class="header__burger">
             <img class="line" src="/coffee-house/images/header/burgerLine.svg" alt="burgerLine">
             <img class="line" src="/coffee-house/images/header/burgerLine.svg" alt="burgerLine">
         </button>
 
-        <div class="header-burgerMenu">
+        <div class="header__burgerMenu">
 
-            <a href="/coffee-house/index.html" class="burger-link">
+            <a href="/index.html" class="burger-link">
                 Favorite coffee
             </a>
 
-            <a href="/coffee-house/index.html" class="burger-link">
+            <a href="/index.html" class="burger-link">
                 About
             </a>
 
-            <a href="/coffee-house/index.html" class="burger-link">
+            <a href="/index.html" class="burger-link">
                 Mobile app
             </a>
-            <a href="/coffee-house/index.html" class="burger-link">
+            <a href="/index.html" class="burger-link">
                 Contact us
             </a>
             <a href="/coffee-house/menu/menu.html" class="burger-menu">
@@ -69,97 +70,205 @@
     </header>
     <main>
         <section class="menu">
-            <h2 class="menu-title">
+            <h2 class="menu__title">
                 Behind each of our cups
-                hides an <span class="menu-title-word">amazing surprise</span>
+                hides an <span class="menu__title-word">amazing surprise</span>
             </h2>
 
-            <div class="menu-buttons">
+            <div class="menu__buttons">
 
 
-                <button class="menu-coffee">
-                    <div class="menu-coffee-active">
+                <button class="menu__coffee">
+                    <div class="menu__coffee-active">
                         <img src="/coffee-house/menu/imageMenu/menu/menuCoffee.png" alt="Menu">
                     </div>
-                    <h3 class="menu-coffee-categories">
+                    <h3 class="menu__coffee-categories">
                         Coffee
                     </h3>
                 </button>
 
-                <button class="menu-tea">
-                    <div class="menu-tea-active">
+                <button class="menu__tea">
+                    <div class="menu__tea-active">
                         <img src="/coffee-house/menu/imageMenu/menu/menuTea.png" alt="Menu">
                     </div>
-                    <h3 class="menu-tea-categories">
+                    <h3 class="menu__tea-categories">
                         Tea
                     </h3>
                 </button>
 
-                <button class="menu-dessert">
-                    <div class="menu-dessert-active">
+                <button class="menu__dessert">
+                    <div class="menu__dessert-active">
                         <img src="/coffee-house/menu/imageMenu/menu/menuDessert.png" alt="Menu">
                     </div>
-                    <h3 class="menu-dessert-categories">
+                    <h3 class="menu__dessert-categories">
                         Dessert
                     </h3>
                 </button>
             </div>
 
-            <div class="menu-products">
+            <div class="menu__products">
 
 
             </div>
 
-            <button class="menu-more">
+            <button class="menu__more">
                 <img src="/coffee-house/menu/imageMenu/refresh/refresh.svg" alt="menuRefresh">
             </button>
+
+            <div class="menu__popup">
+                <div class="popup__block">
+                    <img class="popup__img" src="/coffee-house/menu/imageMenu/coffee/coffee-1.png" alt="popupProduct">
+
+                    <div class="popup__information">
+                        <h2 class="popup__title">Marble cheesecake</h2>
+                        <h3 class="popup__description">Philadelphia cheese with lemon zest on a light sponge cake and
+                            red
+                            currant jam</h3>
+
+                        <div class="popup__size">
+                            <h2 class="popup__size-title">
+                                Size
+                            </h2>
+
+                            <div class="popup__button-size">
+                                <button class="popup__button-small">
+                                    <span class="button-small-active">
+                                        S
+                                    </span>
+                                    <span class="button-small-size">
+                                        50 g
+                                    </span>
+                                </button>
+
+                                <button class="popup__button-medium">
+                                    <span class="button-medium-active">
+                                        M
+                                    </span>
+                                    <span class="button-medium-size">
+                                        100 g
+                                    </span>
+                                </button>
+
+                                <button class="popup__button-large">
+                                    <span class="button-large-active">
+                                        L
+                                    </span>
+                                    <span class="button-large-size">
+                                        200 g
+                                    </span>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="popup__additives">
+                            <h2 class="popup__additives-title">
+                                Additives
+                            </h2>
+
+                            <div class="popup__button-additives">
+
+                                <button class="popup__button-first">
+                                    <span class="button-first-active">
+                                        1
+                                    </span>
+                                    <span class="button-first-size">
+                                        Berries
+                                    </span>
+                                </button>
+
+                                <button class="popup__button-second">
+                                    <span class="button-second-active">
+                                        2
+                                    </span>
+                                    <span class="button-second-size">
+                                        Nuts
+                                    </span>
+                                </button>
+
+                                <button class="popup__button-third">
+                                    <span class="button-third-active">
+                                        3
+                                    </span>
+                                    <span class="button-third-size">
+                                        Jam
+                                    </span>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="popup__total">
+                            <h2 class="popup__total-title">
+                                Total:
+                            </h2>
+                            <h2 class="total__price">$3.50</h2>
+                        </div>
+
+                        <div class="popup__info">
+                            <img src="/coffee-house/menu/imageMenu/menu/info-empty.svg" alt="menuInfo">
+                            <h3 class="info_description">
+                                The cost is not final. Download our mobile app to see the final price and place your
+                                order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.
+                            </h3>
+                        </div>
+
+                        <button class="popup__buttoncancel">
+                            <span class="popup__buttoncancel-text">
+                                Close
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
         </section>
 
     </main>
     <footer class="footer">
-        <div class="footer-block">
-            <h2 class="footer-title">
+        <div class="footer__block">
+            <h2 class="footer__title">
                 Sip, Savor, Smile.
-                <span class="footer-title-word">It’s coffee time!</span>
+                <span class="footer__title-word">It’s coffee time!</span>
             </h2>
-            <div class="footer-social">
-                <button class="footer-button">
+            <div class="footer__social">
+                <button class="footer__social-button">
                     <img src="/coffee-house/images/footer/twitter.svg" alt="footerTwitter">
                 </button>
 
-                <button class="footer-button">
+                <button class="footer__social-button">
                     <img src="/coffee-house/images/footer/instagram.svg" alt="footerInstagram">
                 </button>
 
-                <button class="footer-button">
+                <button class="footer__social-button">
                     <img src="/coffee-house/images/footer/facebook.svg" alt="footerFacebook">
                 </button>
             </div>
         </div>
 
 
-        <div class="footer-contact">
+        <div class="footer__contact">
 
-            <div class="footer-connection">
-                <h2 class="connection-title">Contact us</h2>
-                <div class="connection-block">
+            <div class="footer__connection">
+                <h2 class="connection__title">Contact us</h2>
+                <div class="connection__block">
 
                     <div class="connection">
                         <img src="/coffee-house/images/footer/pin-alt.svg" alt="connectionPil">
-                        <h3 class="connection-text">
+                        <h3 class="connection__text">
                             8558 Green Rd., LA
                         </h3>
                     </div>
                     <div class="connection">
                         <img src="/coffee-house/images/footer/phone.svg" alt="connectionPhone">
-                        <h3 class="connection-text">
+                        <h3 class="connection__text">
                             +1 (603) 555-0123
                         </h3>
                     </div>
                     <div class="connection">
                         <img src="/coffee-house/images/footer/clock.svg" alt="connectionClock">
-                        <h3 class="connection-text">
+                        <h3 class="connection__text">
                             Mon-Sat: 9:00 AM – 23:00 PM
                         </h3>
                     </div>

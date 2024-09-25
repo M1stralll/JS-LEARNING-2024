@@ -141,5 +141,5 @@ export const arrTea = [
         addPrice: "0.50"
       }
     ]
-  }
+  },
 ];

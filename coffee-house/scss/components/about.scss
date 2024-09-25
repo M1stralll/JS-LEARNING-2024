@@ -1,0 +1,80 @@
+@import 'mixin/breakpoints.mixin';
+
+.about {
+    height: 644px;
+    background-image: url(/coffee-house/video/videoCoffee.gif);
+    background-size: cover;
+    border-radius: 40px;
+    margin: 0px 40px;
+    margin-top: 20px;
+
+    @include phone {
+        height: 550px;
+        margin: 0px 16px;
+    }
+
+}
+
+.about__title {
+    font-size: 72px;
+    font-family: "Inter", sans-serif;
+    color: #E1D4C9;
+    max-width: 600px;
+    font-style: bold;
+
+    @include phone {
+        font-size: 32px;
+        max-width: 316px;
+    }
+
+}
+
+.about__title-word {
+    color: #B0907A;
+    font-style: italic;
+}
+
+.about__description {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    color: #E1D4C9;
+    max-width: 530px;
+    text-align: start;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @include phone {
+        max-width: 316px;
+    }
+}
+
+.about__button {
+    font-size: 16px;
+    color: #403F3D;
+    border-radius: 100px;
+    width: 200px;
+    height: 64px;
+    background-color: #E1D4C9;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    
+}
+
+.about__block {
+    padding-top: 60px;
+    padding-left: 60px;
+    margin-top: 20px;
+
+    @include phone {
+        padding-left: 16px;
+    }
+}
+
+.about__button-img {
+        display: none;
+    
+}

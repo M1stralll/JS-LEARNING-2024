@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="X-UA-Compatible" content="ie=edge">
+    <title>SH</title>
+    <script defer type="module" src="/coffee-house/javascript/burger.js"></script>
+    <script defer type="module" src="/coffee-house/javascript/slider.js"></script>
+    <link rel="stylesheet" href="/coffee-house/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <img class="header__logo" src="/coffee-house/images/header/logo.svg" alt="header__logo">
+
+        <ul class="header__pages">
+            <li><a href="#favorite-coffe">Favorite coffee</a></li>
+            <li><a href="/index.html">About</a></li>
+            <li><a href="#download">Mobile app</a></li>
+            <li><a href="#contact">Contact us</a></li>
+        </ul>
+
+        <div class="header__menu">
+
+            <a href="/coffee-house/menu/menu.html">Menu</a>
+            <img href="/coffee-house/menu/menu.html" src="/coffee-house/images/header/coffee-cup.svg" alt="menu-logo">
+        </div>
+
+        <button class="header__burger">
+            <img class="line" src="/coffee-house/images/header/burgerLine.svg" alt="burgerLine">
+            <img class="line" src="/coffee-house/images/header/burgerLine.svg" alt="burgerLine">
+        </button>
+
+        <div class="header__burgerMenu">
+
+            <a href="/index.html" class="burger-link">
+                Favorite coffee
+            </a>
+
+            <a href="/index.html" class="burger-link">
+                About
+            </a>
+
+            <a href="/index.html" class="burger-link">
+                Mobile app
+            </a>
+            <a href="/index.html" class="burger-link">
+                Contact us
+            </a>
+            <a href="/coffee-house/menu/menu.html" class="burger-menu">
+
+                <h2 class="burger-link">
+                    Menu
+                </h2>
+
+                <img src="/coffee-house/images/header/coffee-cup.svg" alt="menu-logo">
+
+            </a>
+        </div>
+
+    </header>
+    <main>
+        <section class="about">
+            <div class="about__block">
+
+                <h2 id="about" class="about__title">
+                    <span class="about__title-word">Enjoy</span> premium coffee at our charming cafe
+                </h2>
+
+                <p class="about__description">
+                    With its inviting atmosphere and delicious coffee options, the Coffee House Resource
+                    is a popular destination for coffee lovers and those seeking a warm and inviting space
+                    to enjoy their favorite beverage.
+                </p>
+
+                <button class="about__button"></h2>
+                    Menu
+                    <img class="about__button-img" src="/coffee-house/images/header/coffee-cup.svg" alt="aboutCoffee">
+                </button>
+
+            </div>
+        </section>
+
+        <section class="favorite">
+
+            <h2 class="favorite__title" id="favorite-coffe">
+                Choose your <span class="favorite__title-word">favorite</span> coffee
+            </h2>
+
+            <div class="favorite__slider">
+
+                <button class="favorite__arrow-left">
+                </button>
+
+                <div class="favorite__coffee-bloack">
+
+
+
+                </div>
+
+                <button class="favorite__arrow-right">
+                </button>
+
+            </div>
+
+            <div class="favorite__controls">
+                <div class="controls-first"></div>
+                <div class="controls-second"></div>
+                <div class="controls-third"></div>
+            </div>
+
+        </section>
+
+        <section class="place">
+
+            <h2 class="place__title">
+                Resource is <span class="place__title-word"> the perfect and cozy place </span> where you can
+                enjoy a variety of hot beverages, relax, catch up with
+                friends, or get some work done.
+            </h2>
+
+            <div class="place__photo">
+                <div class="place__column">
+                    <img class="photo__bigger" src="/coffee-house/images/place/place-1.png" alt="placePhoto">
+                    <img class="photo__smaller" src="/coffee-house/images/place/place-4.png" alt="placePhoto">
+                </div>
+                <div class="place__column">
+                    <img class="photo__smaller" src="/coffee-house/images/place/place-3.png" alt="placePhoto">
+                    <img class="photo__bigger" src="/coffee-house/images/place/place-2.png" alt="placePhoto">
+                </div>
+            </div>
+
+
+        </section>
+
+        <section class="download">
+            <div class="download__block">
+                <h2 class="download__title">
+                    <span class="download__title-word">Download</span> our apps to start ordering
+                </h2>
+
+                <p class="download__description">
+                    Download the Resource app today and experience the comfort
+                    of ordering your favorite coffee from wherever you are
+                </p>
+
+                <div class="download__service">
+                    <button class="download__button">
+
+                        <img class="apple" src="/coffee-house/images/download/Vector.svg" alt="downlaodApple">
+
+                        <div class="download__text">
+
+                            <h3 class="download__available">
+                                Available on the
+                            </h3>
+
+                            <h2 class="download__application">
+                                App Store
+                            </h2>
+                        </div>
+
+                    </button>
+
+                    <button class="download__button">
+
+                        <img class="apple" src="/coffee-house/images/download/Icon.svg" alt="downlaodGoogle">
+
+                        <div class="download__text">
+
+                            <h3 class="download__available">
+                                Available on
+                            </h3>
+
+                            <h2 class="download__application">
+                                Google Play
+                            </h2>
+                        </div>
+                    </button>
+
+                </div>
+
+            </div>
+            <img class="download__picture" src="/coffee-house/images/download/mobile-screens.png" alt="downloadPhone">
+
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="footer__block">
+            <h2 class="footer__title">
+                Sip, Savor, Smile.
+                <span class="footer__title-word">It’s coffee time!</span>
+            </h2>
+            <div class="footer__social">
+                <button class="footer__social-button">
+                    <img src="/coffee-house/images/footer/twitter.svg" alt="footerTwitter">
+                </button>
+
+                <button class="footer__social-button">
+                    <img src="/coffee-house/images/footer/instagram.svg" alt="footerInstagram">
+                </button>
+
+                <button class="footer__social-button">
+                    <img src="/coffee-house/images/footer/facebook.svg" alt="footerFacebook">
+                </button>
+            </div>
+        </div>
+
+
+        <div class="footer__contact">
+
+            <div class="footer__connection">
+                <h2 class="connection__title">Contact us</h2>
+                <div class="connection__block">
+
+                    <div class="connection">
+                        <img src="/coffee-house/images/footer/pin-alt.svg" alt="connectionPil">
+                        <h3 class="connection__text">
+                            8558 Green Rd., LA
+                        </h3>
+                    </div>
+                    <div class="connection">
+                        <img src="/coffee-house/images/footer/phone.svg" alt="connectionPhone">
+                        <h3 class="connection__text">
+                            +1 (603) 555-0123
+                        </h3>
+                    </div>
+                    <div class="connection">
+                        <img src="/coffee-house/images/footer/clock.svg" alt="connectionClock">
+                        <h3 class="connection__text">
+                            Mon-Sat: 9:00 AM – 23:00 PM
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

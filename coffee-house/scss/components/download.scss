@@ -1,30 +1,34 @@
-.download-title {
+.download__title {
     font-size: 60px;
     color: #403F3D;
     font-family: "Inter", sans-serif;
     max-width: 550px;
+
     @include tablet {
         max-width: 688px;
     }
+
     @include phone {
         font-size: 32px;
         max-width: 316px;
     }
 }
 
-.download-title-word {
+.download__title-word {
     color: #B0907A;
     font-style: italic;
 }
 
-.download-description {
+.download__description {
     font-size: 16px;
     color: #403F3D;
     font-family: "Inter", sans-serif;
     max-width: 750px;
+
     @include tablet {
         max-width: 688px;
     }
+
     @include phone {
         max-width: 316px;
     }
@@ -35,22 +39,24 @@
     justify-content: center;
     align-items: center;
     margin-top: 100px;
+
     @include tablet {
         flex-direction: column;
-        
+
     }
 }
 
-.download-block {
+.download__block {
     display: flex;
     flex-direction: column;
     gap: 40px;
+
     @include phone {
         margin-left: 8px;
     }
 }
 
-.download-button {
+.download__button {
     background-color: #E1D4C9;
     border: 1px solid #665F55;
     border-radius: 100px;
@@ -60,13 +66,28 @@
     align-items: center;
     gap: 5px;
     padding-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+    &:hover {
+        background-color: #665F55;
+        & h2, h3{
+            color: #E1D4C9;
+        }
+        & img {
+            background-color: #665F55;
+        }
+    }
 }
 
 .apple {
     background-color: #E1D4C9;
+    transition: background-color 0.3s linear;
+    &:hover {
+            background-color: #665F55;
+    }
 }
 
-.download-available {
+.download__available {
     font-size: 10px;
     color: #403F3D;
     font-family: "Inter", sans-serif;
@@ -74,33 +95,34 @@
     justify-content: start;
 }
 
-.download-application {
+.download__application {
     font-size: 16px;
     color: #403F3D;
     font-family: "Inter", sans-serif;
 }
 
-.download-text {
+.download__text {
     display: flex;
     flex-direction: column;
 }
 
-.download-service {
+.download__service {
     display: flex;
     gap: 20px;
+
     @include phone {
         flex-direction: column;
     }
 }
 
-.download-picture {
+.download__picture {
     margin-top: 100px;
     width: 348px;
     height: 348px;
+
     @include phone {
         width: 304px;
         height: 304px;
         margin-top: 40px;
     }
 }
-

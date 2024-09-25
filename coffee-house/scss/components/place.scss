@@ -1,10 +1,11 @@
 @import 'mixin/breakpoints.mixin';
 
-.place-photo {
+.place__photo {
     margin-top: 40px;
     display: flex;
     gap: 40px;
     justify-content: center;
+
     @include tablet {
         flex-direction: column;
         justify-content: center;
@@ -12,33 +13,35 @@
     }
 }
 
-.place-column {
+.place__column {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    
+
 }
 
-.photo-bigger {
+.photo__bigger {
     border-radius: 20px;
     width: 660px;
     height: 590px;
+
     @include phone {
         width: 304px;
         height: 470px;
     }
 }
 
-.photo-smaller {
+.photo__smaller {
     border-radius: 20px;
     width: 660px;
     height: 430px;
-    @include tablet { 
-            display: none;
+
+    @include tablet {
+        display: none;
     }
 }
 
-.place-title {
+.place__title {
     font-size: 60px;
     color: #403F3D;
     font-family: "Inter", sans-serif;
@@ -46,17 +49,19 @@
     max-width: 1250px;
     margin: 0px auto;
     margin-top: 100px;
+
     @include tablet {
         width: 688px;
-        text-align:justify;
+        text-align: justify;
     }
+
     @include phone {
         font-size: 32px;
         max-width: 304px;
     }
 }
 
-.place-title-word {
+.place__title-word {
     color: #B0907A;
     font-style: italic;
 }
