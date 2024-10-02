@@ -1,202 +1,44 @@
-const arrFavotiteCoffe = [
-    {
-        img: "/coffee-house/images/favorite/coffee-slider-1.png",
-        name: "S’mores Frappuccino",
-        description: "This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat milk.",
-        price: "$5.50",
-    },
-    {
-        img: "/coffee-house/images/favorite/coffee-slider-2.png",
-        name: "Caramel Macchiato",
-        description: "Fragrant and unique classic espresso with rich caramel-peanut syrup, with the addition of delicate cream under whipped thick foam.",
-        price: "$5.00",
-    },
-    {
-        img: "/coffee-house/images/favorite/coffee-slider-3.png",
-        name: "Ice coffee",
-        description: "A popular summer drink that tones and invigorates. Prepared from coffee, milk and ice.",
-        price: "$4.50",
-    },
-
-];
+import { arrFavoriteCoffe } from "./variables/favorite.const.js";
 
 let coffeeNumber = -1;
 
-const container = document.querySelector('.favorite__coffee-bloack');
-container.innerHTML = '';
+const container = document.querySelector(".favorite__coffee-bloack");
 
-function card(slot) {
-
-
-    const coffeCard = document.createElement('div');
-    coffeCard.className = `favorite-coffe`;
-    coffeCard.innerHTML = `
-            <img class="favorite-picture" src="${arrFavotiteCoffe[slot].img}" alt="favoriteCoffe">
-
-                        <h3 class="favorite-name">
-                            ${arrFavotiteCoffe[slot].name}
-                        </h3>
-
-                        <p class="favorite-description">
-                            ${arrFavotiteCoffe[slot].description}
-                        </p>
-
-                        <h3 class="favorite-price">
-                            ${arrFavotiteCoffe[slot].price}
-                        </h3>
-        `;
-
-    container.appendChild(coffeCard);
-}
+container.innerHTML = "";
 
 card(0);
 
 const arrowLeft = document.querySelector(".favorite__arrow-left");
 const arrowRight = document.querySelector(".favorite__arrow-right");
 
-
 arrowLeft.addEventListener("click", () => switchOrder("left"));
 arrowRight.addEventListener("click", () => switchOrder("right"));
 
-function switchOrder(side) {
-    if (side === "right") {
+arrowLeft.addEventListener("click", () => buttonMove());
+arrowRight.addEventListener("click", () => buttonMove());
 
-        if (coffeeNumber === arrFavotiteCoffe.length - 1) { coffeeNumber = -1 };
-        coffeeNumber = coffeeNumber + 1;
+let controlsFirst = document.querySelector(".controls-first");
+let controlsSecond = document.querySelector(".controls-second");
+let controlsThird = document.querySelector(".controls-third");
 
-        document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave");
-
-        setTimeout(() => {
-
-            document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave");
-
-
-            document.getElementsByClassName('favorite-name')[0].textContent = arrFavotiteCoffe[coffeeNumber].name;
-            document.getElementsByClassName('favorite-description')[0].textContent = arrFavotiteCoffe[coffeeNumber].description;
-            document.getElementsByClassName('favorite-price')[0].textContent = arrFavotiteCoffe[coffeeNumber].price;
-            document.getElementsByClassName('favorite-picture')[0].src = arrFavotiteCoffe[coffeeNumber].img;
-
-            document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active");
-        }, 700);
-
-        setTimeout(() => {
-
-
-
-            document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active");
-
-        }, 1400);
-    } else {
-
-        if (coffeeNumber === 0) { coffeeNumber = arrFavotiteCoffe.length };
-        coffeeNumber = coffeeNumber - 1;
-
-        document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave-left");
-
-        setTimeout(() => {
-
-            document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave-left");
-
-
-            document.getElementsByClassName('favorite-name')[0].textContent = arrFavotiteCoffe[coffeeNumber].name;
-            document.getElementsByClassName('favorite-description')[0].textContent = arrFavotiteCoffe[coffeeNumber].description;
-            document.getElementsByClassName('favorite-price')[0].textContent = arrFavotiteCoffe[coffeeNumber].price;
-            document.getElementsByClassName('favorite-picture')[0].src = arrFavotiteCoffe[coffeeNumber].img;
-
-            document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active-left");
-        }, 700);
-
-        setTimeout(() => {
-
-
-
-            document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active-left");
-
-        }, 1400);
-    }
-
-}
-
-
-arrowLeft.addEventListener("click", () => buttonslider());
-arrowRight.addEventListener("click", () => buttonslider());
-
-let controlsFirst = document.querySelector('.controls-first');
-let controlsSecond = document.querySelector('.controls-second');
-let controlsThird = document.querySelector('.controls-third');
-
-controlsFirst.classList.add('controls-selected');
-
-
-function buttonslider() {
-
-    setTimeout(() => {
-
-        selected();
-
-    }, 701);
-
-}
+controlsFirst.classList.add("controls-selected");
 
 let stopRecursion = true;
 
-document.addEventListener('click', function (event) {
+document.addEventListener("click", (event) => {
     if (event.target.classList.length > 0) {
         let clickedClass = event.target.className;
-        if (clickedClass === "favorite__arrow-left" || clickedClass === "favorite__arrow-right" || clickedClass === "controls-first" || clickedClass === "controls-second" || clickedClass === "controls-third") {
+        if (
+            clickedClass === "favorite__arrow-left" ||
+            clickedClass === "favorite__arrow-right" ||
+            clickedClass === "controls-first" ||
+            clickedClass === "controls-second" ||
+            clickedClass === "controls-third"
+        ) {
             stopRecursion = false;
         }
     }
 });
-
-
-function autoslider() {
-    if (stopRecursion) {
-        if (coffeeNumber === arrFavotiteCoffe.length - 1) { coffeeNumber = -1 };
-        coffeeNumber = coffeeNumber + 1;
-
-        setTimeout(() => {
-            if (stopRecursion) {
-                document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave");
-
-                setTimeout(() => {
-
-                    document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave");
-
-
-                    document.getElementsByClassName('favorite-name')[0].textContent = arrFavotiteCoffe[coffeeNumber].name;
-                    document.getElementsByClassName('favorite-description')[0].textContent = arrFavotiteCoffe[coffeeNumber].description;
-                    document.getElementsByClassName('favorite-price')[0].textContent = arrFavotiteCoffe[coffeeNumber].price;
-                    document.getElementsByClassName('favorite-picture')[0].src = arrFavotiteCoffe[coffeeNumber].img;
-
-                    document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active");
-                }, 700);
-
-                setTimeout(() => {
-
-
-
-                    document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active");
-
-
-                    selected();
-
-
-                }, 1400);
-
-                console.log(coffeeNumber);
-                autoslider();
-            }
-
-        }, 3000);
-    }
-
-    return;
-
-
-
-
-}
 
 autoslider();
 
@@ -244,80 +86,263 @@ function controls(part) {
     }
 }
 
-
 function selected() {
-    let namecoffe = document.getElementsByClassName("favorite-name")[0].textContent.trim();
+    let namecoffe = document
+        .getElementsByClassName("favorite-name")[0]
+        .textContent.trim();
 
     if (namecoffe === "S’mores Frappuccino") {
-
-        controlsFirst.classList.add('controls-selected');
-        controlsSecond.classList.remove('controls-selected');
-        controlsThird.classList.remove('controls-selected');
-
+        controlsFirst.classList.add("controls-selected");
+        controlsSecond.classList.remove("controls-selected");
+        controlsThird.classList.remove("controls-selected");
     } else if (namecoffe === "Caramel Macchiato") {
-
-        controlsFirst.classList.remove('controls-selected');
-        controlsSecond.classList.add('controls-selected');
-        controlsThird.classList.remove('controls-selected');
-
+        controlsFirst.classList.remove("controls-selected");
+        controlsSecond.classList.add("controls-selected");
+        controlsThird.classList.remove("controls-selected");
     } else if (namecoffe === "Ice coffee") {
-
-        controlsFirst.classList.remove('controls-selected');
-        controlsSecond.classList.remove('controls-selected');
-        controlsThird.classList.add('controls-selected');
-
+        controlsFirst.classList.remove("controls-selected");
+        controlsSecond.classList.remove("controls-selected");
+        controlsThird.classList.add("controls-selected");
     }
 }
 
-
 function controlsChangeRight(number) {
-    document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave");
+    document
+        .querySelector(".favorite-coffe")
+        .classList.toggle("favorite-coffe-leave-right");
 
     setTimeout(() => {
+        document
+            .querySelector(".favorite-coffe")
+            .classList.toggle("favorite-coffe-leave-right");
 
-        document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave");
+        document.getElementsByClassName("favorite-name")[0].textContent =
+            arrFavoriteCoffe[number].name;
+        document.getElementsByClassName("favorite-description")[0].textContent =
+            arrFavoriteCoffe[number].description;
+        document.getElementsByClassName("favorite-price")[0].textContent =
+            arrFavoriteCoffe[number].price;
+        document.getElementsByClassName("favorite-picture")[0].src =
+            arrFavoriteCoffe[number].img;
 
-
-        document.getElementsByClassName('favorite-name')[0].textContent = arrFavotiteCoffe[number].name;
-        document.getElementsByClassName('favorite-description')[0].textContent = arrFavotiteCoffe[number].description;
-        document.getElementsByClassName('favorite-price')[0].textContent = arrFavotiteCoffe[number].price;
-        document.getElementsByClassName('favorite-picture')[0].src = arrFavotiteCoffe[number].img;
-
-        document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active");
+        document
+            .querySelector(".favorite-coffe")
+            .classList.toggle("favorite-coffe-active-right");
     }, 700);
 
     setTimeout(() => {
-
         selected();
 
-        document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active");
-
+        document
+            .querySelector(".favorite-coffe")
+            .classList.toggle("favorite-coffe-active-right");
     }, 1400);
     coffeeNumber = number;
 }
 
 function controlsChangeLeft(number) {
-    document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave-left");
+    document
+        .querySelector(".favorite-coffe")
+        .classList.toggle("favorite-coffe-leave-left");
 
     setTimeout(() => {
+        document
+            .querySelector(".favorite-coffe")
+            .classList.toggle("favorite-coffe-leave-left");
 
-        document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-leave-left");
+        document.getElementsByClassName("favorite-name")[0].textContent =
+            arrFavoriteCoffe[number].name;
+        document.getElementsByClassName("favorite-description")[0].textContent =
+            arrFavoriteCoffe[number].description;
+        document.getElementsByClassName("favorite-price")[0].textContent =
+            arrFavoriteCoffe[number].price;
+        document.getElementsByClassName("favorite-picture")[0].src =
+            arrFavoriteCoffe[number].img;
 
-
-        document.getElementsByClassName('favorite-name')[0].textContent = arrFavotiteCoffe[number].name;
-        document.getElementsByClassName('favorite-description')[0].textContent = arrFavotiteCoffe[number].description;
-        document.getElementsByClassName('favorite-price')[0].textContent = arrFavotiteCoffe[number].price;
-        document.getElementsByClassName('favorite-picture')[0].src = arrFavotiteCoffe[number].img;
-
-        document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active-left");
+        document
+            .querySelector(".favorite-coffe")
+            .classList.toggle("favorite-coffe-active-left");
     }, 700);
 
     setTimeout(() => {
-
         selected();
 
-        document.querySelector(".favorite-coffe").classList.toggle("favorite-coffe-active-left");
-
+        document
+            .querySelector(".favorite-coffe")
+            .classList.toggle("favorite-coffe-active-left");
     }, 1400);
     coffeeNumber = number;
+}
+
+function buttonMove() {
+    setTimeout(() => {
+        selected();
+    }, 701);
+}
+
+function switchOrder(side) {
+    console.log(side);
+    if (side === "right") {
+        if (coffeeNumber === arrFavoriteCoffe.length - 1) {
+            coffeeNumber = -1;
+        }
+        coffeeNumber = coffeeNumber + 1;
+
+        switchSide(side);
+    } else {
+        if (coffeeNumber === 0) {
+            coffeeNumber = arrFavoriteCoffe.length;
+        }
+        coffeeNumber = coffeeNumber - 1;
+
+        switchSide(side);
+    }
+}
+
+function switchSide(scrolling) {
+    document
+        .querySelector(".favorite-coffe")
+        .classList.toggle(`favorite-coffe-leave-${scrolling}`);
+
+    setTimeout(() => {
+        document
+            .querySelector(".favorite-coffe")
+            .classList.toggle(`favorite-coffe-leave-${scrolling}`);
+
+        document.getElementsByClassName("favorite-name")[0].textContent =
+            arrFavoriteCoffe[coffeeNumber].name;
+        document.getElementsByClassName("favorite-description")[0].textContent =
+            arrFavoriteCoffe[coffeeNumber].description;
+        document.getElementsByClassName("favorite-price")[0].textContent =
+            arrFavoriteCoffe[coffeeNumber].price;
+        document.getElementsByClassName("favorite-picture")[0].src =
+            arrFavoriteCoffe[coffeeNumber].img;
+
+        document
+            .querySelector(".favorite-coffe")
+            .classList.toggle(`favorite-coffe-active-${scrolling}`);
+    }, 700);
+
+    setTimeout(() => {
+        document
+            .querySelector(".favorite-coffe")
+            .classList.toggle(`favorite-coffe-active-${scrolling}`);
+    }, 1400);
+}
+
+function card(slot) {
+    const coffeCard = document.createElement("div");
+    coffeCard.className = `favorite-coffe`;
+    coffeCard.innerHTML = `
+            <img class="favorite-picture" src="${arrFavoriteCoffe[slot].img}" alt="favoriteCoffe">
+
+                        <h3 class="favorite-name">
+                            ${arrFavoriteCoffe[slot].name}
+                        </h3>
+
+                        <p class="favorite-description">
+                            ${arrFavoriteCoffe[slot].description}
+                        </p>
+
+                        <h3 class="favorite-price">
+                            ${arrFavoriteCoffe[slot].price}
+                        </h3>
+        `;
+
+    container.appendChild(coffeCard);
+}
+
+function autoslider() {
+    if (stopRecursion) {
+        if (coffeeNumber === arrFavoriteCoffe.length - 1) {
+            coffeeNumber = -1;
+        }
+        coffeeNumber = coffeeNumber + 1;
+
+        setTimeout(() => {
+            if (stopRecursion) {
+                document
+                    .querySelector(".favorite-coffe")
+                    .classList.toggle("favorite-coffe-leave-right");
+
+                setTimeout(() => {
+                    document
+                        .querySelector(".favorite-coffe")
+                        .classList.toggle("favorite-coffe-leave-right");
+
+                    document.getElementsByClassName("favorite-name")[0].textContent =
+                        arrFavoriteCoffe[coffeeNumber].name;
+                    document.getElementsByClassName(
+                        "favorite-description",
+                    )[0].textContent = arrFavoriteCoffe[coffeeNumber].description;
+                    document.getElementsByClassName("favorite-price")[0].textContent =
+                        arrFavoriteCoffe[coffeeNumber].price;
+                    document.getElementsByClassName("favorite-picture")[0].src =
+                        arrFavoriteCoffe[coffeeNumber].img;
+
+                    document
+                        .querySelector(".favorite-coffe")
+                        .classList.toggle("favorite-coffe-active-right");
+                }, 700);
+
+                setTimeout(() => {
+                    document
+                        .querySelector(".favorite-coffe")
+                        .classList.toggle("favorite-coffe-active-right");
+
+                    selected();
+                }, 1400);
+
+                console.log(coffeeNumber);
+                autoslider();
+            }
+        }, 3000);
+    }
+
+    return;
+}
+
+
+let sizeWindow = window.matchMedia("(max-width: 767px)")
+console.log(sizeWindow.matches);
+
+if (sizeWindow.matches == false) {
+    let placeX = 0;
+    let cooldownActive = false;
+
+    const mouseMoveHandler = (event) => {
+        const currentX = event.clientX;
+
+        if (!cooldownActive) {
+            if (currentX > placeX) {
+                switchOrder("right");
+                buttonMove();
+                cooldownActive = true;
+                setTimeout(() => {
+                    cooldownActive = false;
+                    document.removeEventListener('mousemove', mouseMoveHandler);
+                }, 1000);
+            } else if (currentX < placeX) {
+                switchOrder("left");
+                buttonMove();
+                cooldownActive = true;
+                setTimeout(() => {
+                    cooldownActive = false;
+                    document.removeEventListener('mousemove', mouseMoveHandler);
+                }, 1000);
+            }
+        }
+
+        placeX = currentX;
+    };
+
+    document.addEventListener('mousedown', (event) => {
+        if (event.target.className == "favorite-coffe" ||
+            event.target.className == "favorite-picture" ||
+            event.target.className == "favorite-name"
+        ) {
+            console.log(event.target.className);
+            document.addEventListener('mousemove', mouseMoveHandler);
+        }
+    });
 }

@@ -2,12 +2,15 @@
     background-color: #665F55;
     border-radius: 40px;
     margin: 0px 40px;
-    margin-top: 100px;
     display: flex;
+    margin-bottom: 40px;
+    margin-top: 100px;
+    
 
     @include tablet {
         flex-direction: column;
         align-items: center;
+
     }
 
     @include phone {
@@ -41,8 +44,15 @@
     width: 60px;
     height: 60px;
     border-radius: 100px;
-    border: 1px solid #C1B6AD;
+    border: 1px solid hsl(27, 14%, 72%);
+    transition: background-color 0.3s linear;
     cursor: pointer;
+    &:hover {
+        background-color: #83766b;
+        border: 1px solid #83766b;
+        color: #C1B6AD;
+        
+    }
 }
 
 .footer__social {
@@ -52,6 +62,7 @@
 
     @include phone {
         margin-left: -56px;
+        margin-bottom: 40px;
     }
 }
 
@@ -92,13 +103,13 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-
+    margin-left: 100px;
     @include tablet {
         margin-left: -250px;
     }
 
     @include phone {
-        margin-left: -80px;
+        margin-left: -140px;
     }
 }
 

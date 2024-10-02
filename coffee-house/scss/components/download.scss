@@ -5,12 +5,11 @@
     max-width: 550px;
 
     @include tablet {
-        max-width: 688px;
+        max-width: auto;
     }
 
     @include phone {
         font-size: 32px;
-        max-width: 316px;
     }
 }
 
@@ -50,10 +49,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-
-    @include phone {
-        margin-left: 8px;
-    }
+    margin: 0px 16px;
 }
 
 .download__button {

@@ -11,6 +11,11 @@
     }
 }
 
+.favorite-coffe {
+    display: block;
+    z-index: 5;
+}
+
 .favorite__title-word {
     color: #B0907A;
     font-style: italic;
@@ -97,6 +102,16 @@
     flex-direction: column;
     gap: 20px;
     height: 670px;
+    margin-top: -10px;
+    z-index: 5;
+
+    @include tablet {
+        margin-top: -10px;
+    }
+
+    @include phone {
+        margin-top: -120px;
+    }
 }
 
 .favorite__slider {
@@ -160,38 +175,17 @@
 
 
 
-.favorite-coffe-leave {
+.favorite-coffe-leave-right {
     display: flex;
     animation: 0.71s leave ease;
 }
 
-@keyframes leave {
-    from {
-        margin-left: 0%
-    }
-
-    to {
-        margin-left: -400%;
-    }
-}
 
 
-.favorite-coffe-active {
+.favorite-coffe-active-right {
     display: flex;
     animation: 0.7s active ease;
 }
-
-@keyframes active {
-    from {
-        margin-right: -400%
-    }
-
-    to {
-        margin-left: 0px;
-    }
-}
-
-
 
 
 .favorite-coffe-leave-left {
@@ -199,28 +193,57 @@
     animation: 0.71s leaveleft ease;
 }
 
-@keyframes leaveleft {
-    from {
-        margin-left: 0%
-    }
-
-    to {
-        margin-right: -400%;
-    }
-}
-
-
 .favorite-coffe-active-left {
     display: flex;
     animation: 0.7s activeleft ease;
 }
+@keyframes leave {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes active {
+    from {
+        transform: translateX(100%);
+        visibility: hidden;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes leaveleft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 
 @keyframes activeleft {
     from {
-        margin-left: -400%
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
     }
-
     to {
-        margin-left: 0px;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
     }
 }

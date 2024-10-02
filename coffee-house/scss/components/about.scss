@@ -7,6 +7,11 @@
     border-radius: 40px;
     margin: 0px 40px;
     margin-top: 20px;
+    
+    @include tablet {
+    background-position: 70% 70%;
+
+    }
 
     @include phone {
         height: 550px;
