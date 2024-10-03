@@ -391,13 +391,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 16px;
   color: #403F3D;
+  font-family: "Inter", sans-serif;
   font-family: "Inter", sans-serif;
 }
 
 .button-small-size {
-  font-size: 13px;
+  font-size: 16px;
   font-family: "Inter", sans-serif;
 }
 
@@ -417,6 +417,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 16px;
   gap: 8px;
   color: #403F3D;
   cursor: pointer;
@@ -474,7 +475,7 @@
 }
 
 .button-medium-size {
-  font-size: 13px;
+  font-size: 16px;
   font-family: "Inter", sans-serif;
 }
 
@@ -525,7 +526,7 @@
 }
 
 .button-large-size {
-  font-size: 13px;
+  font-size: 16px;
   font-family: "Inter", sans-serif;
 }
 
@@ -548,16 +549,16 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-size: 16px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 16px;
   color: #403F3D;
   font-family: "Inter", sans-serif;
 }
 
 .button-first-additives {
-  font-size: 13px;
+  font-size: 16px;
   font-family: "Inter", sans-serif;
 }
 
@@ -588,7 +589,7 @@
 }
 
 .popup__button-second {
-  width: 108px;
+  width: 130px;
   height: 46px;
   border-radius: 100px;
   background-color: #E1D4C9;
@@ -634,7 +635,7 @@
 }
 
 .button-second-additives {
-  font-size: 13px;
+  font-size: 16px;
   font-family: "Inter", sans-serif;
 }
 

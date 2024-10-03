@@ -21,6 +21,7 @@ document.querySelector(".popup__button-small").classList.toggle("menu-selected")
 
 document.addEventListener("click", function (event) {
     if (event.target.classList.contains("menu-card-img")) {
+        document.body.style.overflow = 'hidden';
 
 
         const productCardElement = event.target.closest("div");
@@ -110,6 +111,7 @@ document.addEventListener("click", function (event) {
 
         if (popup) {
             popup.style.display = "none";
+            document.body.style.overflow = 'auto';
             counterSmall = 0;
             counterMedium = 0;
             counterLarge = 0;
@@ -160,6 +162,7 @@ document.addEventListener("click", function (event) {
 
         if (popup && event.target === popup) {
             popup.style.display = "none";
+            document.body.style.overflow = 'auto';
             counterSmall = 0;
             counterMedium = 0;
             counterLarge = 0;
@@ -209,7 +212,7 @@ document.addEventListener("click", function (event) {
 
 
 document.addEventListener("click", function (button) {
-    if (button.target.classList.contains("popup__button-small")) {
+    if (button.target.classList.contains("popup__button-small") || button.target.classList.contains("button-small-active") || button.target.classList.contains("button-small-size")) {
 
         const popupTotal = document.querySelector(".total__price");
 
@@ -262,7 +265,7 @@ document.addEventListener("click", function (button) {
 
     }
 
-    if (button.target.classList.contains("popup__button-medium")) {
+    if (button.target.classList.contains("popup__button-medium") || button.target.classList.contains("button-medium-active") || button.target.classList.contains("button-medium-size")) {
 
         const popupTotal = document.querySelector(".total__price");
 
@@ -315,7 +318,7 @@ document.addEventListener("click", function (button) {
 
     }
 
-    if (button.target.classList.contains("popup__button-large")) {
+    if (button.target.classList.contains("popup__button-large") || button.target.classList.contains("button-large-active") || button.target.classList.contains("button-large-size")) {
 
         const popupTotal = document.querySelector(".total__price");
 
@@ -368,7 +371,7 @@ document.addEventListener("click", function (button) {
 
     }
 
-    if (button.target.classList.contains("popup__button-first")) {
+    if (button.target.classList.contains("popup__button-first") || button.target.classList.contains("button-first-active") || button.target.classList.contains("button-first-size")) {
 
         const popupTotal = document.querySelector(".total__price");
 
@@ -402,7 +405,7 @@ document.addEventListener("click", function (button) {
 
     }
 
-    if (button.target.classList.contains("popup__button-second")) {
+    if (button.target.classList.contains("popup__button-second") || button.target.classList.contains("button-second-active") || button.target.classList.contains("button-second-size")) {
 
         const popupTotal = document.querySelector(".total__price");
 
@@ -437,7 +440,7 @@ document.addEventListener("click", function (button) {
 
     }
 
-    if (button.target.classList.contains("popup__button-third")) {
+    if (button.target.classList.contains("popup__button-third") || button.target.classList.contains("button-third-active") || button.target.classList.contains("button-third-size")) {
 
         const popupTotal = document.querySelector(".total__price");
 
