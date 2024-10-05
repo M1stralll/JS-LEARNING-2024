@@ -49,11 +49,12 @@ categoryDessert.addEventListener("click", () =>
   generateDessert(currentCategory),
 );
 
+let cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
+
 const more = document.querySelector(".menu__more");
 
 more.addEventListener("click", () => moreProduct());
 
-const cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
 
 function generateTea(category) {
   if (category === "tea") {
@@ -61,6 +62,7 @@ function generateTea(category) {
   }
 
   container.innerHTML = "";
+  
 
   document
     .querySelector(`.menu__${category}`)
@@ -105,6 +107,8 @@ function generateTea(category) {
 
     container.appendChild(card);
   }
+
+    more.style.display = "none";
 }
 
 function generateDessert(category) {
@@ -112,8 +116,12 @@ function generateDessert(category) {
     return;
   }
 
-  if (arrCoffee.length !== classQuantity.length) {
+  let sizeWindow = window.matchMedia("(max-width: 1439px)")
+
+  if (sizeWindow.matches == true) {
     more.style.display = "flex";
+  }else {
+    more.style.display = "none";
   }
 
   container.innerHTML = "";
@@ -162,23 +170,13 @@ function generateDessert(category) {
     container.appendChild(card);
   }
 
+
+  cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
+
   more.addEventListener("click", () => moreProduct());
 
-  const cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
 
-  function moreProduct() {
-    cards.forEach((card) => {
-      card.style.display = "flex";
-    });
-    quantityCheck();
-  }
 
-  function quantityCheck() {
-    more.style.display = "flex";
-    if (arrDessert.length == classQuantity.length) {
-      more.style.display = "none";
-    }
-  }
 }
 
 function generateCoffee(category) {
@@ -186,8 +184,12 @@ function generateCoffee(category) {
     return;
   }
 
-  if (arrCoffee.length !== classQuantity.length) {
+  let sizeWindow = window.matchMedia("(max-width: 1439px)")
+
+  if (sizeWindow.matches == true) {
     more.style.display = "flex";
+  }else {
+    more.style.display = "none";
   }
 
   container.innerHTML = "";
@@ -236,36 +238,17 @@ function generateCoffee(category) {
     container.appendChild(card);
   }
 
+  cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
+
   more.addEventListener("click", () => moreProduct());
 
-  const cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
-
-  function moreProduct() {
-    cards.forEach((card) => {
-      card.style.display = "flex";
-    });
-    quantityCheck();
-  }
-
-  function quantityCheck() {
-    more.style.display = "flex";
-    if (arrDessert.length == classQuantity.length) {
-      more.style.display = "none";
-    }
-  }
+  
 }
+
 
 function moreProduct() {
   cards.forEach((card) => {
     card.style.display = "flex";
   });
-  quantityCheck();
-}
-
-function quantityCheck() {
-  more.style.display = "flex";
-  if (arrCoffee.length == classQuantity.length) {
     more.style.display = "none";
-  }
 }
-

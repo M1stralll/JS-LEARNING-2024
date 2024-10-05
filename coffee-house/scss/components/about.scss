@@ -66,8 +66,32 @@
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    
+    position: relative; 
+
+    &::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url("/coffee-house/images/about/coffee-cup.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        margin-left: 74px;
+        display: none;
+    }
+
+    &:hover::after {
+        display: flex;
+    }
+
+    &:hover{
+        padding-right: 24px;
+    }
 }
+
+
 
 .about__block {
     padding-top: 60px;

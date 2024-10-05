@@ -27,16 +27,13 @@
     border-radius: 100px;
     border: 1px solid #665F55;
     background: none;
-    background-image: url(/coffee-house/images/favorite/arrow-left.svg);
-    background-repeat: no-repeat;
-    background-position: center;
     cursor: pointer;
+    stroke: #403F3D;
     transition: background-color 0.3s linear;
 
     &:hover {
         background-color: #665F55;
-        background-image: url(/coffee-house/images/favorite/arrow-hover.svg);
-        transform: rotate(180deg);
+        stroke: #E1D4C9;
     }
 
     @include phone {
@@ -51,15 +48,13 @@
     border-radius: 100px;
     border: 1px solid #665F55;
     background: none;
-    background-image: url(/coffee-house/images/favorite/arrow-right.svg);
-    background-repeat: no-repeat;
-    background-position: center;
     cursor: pointer;
+    stroke: #403F3D;
     transition: background-color 0.3s linear;
 
     &:hover {
         background-color: #665F55;
-        background-image: url(/coffee-house/images/favorite/arrow-hover.svg);
+        stroke: #E1D4C9;
     }
 
     @include phone {

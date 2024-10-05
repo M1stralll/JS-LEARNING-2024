@@ -64,37 +64,32 @@
     padding-left: 20px;
     cursor: pointer;
     transition: background-color 0.3s linear;
+    color: #403F3D;
+    stroke: #403F3D;
+    fill: #403F3D;
+    font-family: "Inter", sans-serif;
     &:hover {
         background-color: #665F55;
-        & h2, h3{
-            color: #E1D4C9;
-        }
-        & img {
-            background-color: #665F55;
-        }
+        color: #E1D4C9;
+        background-color: #665F55;
+        stroke: #E1D4C9;
+        fill: #E1D4C9;
     }
 }
 
 .apple {
     background-color: #E1D4C9;
     transition: background-color 0.3s linear;
-    &:hover {
-            background-color: #665F55;
-    }
 }
 
 .download__available {
     font-size: 10px;
-    color: #403F3D;
-    font-family: "Inter", sans-serif;
     display: flex;
     justify-content: start;
 }
 
 .download__application {
     font-size: 16px;
-    color: #403F3D;
-    font-family: "Inter", sans-serif;
 }
 
 .download__text {

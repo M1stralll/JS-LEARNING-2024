@@ -44,6 +44,7 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 .menu__coffee:hover {
   background-color: #665F55;
@@ -69,6 +70,7 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 .menu__tea:hover {
   background-color: #665F55;
@@ -94,6 +96,7 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
+  cursor: pointer;
 }
 .menu__dessert:hover {
   background-color: #665F55;

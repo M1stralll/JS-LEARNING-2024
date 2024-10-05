@@ -47,11 +47,12 @@
     border: 1px solid hsl(27, 14%, 72%);
     transition: background-color 0.3s linear;
     cursor: pointer;
+    stroke: #E1D4C9;
     &:hover {
-        background-color: #83766b;
-        border: 1px solid #83766b;
+        background-color: #E1D4C9;
+        border: 1px solid #E1D4C9;
         color: #C1B6AD;
-        
+        stroke: #403F3D;
     }
 }
 
