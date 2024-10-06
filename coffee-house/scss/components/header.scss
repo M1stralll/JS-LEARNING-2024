@@ -69,7 +69,7 @@
         align-items: center;
         flex-direction: column;
         gap: 8px;
-        z-index: 2;
+        z-index: 11;
     }
 
 
@@ -88,6 +88,7 @@
     align-items: center;
     flex-direction: column;
     gap: 60px;
+    z-index: 9;
     display: none;
 }
 

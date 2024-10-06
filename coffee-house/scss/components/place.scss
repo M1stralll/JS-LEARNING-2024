@@ -17,21 +17,56 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-
 }
 
-.photo__bigger {
+.place__column:nth-child(1) {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.place__column:nth-child(1) .photo__bigger {
+    background-image: url(/coffee-house/images/place/place-1.png);
+    background-position: 40% 50%;
     border-radius: 20px;
     width: 660px;
     height: 590px;
 
     @include phone {
+        background-position: 50% 30%;
         width: 342px;
-        height: 470px;
+        height: 590px;
     }
 }
 
-.photo__smaller {
+.place__column:nth-child(2) .photo__bigger {
+    background-image: url(/coffee-house/images/place/place-2.png);
+    background-position: 40% 50%;
+    border-radius: 20px;
+    width: 660px;
+    height: 590px;
+
+    @include phone {
+        background-position: 50% 30%;
+        width: 342px;
+        height: 590px;
+    }
+}
+
+.place__column:nth-child(1) .photo__smaller {
+    background-image: url(/coffee-house/images/place/place-4.png);
+    background-position: 40% 50%;
+    border-radius: 20px;
+    width: 660px;
+    height: 430px;
+
+    @include tablet {
+        display: none;
+    }
+}
+
+.place__column:nth-child(2) .photo__smaller {
+    background-image: url(/coffee-house/images/place/place-3.png);
+    background-position: 40% 50%;
     border-radius: 20px;
     width: 660px;
     height: 430px;
@@ -48,16 +83,18 @@
     text-align: center;
     max-width: 1250px;
     margin: 0px auto;
-    
+
 
     @include tablet {
+        max-width: 688px;
         width: auto;
+        margin-left: auto;
         text-align: justify;
         margin: 0px 40px;
     }
 
     @include phone {
-        width: auto;
+        max-width: 500px;
         font-size: 32px;
         margin: 0px 16px;
     }
@@ -70,4 +107,8 @@
 
 .place {
     margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

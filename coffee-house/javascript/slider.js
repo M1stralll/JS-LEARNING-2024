@@ -1,348 +1,227 @@
 import { arrFavoriteCoffe } from "./variables/favorite.const.js";
 
-let coffeeNumber = -1;
 
-const container = document.querySelector(".favorite__coffee-bloack");
+const container = document.querySelector(".favorite__coffee-container");
+let count = 0;
+let translate = 0;
+let startX = 0;
+let countX = 0;
+let isSwiping = false;
+selectCard();
 
 container.innerHTML = "";
 
-card(0);
-
-const arrowLeft = document.querySelector(".favorite__arrow-left");
-const arrowRight = document.querySelector(".favorite__arrow-right");
-
-arrowLeft.addEventListener("click", () => switchOrder("left"));
-arrowRight.addEventListener("click", () => switchOrder("right"));
-
-arrowLeft.addEventListener("click", () => buttonMove());
-arrowRight.addEventListener("click", () => buttonMove());
-
-let controlsFirst = document.querySelector(".controls-first");
-let controlsSecond = document.querySelector(".controls-second");
-let controlsThird = document.querySelector(".controls-third");
-
-controlsFirst.classList.add("controls-selected");
-
-let stopRecursion = true;
-
-document.addEventListener("click", (event) => {
-    if (event.target.classList.length > 0) {
-        let clickedClass = event.target.className;
-        if (
-            clickedClass === "favorite__arrow-left" ||
-            clickedClass === "favorite__arrow-right" ||
-            clickedClass === "controls-first" ||
-            clickedClass === "controls-second" ||
-            clickedClass === "controls-third"
-        ) {
-            stopRecursion = false;
-        }
-    }
-});
-
-autoslider();
-
-let lastActivePart = null;
-
-controlsFirst.addEventListener("click", () => {
-    if (lastActivePart !== "first") {
-        controlsFirst.disabled = true;
-        controls("first");
-    }
-});
-
-controlsSecond.addEventListener("click", () => {
-    if (lastActivePart !== "second") {
-        controls("second");
-    }
-});
-
-controlsThird.addEventListener("click", () => {
-    if (lastActivePart !== "third") {
-        controls("third");
-    }
-});
-
-function controls(part) {
-    if (part === lastActivePart) return;
-
-    lastActivePart = part;
-
-    if (part === "first") {
-        if (coffeeNumber === 2) {
-            controlsChangeRight(0);
-        }
-        controlsChangeLeft(0);
-    } else if (part === "second") {
-        if (coffeeNumber === 0) {
-            controlsChangeRight(1);
-        }
-        controlsChangeLeft(1);
-    } else if (part === "third") {
-        if (coffeeNumber === 1) {
-            controlsChangeRight(2);
-        }
-        controlsChangeLeft(2);
-    }
-}
-
-function selected() {
-    let namecoffe = document
-        .getElementsByClassName("favorite-name")[0]
-        .textContent.trim();
-
-    if (namecoffe === "S’mores Frappuccino") {
-        controlsFirst.classList.add("controls-selected");
-        controlsSecond.classList.remove("controls-selected");
-        controlsThird.classList.remove("controls-selected");
-    } else if (namecoffe === "Caramel Macchiato") {
-        controlsFirst.classList.remove("controls-selected");
-        controlsSecond.classList.add("controls-selected");
-        controlsThird.classList.remove("controls-selected");
-    } else if (namecoffe === "Ice coffee") {
-        controlsFirst.classList.remove("controls-selected");
-        controlsSecond.classList.remove("controls-selected");
-        controlsThird.classList.add("controls-selected");
-    }
-}
-
-function controlsChangeRight(number) {
-    document
-        .querySelector(".favorite-coffe")
-        .classList.toggle("favorite-coffe-leave-right");
-
-    setTimeout(() => {
-        document
-            .querySelector(".favorite-coffe")
-            .classList.toggle("favorite-coffe-leave-right");
-
-        document.getElementsByClassName("favorite-name")[0].textContent =
-            arrFavoriteCoffe[number].name;
-        document.getElementsByClassName("favorite-description")[0].textContent =
-            arrFavoriteCoffe[number].description;
-        document.getElementsByClassName("favorite-price")[0].textContent =
-            arrFavoriteCoffe[number].price;
-        document.getElementsByClassName("favorite-picture")[0].src =
-            arrFavoriteCoffe[number].img;
-
-        document
-            .querySelector(".favorite-coffe")
-            .classList.toggle("favorite-coffe-active-right");
-    }, 700);
-
-    setTimeout(() => {
-        selected();
-
-        document
-            .querySelector(".favorite-coffe")
-            .classList.toggle("favorite-coffe-active-right");
-    }, 1400);
-    coffeeNumber = number;
-}
-
-function controlsChangeLeft(number) {
-    document
-        .querySelector(".favorite-coffe")
-        .classList.toggle("favorite-coffe-leave-left");
-
-    setTimeout(() => {
-        document
-            .querySelector(".favorite-coffe")
-            .classList.toggle("favorite-coffe-leave-left");
-
-        document.getElementsByClassName("favorite-name")[0].textContent =
-            arrFavoriteCoffe[number].name;
-        document.getElementsByClassName("favorite-description")[0].textContent =
-            arrFavoriteCoffe[number].description;
-        document.getElementsByClassName("favorite-price")[0].textContent =
-            arrFavoriteCoffe[number].price;
-        document.getElementsByClassName("favorite-picture")[0].src =
-            arrFavoriteCoffe[number].img;
-
-        document
-            .querySelector(".favorite-coffe")
-            .classList.toggle("favorite-coffe-active-left");
-    }, 700);
-
-    setTimeout(() => {
-        selected();
-
-        document
-            .querySelector(".favorite-coffe")
-            .classList.toggle("favorite-coffe-active-left");
-    }, 1400);
-    coffeeNumber = number;
-}
-
-function buttonMove() {
-    setTimeout(() => {
-        selected();
-    }, 701);
-}
-
-function switchOrder(side) {
-    console.log(side);
-    if (side === "right") {
-        if (coffeeNumber === arrFavoriteCoffe.length - 1) {
-            coffeeNumber = -1;
-        }
-        coffeeNumber = coffeeNumber + 1;
-
-        switchSide(side);
-    } else {
-        if (coffeeNumber === 0) {
-            coffeeNumber = arrFavoriteCoffe.length;
-        }
-        coffeeNumber = coffeeNumber - 1;
-
-        switchSide(side);
-    }
-}
-
-function switchSide(scrolling) {
-    document
-        .querySelector(".favorite-coffe")
-        .classList.toggle(`favorite-coffe-leave-${scrolling}`);
-
-    setTimeout(() => {
-        document
-            .querySelector(".favorite-coffe")
-            .classList.toggle(`favorite-coffe-leave-${scrolling}`);
-
-        document.getElementsByClassName("favorite-name")[0].textContent =
-            arrFavoriteCoffe[coffeeNumber].name;
-        document.getElementsByClassName("favorite-description")[0].textContent =
-            arrFavoriteCoffe[coffeeNumber].description;
-        document.getElementsByClassName("favorite-price")[0].textContent =
-            arrFavoriteCoffe[coffeeNumber].price;
-        document.getElementsByClassName("favorite-picture")[0].src =
-            arrFavoriteCoffe[coffeeNumber].img;
-
-        document
-            .querySelector(".favorite-coffe")
-            .classList.toggle(`favorite-coffe-active-${scrolling}`);
-    }, 700);
-
-    setTimeout(() => {
-        document
-            .querySelector(".favorite-coffe")
-            .classList.toggle(`favorite-coffe-active-${scrolling}`);
-    }, 1400);
-}
-
-function card(slot) {
-    const coffeCard = document.createElement("div");
-    coffeCard.className = `favorite-coffe`;
-    coffeCard.innerHTML = `
-            <img class="favorite-picture" src="${arrFavoriteCoffe[slot].img}" alt="favoriteCoffe">
+const coffeCardFirst = document.createElement("div");
+coffeCardFirst.className = `favorite-coffee`;
+coffeCardFirst.innerHTML = `
+            <img class="favorite-picture" src="${arrFavoriteCoffe[0].img}" alt="favoriteCoffe">
 
                         <h3 class="favorite-name">
-                            ${arrFavoriteCoffe[slot].name}
+                            ${arrFavoriteCoffe[0].name}
                         </h3>
 
                         <p class="favorite-description">
-                            ${arrFavoriteCoffe[slot].description}
+                            ${arrFavoriteCoffe[0].description}
                         </p>
 
                         <h3 class="favorite-price">
-                            ${arrFavoriteCoffe[slot].price}
+                            ${arrFavoriteCoffe[0].price}
                         </h3>
         `;
 
-    container.appendChild(coffeCard);
-}
+container.appendChild(coffeCardFirst);
 
-function autoslider() {
-    if (stopRecursion) {
-        if (coffeeNumber === arrFavoriteCoffe.length - 1) {
-            coffeeNumber = -1;
-        }
-        coffeeNumber = coffeeNumber + 1;
 
-        setTimeout(() => {
-            if (stopRecursion) {
-                document
-                    .querySelector(".favorite-coffe")
-                    .classList.toggle("favorite-coffe-leave-right");
+const coffeCardSecond = document.createElement("div");
+coffeCardSecond.className = `favorite-coffee`;
+coffeCardSecond.innerHTML = `
+            <img class="favorite-picture" src="${arrFavoriteCoffe[1].img}" alt="favoriteCoffe">
 
-                setTimeout(() => {
-                    document
-                        .querySelector(".favorite-coffe")
-                        .classList.toggle("favorite-coffe-leave-right");
+                        <h3 class="favorite-name">
+                            ${arrFavoriteCoffe[1].name}
+                        </h3>
 
-                    document.getElementsByClassName("favorite-name")[0].textContent =
-                        arrFavoriteCoffe[coffeeNumber].name;
-                    document.getElementsByClassName(
-                        "favorite-description",
-                    )[0].textContent = arrFavoriteCoffe[coffeeNumber].description;
-                    document.getElementsByClassName("favorite-price")[0].textContent =
-                        arrFavoriteCoffe[coffeeNumber].price;
-                    document.getElementsByClassName("favorite-picture")[0].src =
-                        arrFavoriteCoffe[coffeeNumber].img;
+                        <p class="favorite-description">
+                            ${arrFavoriteCoffe[1].description}
+                        </p>
 
-                    document
-                        .querySelector(".favorite-coffe")
-                        .classList.toggle("favorite-coffe-active-right");
-                }, 700);
+                        <h3 class="favorite-price">
+                            ${arrFavoriteCoffe[1].price}
+                        </h3>
+        `;
 
-                setTimeout(() => {
-                    document
-                        .querySelector(".favorite-coffe")
-                        .classList.toggle("favorite-coffe-active-right");
+container.appendChild(coffeCardSecond);
 
-                    selected();
-                }, 1400);
+const coffeCardThird = document.createElement("div");
+coffeCardThird.className = `favorite-coffee`;
+coffeCardThird.innerHTML = `
+            <img class="favorite-picture" src="${arrFavoriteCoffe[2].img}" alt="favoriteCoffe">
 
-                console.log(coffeeNumber);
-                autoslider();
-            }
-        }, 3000);
+                        <h3 class="favorite-name">
+                            ${arrFavoriteCoffe[2].name}
+                        </h3>
+
+                        <p class="favorite-description">
+                            ${arrFavoriteCoffe[2].description}
+                        </p>
+
+                        <h3 class="favorite-price">
+                            ${arrFavoriteCoffe[2].price}
+                        </h3>
+        `;
+
+container.appendChild(coffeCardThird);
+
+
+
+document.querySelector('.favorite__arrow-right').onclick = function () {
+    if (count < 2) {
+        translate -= 480;
+        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+            element.style.transform = `translateX(${translate}px)`;
+        });
+
+        count++;
+    } else {
+        translate = 0;
+        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+            element.style.transform = `translateX(${translate}px)`;
+
+        });
+        count = 0;
     }
+};
 
-    return;
+document.querySelector('.favorite__arrow-left').onclick = function () {
+    if (count > 0) {
+        translate += 480;
+        count--;
+        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+            element.style.transform = `translateX(${translate}px)`;
+
+        });
+    } else {
+        count = 2;
+        translate = -960;
+        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+            element.style.transform = `translateX(${translate}px)`;
+
+        });
+    }
+};
+
+document.querySelector('.controls-first').onclick = function () {
+    changeButtomButtons(0, 0, 0);
+};
+
+document.querySelector('.controls-second').onclick = function () {
+    changeButtomButtons(-316, -480, 1);
+};
+
+document.querySelector('.controls-third').onclick = function () {
+    changeButtomButtons(-632, -960, 2);
+};
+
+function changeButtomButtons(phone, laptom, check) {
+    let sizeWindow = window.matchMedia("(max-width: 767px)")
+
+    if (sizeWindow.matches == true) {
+        count = check;
+        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+            element.style.transform = `translateX(${phone}px)`;
+
+        });
+    } else {
+        count = check;
+        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+            element.style.transform = `translateX(${laptom}px)`;
+        });
+    }
+}
+
+document.addEventListener('click', function (event) {
+
+    if (event.target.className.startsWith('favorite') || event.target.className.startsWith('controls')) {
+        selectCard();
+    }
+});
+
+function selectCard() {
+    if (count === 0) {
+        document.querySelector('.controls-first').classList.add('controls-selected');
+        document.querySelector('.controls-second').classList.remove('controls-selected');
+        document.querySelector('.controls-third').classList.remove('controls-selected');
+    } else if (count === 1) {
+        document.querySelector('.controls-first').classList.remove('controls-selected');
+        document.querySelector('.controls-second').classList.add('controls-selected');
+        document.querySelector('.controls-third').classList.remove('controls-selected');
+    } else {
+        document.querySelector('.controls-first').classList.remove('controls-selected');
+        document.querySelector('.controls-second').classList.remove('controls-selected');
+        document.querySelector('.controls-third').classList.add('controls-selected');
+    }
 }
 
 
-let sizeWindow = window.matchMedia("(max-width: 767px)")
-console.log(sizeWindow.matches);
+container.addEventListener('touchstart', function (event) {
+    startX = event.touches[0].clientX; 
+    isSwiping = true;
+});
 
-if (sizeWindow.matches == false) {
-    let placeX = 0;
-    let cooldownActive = false;
 
-    const mouseMoveHandler = (event) => {
-        const currentX = event.clientX;
+container.addEventListener('touchmove', function (event) {
+    if (isSwiping) {
+        countX = event.touches[0].clientX;
+    }
+});
 
-        if (!cooldownActive) {
-            if (currentX > placeX) {
-                switchOrder("right");
-                buttonMove();
-                cooldownActive = true;
-                setTimeout(() => {
-                    cooldownActive = false;
-                    document.removeEventListener('mousemove', mouseMoveHandler);
-                }, 1000);
-            } else if (currentX < placeX) {
-                switchOrder("left");
-                buttonMove();
-                cooldownActive = true;
-                setTimeout(() => {
-                    cooldownActive = false;
-                    document.removeEventListener('mousemove', mouseMoveHandler);
-                }, 1000);
+container.addEventListener('touchend', function () {
+    let sizeWindow = window.matchMedia("(max-width: 767px)")
+
+    if (sizeWindow.matches == true) {
+        if (isSwiping) {
+            let changeX = startX - countX;
+            console.log(Math.abs(changeX))
+
+            if (Math.abs(changeX) > 50) {
+                if (changeX > 0) {
+                    if (count < 2) {
+                        translate -= 316;
+                        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+                            element.style.transform = `translateX(${translate}px)`;
+                        });
+
+                        count++;
+                    } else {
+                        translate = 0;
+                        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+                            element.style.transform = `translateX(${translate}px)`;
+
+                        });
+                        count = 0;
+                    }
+                } else {
+                    if (count > 0) {
+                        translate += 316;
+                        count--;
+                        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+                            element.style.transform = `translateX(${translate}px)`;
+
+                        });
+                    } else {
+                        count = 2;
+                        translate = -632;
+                        document.querySelectorAll('.favorite-coffee').forEach(function (element) {
+                            element.style.transform = `translateX(${translate}px)`;
+
+                        });
+                    }
+                }
             }
+            selectCard();
         }
-
-        placeX = currentX;
-    };
-
-    document.addEventListener('mousedown', (event) => {
-        if (event.target.className == "favorite-coffe" ||
-            event.target.className == "favorite-picture" ||
-            event.target.className == "favorite-name"
-        ) {
-            console.log(event.target.className);
-            document.addEventListener('mousemove', mouseMoveHandler);
-        }
-    });
-}
+    } else {
+        return;
+    }
+    isSwiping = false;
+});
