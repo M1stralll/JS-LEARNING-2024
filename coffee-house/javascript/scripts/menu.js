@@ -1,22 +1,17 @@
-import { arrCoffee } from "./variables/coffee.const.js";
-import { arrTea } from "./variables/tea.const.js";
-import { arrDessert } from "./variables/dessert.const.js";
+import { arrCoffee } from "../variables/coffee.variable.js";
+import { arrTea } from "../variables/tea.variable.js";
+import { arrDessert } from "../variables/dessert.variable.js";
 
 const categoryCoffee = document.querySelector(".menu__coffee");
 const categoryTea = document.querySelector(".menu__tea");
 const categoryDessert = document.querySelector(".menu__dessert");
-let classQuantity = document.getElementsByClassName("menu-card");
-
-document.querySelector(".menu__coffee").classList.toggle("menu-selected");
-document
-  .querySelector(".menu__coffee-active")
-  .classList.toggle("menu-active-selected");
-document
-  .querySelector(".menu__coffee-categories")
-  .classList.toggle("menu-categories-selected");
-
+let currentCategory = "coffee";
 const container = document.querySelector(".menu__products");
 container.innerHTML = "";
+let cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
+const more = document.querySelector(".menu__more");
+
+buttonSelected("coffee");
 
 for (let i = 0; i < arrCoffee.length; i++) {
   const card = document.createElement("div");
@@ -41,20 +36,13 @@ for (let i = 0; i < arrCoffee.length; i++) {
   container.appendChild(card);
 }
 
-let currentCategory = "coffee";
-
 categoryCoffee.addEventListener("click", () => generateCoffee(currentCategory));
 categoryTea.addEventListener("click", () => generateTea(currentCategory));
 categoryDessert.addEventListener("click", () =>
   generateDessert(currentCategory),
 );
 
-let cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
-
-const more = document.querySelector(".menu__more");
-
 more.addEventListener("click", () => moreProduct());
-
 
 function generateTea(category) {
   if (category === "tea") {
@@ -62,26 +50,10 @@ function generateTea(category) {
   }
 
   container.innerHTML = "";
-  
 
-  document
-    .querySelector(`.menu__${category}`)
-    .classList.toggle("menu-selected");
-  document
-    .querySelector(`.menu__${category}-active`)
-    .classList.toggle("menu-active-selected");
-  document
-    .querySelector(`.menu__${category}-categories`)
-    .classList.toggle("menu-categories-selected");
-  document.querySelector(`.menu__tea`).classList.toggle("menu-selected");
-  document
-    .querySelector(`.menu__tea-active`)
-    .classList.toggle("menu-active-selected");
-  document
-    .querySelector(`.menu__tea-categories`)
-    .classList.toggle("menu-categories-selected");
+  buttonSelected("tea");
 
-  currentCategory = "tea";
+  currentCategory = `tea`;
 
   const innerElements = container.querySelectorAll("*");
 
@@ -108,7 +80,7 @@ function generateTea(category) {
     container.appendChild(card);
   }
 
-    more.style.display = "none";
+  more.style.display = "none";
 }
 
 function generateDessert(category) {
@@ -116,34 +88,19 @@ function generateDessert(category) {
     return;
   }
 
-  let sizeWindow = window.matchMedia("(max-width: 1439px)")
+  let sizeWindow = window.matchMedia("(max-width: 1439px)");
 
   if (sizeWindow.matches == true) {
     more.style.display = "flex";
-  }else {
+  } else {
     more.style.display = "none";
   }
 
   container.innerHTML = "";
 
-  document
-    .querySelector(`.menu__${category}`)
-    .classList.toggle("menu-selected");
-  document
-    .querySelector(`.menu__${category}-active`)
-    .classList.toggle("menu-active-selected");
-  document
-    .querySelector(`.menu__${category}-categories`)
-    .classList.toggle("menu-categories-selected");
-  document.querySelector(`.menu__dessert`).classList.toggle("menu-selected");
-  document
-    .querySelector(`.menu__dessert-active`)
-    .classList.toggle("menu-active-selected");
-  document
-    .querySelector(`.menu__dessert-categories`)
-    .classList.toggle("menu-categories-selected");
+  buttonSelected("dessert");
 
-  currentCategory = "dessert";
+  currentCategory = `dessert`;
 
   const innerElements = container.querySelectorAll("*");
 
@@ -170,13 +127,9 @@ function generateDessert(category) {
     container.appendChild(card);
   }
 
-
   cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
 
   more.addEventListener("click", () => moreProduct());
-
-
-
 }
 
 function generateCoffee(category) {
@@ -184,34 +137,19 @@ function generateCoffee(category) {
     return;
   }
 
-  let sizeWindow = window.matchMedia("(max-width: 1439px)")
+  let sizeWindow = window.matchMedia("(max-width: 1439px)");
 
   if (sizeWindow.matches == true) {
     more.style.display = "flex";
-  }else {
+  } else {
     more.style.display = "none";
   }
 
   container.innerHTML = "";
 
-  document
-    .querySelector(`.menu__${category}`)
-    .classList.toggle("menu-selected");
-  document
-    .querySelector(`.menu__${category}-active`)
-    .classList.toggle("menu-active-selected");
-  document
-    .querySelector(`.menu__${category}-categories`)
-    .classList.toggle("menu-categories-selected");
-  document.querySelector(`.menu__coffee`).classList.toggle("menu-selected");
-  document
-    .querySelector(`.menu__coffee-active`)
-    .classList.toggle("menu-active-selected");
-  document
-    .querySelector(`.menu__coffee-categories`)
-    .classList.toggle("menu-categories-selected");
+  buttonSelected("coffee");
 
-  currentCategory = "coffee";
+  currentCategory = `coffee`;
 
   const innerElements = container.querySelectorAll("*");
 
@@ -241,14 +179,28 @@ function generateCoffee(category) {
   cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
 
   more.addEventListener("click", () => moreProduct());
-
-  
 }
-
 
 function moreProduct() {
   cards.forEach((card) => {
     card.style.display = "flex";
   });
-    more.style.display = "none";
+  more.style.display = "none";
+}
+
+function buttonSelected(product) {
+  document.querySelector(`.menu__${product}`).classList.toggle("menu-selected");
+  document
+    .querySelector(`.menu__${product}-active`)
+    .classList.toggle("menu-active-selected");
+  document
+    .querySelector(`.menu__${product}-categories`)
+    .classList.toggle("menu-categories-selected");
+  document.querySelector(`.menu__${product}`).classList.toggle("menu-selected");
+  document
+    .querySelector(`.menu__${product}-active`)
+    .classList.toggle("menu-active-selected");
+  document
+    .querySelector(`.menu__${product}-categories`)
+    .classList.toggle("menu-categories-selected");
 }

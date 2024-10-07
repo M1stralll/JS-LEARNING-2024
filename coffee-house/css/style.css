@@ -211,7 +211,7 @@
 
 .about {
   height: 644px;
-  background-image: url(/coffee-house/video/videoCoffee.gif);
+  background-image: url(/coffee-house/assests/video/videoCoffee.gif);
   background-size: cover;
   border-radius: 40px;
   margin: 0px 40px;
@@ -288,7 +288,7 @@
   content: "";
   width: 20px;
   height: 20px;
-  background-image: url("/coffee-house/images/about/coffee-cup.svg");
+  background-image: url("/coffee-house/assests/images/about/coffee-cup.svg");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -310,13 +310,13 @@
   padding-right: 24px;
 }
 
-.about__block {
+.about__container {
   padding-top: 60px;
   padding-left: 60px;
   margin-top: 20px;
 }
 @media (max-width: 767px) {
-  .about__block {
+  .about__container {
     padding-left: 16px;
   }
 }
@@ -519,149 +519,6 @@
   }
 }
 
-.favorite-coffee-leave-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-animation: 0.71s leave ease;
-          animation: 0.71s leave ease;
-}
-
-.favorite-coffee-active-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-animation: 0.7s active ease;
-          animation: 0.7s active ease;
-}
-
-.favorite-coffee-leave-left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-animation: 0.71s leaveleft ease;
-          animation: 0.71s leaveleft ease;
-}
-
-.favorite-coffee-active-left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-animation: 0.7s activeleft ease;
-          animation: 0.7s activeleft ease;
-}
-
-@-webkit-keyframes leave {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes leave {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-@-webkit-keyframes active {
-  from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-    visibility: hidden;
-  }
-  to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-}
-@keyframes active {
-  from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-    visibility: hidden;
-  }
-  to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-}
-@-webkit-keyframes leaveleft {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-@keyframes leaveleft {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-  to {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-@-webkit-keyframes activeleft {
-  from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-  to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-}
-@keyframes activeleft {
-  from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-  }
-  to {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-}
 .favorite__coffee-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -722,7 +579,7 @@
 }
 
 .place__column:nth-child(1) .photo__bigger {
-  background-image: url(/coffee-house/images/place/place-1.png);
+  background-image: url(/coffee-house/assests/images/place/place-1.png);
   background-position: 40% 50%;
   border-radius: 20px;
   width: 660px;
@@ -737,7 +594,7 @@
 }
 
 .place__column:nth-child(2) .photo__bigger {
-  background-image: url(/coffee-house/images/place/place-2.png);
+  background-image: url(/coffee-house/assests/images/place/place-2.png);
   background-position: 40% 50%;
   border-radius: 20px;
   width: 660px;
@@ -752,7 +609,7 @@
 }
 
 .place__column:nth-child(1) .photo__smaller {
-  background-image: url(/coffee-house/images/place/place-4.png);
+  background-image: url(/coffee-house/assests/images/place/place-4.png);
   background-position: 40% 50%;
   border-radius: 20px;
   width: 660px;
@@ -765,7 +622,7 @@
 }
 
 .place__column:nth-child(2) .photo__smaller {
-  background-image: url(/coffee-house/images/place/place-3.png);
+  background-image: url(/coffee-house/assests/images/place/place-3.png);
   background-position: 40% 50%;
   border-radius: 20px;
   width: 660px;
