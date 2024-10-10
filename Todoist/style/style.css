@@ -44,8 +44,8 @@ body {
     margin-top: 32px;
 }
 
-ul {
-    margin: 0;
+.main__completed {
+    margin: 0px;
     padding: 0px;
 }
 
@@ -126,9 +126,6 @@ li {
     align-items: center;
 }
 
-li>* {
-    vertical-align: middle;
-}
 
 .maint__todo-list {
     display: flex;
@@ -136,6 +133,8 @@ li>* {
 }
 
 .main__todo {
+    margin: 0px;
+    padding: 0px;
     margin-left: 10px;
 }
 
@@ -148,23 +147,16 @@ li>* {
     margin-left: 10px;
 }
 
-/* li>input[type="checkbox"] {
-    margin: 0 10px;
-} */
-
-li>label {
+label {
     padding-left: 10px;
     box-sizing: border-box;
     font-size: 18px;
     width: 226px;
 }
 
-li>input[type="text"] {
-    width: 226px
-}
 
 button.main__delete img {
-    height: 2em;
+    height: 30px;
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;
 }
@@ -174,7 +166,7 @@ button.main__delete img:hover {
 }
 
 /* Completed */
-ul#main__completed label {
+ul.main__completed label {
     text-decoration: line-through #888;
 }
 
