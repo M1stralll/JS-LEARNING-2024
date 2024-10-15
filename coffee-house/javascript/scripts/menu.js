@@ -189,13 +189,17 @@ function moreProduct() {
 }
 
 function buttonSelected(product) {
-  document.querySelector(`.menu__${product}`).classList.toggle("menu-selected");
-  document
-    .querySelector(`.menu__${product}-active`)
-    .classList.toggle("menu-active-selected");
-  document
-    .querySelector(`.menu__${product}-categories`)
-    .classList.toggle("menu-categories-selected");
+  const categories = ["coffee", "tea", "dessert"];
+
+  categories.forEach((category) => {
+    document.querySelector(`.menu__${category}`).classList.remove("menu-selected");
+    document
+      .querySelector(`.menu__${category}-active`)
+      .classList.remove("menu-active-selected");
+    document
+      .querySelector(`.menu__${category}-categories`)
+      .classList.remove("menu-categories-selected");
+  });
   document.querySelector(`.menu__${product}`).classList.toggle("menu-selected");
   document
     .querySelector(`.menu__${product}-active`)

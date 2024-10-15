@@ -2,7 +2,7 @@
 
 .header__logo {
     z-index: 2;
-    
+
     & img {
         width: 100px;
         height: 60px;
@@ -99,6 +99,7 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
+
     &:hover {
         border-bottom: 2px solid #403F3D;
     }
@@ -109,7 +110,7 @@
     }
 }
 
-.burger-link {
+.header__burger-link {
     font-size: 32px;
     color: #403F3D;
     font-family: "Inter", sans-serif;

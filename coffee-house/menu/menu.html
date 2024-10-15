@@ -10,7 +10,7 @@
     <script defer type="module" src="/coffee-house/javascript/scripts/menu.js"></script>
     <script defer type="module" src="/coffee-house/javascript/scripts/popup.js"></script>
     <link rel="stylesheet" href="/coffee-house/css/style.css">
-    <link rel="stylesheet" href="/coffee-house/menu/cssMenu/menu.css">
+    <link rel="stylesheet" href="/coffee-house/menu/css/menu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -23,42 +23,43 @@
         <img class="header__logo" src="/coffee-house/assests/images/header/logo.svg" alt="Company">
 
         <ul class="header__pages">
-            <li><a href="/index.html">Favorite coffee</a></li>
+            <li><a href="#favorite-coffee">Favorite coffee</a></li>
             <li><a href="/index.html">About</a></li>
-            <li><a href="/index.html">Mobile app</a></li>
-            <li><a href="/index.html">Contact us</a></li>
+            <li><a href="#download">Mobile app</a></li>
+            <li><a href="#contact">Contact us</a></li>
         </ul>
 
         <div class="header__menu">
 
             <a href="/coffee-house/menu/menu.html">Menu</a>
-            <img href="/coffee-house/menu/menu.html" src="/coffee-house/assests/images/header/coffee-cup.svg" alt="Logo">
+            <img href="/coffee-house/menu/menu.html" src="/coffee-house/assests/images/header/coffee-cup.svg"
+                alt="menu-logo">
         </div>
 
         <button class="header__burger">
-            <img class="line" src="/coffee-house/assests/images/header/burgerLine.svg" alt="Line">
-            <img class="line" src="/coffee-house/assests/images/header/burgerLine.svg" alt="Line">
+            <img class="line" src="/coffee-house/assests/images/header/burger-line.svg" alt="Line">
+            <img class="line" src="/coffee-house/assests/images/header/burger-line.svg" alt="Line">
         </button>
 
         <div class="header__burger-menu">
 
-            <a href="/index.html" class="burger-link">
+            <a href="/index.html" class="header__burger-link">
                 Favorite coffee
             </a>
 
-            <a href="/index.html" class="burger-link">
+            <a href="/index.html" class="header__burger-link">
                 About
             </a>
 
-            <a href="/index.html" class="burger-link">
+            <a href="/index.html" class="header__burger-link">
                 Mobile app
             </a>
-            <a href="/index.html" class="burger-link">
+            <a href="/index.html" class="header__burger-link">
                 Contact us
             </a>
-            <a href="/coffee-house/menu/menu.html" class="Menu">
+            <a href="/coffee-house/menu/menu.html" class="burger-menu">
 
-                <h2 class="burger-link">
+                <h2 class="header__burger-link">
                     Menu
                 </h2>
 
@@ -80,7 +81,7 @@
 
                 <button class="menu__coffee">
                     <div class="menu__coffee-active">
-                        <img src="/coffee-house/menu/imageMenu/menu/menuCoffee.png" alt="Menu">
+                        <img src="/coffee-house/menu/image/menu/menuCoffee.png" alt="Menu">
                     </div>
                     <h3 class="menu__coffee-categories">
                         Coffee
@@ -89,7 +90,7 @@
 
                 <button class="menu__tea">
                     <div class="menu__tea-active">
-                        <img src="/coffee-house/menu/imageMenu/menu/menuTea.png" alt="Menu">
+                        <img src="/coffee-house/menu/image/menu/menuTea.png" alt="Menu">
                     </div>
                     <h3 class="menu__tea-categories">
                         Tea
@@ -98,7 +99,7 @@
 
                 <button class="menu__dessert">
                     <div class="menu__dessert-active">
-                        <img src="/coffee-house/menu/imageMenu/menu/menuDessert.png" alt="Menu">
+                        <img src="/coffee-house/menu/image/menu/menuDessert.png" alt="Menu">
                     </div>
                     <h3 class="menu__dessert-categories">
                         Dessert
@@ -112,12 +113,12 @@
             </div>
 
             <button class="menu__more">
-                <img src="/coffee-house/menu/imageMenu/refresh/refresh.svg" alt="Refresh">
+                <img src="/coffee-house/menu/image/refresh/refresh.svg" alt="Refresh">
             </button>
 
             <div class="menu__popup">
                 <div class="popup__block">
-                    <img class="popup__img" src="/coffee-house/menu/imageMenu/coffee/coffee-1.png" alt="Product">
+                    <img class="popup__img" src="/coffee-house/menu/image/coffee/coffee-1.png" alt="Product">
 
                     <div class="popup__information">
                         <h2 class="popup__title">Marble cheesecake</h2>
@@ -190,7 +191,7 @@
                                     <span class="button-third-active">
                                         3
                                     </span>
-                                    <span class="button-second-additives">
+                                    <span class="button-third-additives">
                                         Jam
                                     </span>
                                 </button>
@@ -207,7 +208,7 @@
                         </div>
 
                         <div class="popup__info">
-                            <img src="/coffee-house/menu/imageMenu/menu/info-empty.svg" alt="Info">
+                            <img src="/coffee-house/menu/image/menu/info-empty.svg" alt="Info">
                             <h3 class="info_description">
                                 The cost is not final. Download our mobile app to see the final price and place your
                                 order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.

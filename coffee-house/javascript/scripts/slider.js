@@ -9,7 +9,6 @@ let isSwiping = false;
 container.innerHTML = "";
 const coffeCardFirst = document.createElement("div");
 const coffeCardSecond = document.createElement("div");
-const coffeCardThird = document.createElement("div");
 
 selectCard();
 
@@ -51,6 +50,7 @@ coffeCardSecond.innerHTML = `
 
 container.appendChild(coffeCardSecond);
 
+const coffeCardThird = document.createElement("div");
 coffeCardThird.className = `favorite-coffee`;
 coffeCardThird.innerHTML = `
             <img class="favorite-picture" src="${arrFavoriteCoffe[2].img}" alt="favoriteCoffe">

@@ -2,24 +2,12 @@ import { arrProduct } from "../variables/product.variable.js";
 
 let currentPopupIndex = null;
 
-let counterMedium = 0;
-
-let counterLarge = 0;
-
-let counterFirst = 0;
-
-let counterSecond = 0;
-
-let counterThird = 0;
-
 let sizeWindow = window.matchMedia("(max-width: 767px)");
 
-document
-  .querySelector(".popup__button-small")
-  .classList.toggle("menu-selected");
+document.querySelector(".popup__button-small").classList.toggle("menu-selected");
 
 document.addEventListener("click", function (event) {
-  if (event.target.classList.contains("menu-card-img")) {
+  if (event.target.closest(".menu-card")) {
     document.body.style.overflow = "hidden";
 
     const productCardElement = event.target.closest("div");
@@ -29,11 +17,11 @@ document.addEventListener("click", function (event) {
     const productTitle = menuItem.textContent.trim().toLowerCase();
 
     const productData = arrProduct.find(
-      (product) => product.name.toLowerCase() === productTitle,
+      (product) => product.name.toLowerCase() === productTitle
     );
 
     currentPopupIndex = arrProduct.findIndex(
-      (product) => product.name.toLowerCase() === productTitle,
+      (product) => product.name.toLowerCase() === productTitle
     );
 
     const popupTitle = document.querySelector(".popup__title");
@@ -49,41 +37,14 @@ document.addEventListener("click", function (event) {
 
     if (popupTitle) {
       popupTitle.textContent = productData.name;
-    }
-
-    if (popupImg) {
       popupImg.src = productData.img;
-    }
-
-    if (popupDescription) {
       popupDescription.textContent = productData.description;
-    }
-
-    if (popupTotal) {
       popupTotal.textContent = "$" + productData.price;
-    }
-
-    if (popupSiseS) {
       popupSiseS.textContent = productData.sizes.s.size;
-    }
-
-    if (popupSiseM) {
       popupSiseM.textContent = productData.sizes.m.size;
-    }
-
-    if (popupSiseL) {
       popupSiseL.textContent = productData.sizes.l.size;
-    }
-
-    if (popupAdditivesF) {
       popupAdditivesF.textContent = productData.additives[0].name;
-    }
-
-    if (popupAdditivesS) {
       popupAdditivesS.textContent = productData.additives[1].name;
-    }
-
-    if (popupAdditivesT) {
       popupAdditivesT.textContent = productData.additives[2].name;
     }
 
@@ -98,8 +59,12 @@ document.addEventListener("click", function (event) {
       }
     }
   }
+  const backgroundPopupSelector = `.menu__popup`;
 
-  if (event.target.classList.contains("popup__buttoncancel")) {
+  if (
+    event.target.classList.contains("popup__buttoncancel") ||
+    event.target.matches(backgroundPopupSelector)
+  ) {
     const popup = document.querySelector(".menu__popup");
     const burger = document.querySelector(".header__burger");
     const logo = document.querySelector(".header__logo");
@@ -107,154 +72,12 @@ document.addEventListener("click", function (event) {
     if (popup) {
       popup.style.display = "none";
       document.body.style.overflow = "auto";
-      counterSmall = 0;
-      counterMedium = 0;
-      counterLarge = 0;
-      counterFirst = 0;
-      counterSecond = 0;
-      counterThird = 0;
-
-      if (
-        document
-          .querySelector(".popup__button-first")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-first")
-          .classList.toggle("menu-selected");
-      }
-
-      if (
-        document
-          .querySelector(".popup__button-second")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-second")
-          .classList.toggle("menu-selected");
-      }
-
-      if (
-        document
-          .querySelector(".popup__button-third")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-third")
-          .classList.toggle("menu-selected");
-      }
-
-      if (
-        document
-          .querySelector(".popup__button-medium")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-small")
-          .classList.toggle("menu-selected");
-
-        document
-          .querySelector(".popup__button-medium")
-          .classList.toggle("menu-selected");
-      } else if (
-        document
-          .querySelector(".popup__button-large")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-small")
-          .classList.toggle("menu-selected");
-
-        document
-          .querySelector(".popup__button-large")
-          .classList.toggle("menu-selected");
-      }
 
       if (sizeWindow.matches !== false) {
         burger.style.display = "flex";
         logo.style.display = "flex";
       }
-    }
-
-    currentPopupIndex = null;
-  }
-
-  const backgroundPopupSelector = `.menu__popup`;
-  if (event.target.matches(backgroundPopupSelector)) {
-    const popup = document.querySelector(".menu__popup");
-    const burger = document.querySelector(".header__burger");
-    const logo = document.querySelector(".header__logo");
-
-    if (popup && event.target === popup) {
-      popup.style.display = "none";
-      document.body.style.overflow = "auto";
-      counterSmall = 0;
-      counterMedium = 0;
-      counterLarge = 0;
-      counterFirst = 0;
-      counterSecond = 0;
-      counterThird = 0;
-
-      if (
-        document
-          .querySelector(".popup__button-first")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-first")
-          .classList.toggle("menu-selected");
-      }
-
-      if (
-        document
-          .querySelector(".popup__button-second")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-second")
-          .classList.toggle("menu-selected");
-      }
-
-      if (
-        document
-          .querySelector(".popup__button-third")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-third")
-          .classList.toggle("menu-selected");
-      }
-
-      if (
-        document
-          .querySelector(".popup__button-medium")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-small")
-          .classList.toggle("menu-selected");
-
-        document
-          .querySelector(".popup__button-medium")
-          .classList.toggle("menu-selected");
-      } else if (
-        document
-          .querySelector(".popup__button-large")
-          .classList.contains("menu-selected")
-      ) {
-        document
-          .querySelector(".popup__button-small")
-          .classList.toggle("menu-selected");
-
-        document
-          .querySelector(".popup__button-large")
-          .classList.toggle("menu-selected");
-      }
-
-      if (sizeWindow.matches !== false) {
-        burger.style.display = "flex";
-        logo.style.display = "flex";
-      }
+      resetPopupState();
     }
 
     currentPopupIndex = null;
@@ -262,309 +85,123 @@ document.addEventListener("click", function (event) {
 });
 
 document.addEventListener("click", function (button) {
-  if (
-    button.target.classList.contains("popup__button-small") ||
-    button.target.classList.contains("button-small-active") ||
-    button.target.classList.contains("button-small-size")
-  ) {
-    const popupTotal = document.querySelector(".total__price");
+  if (button.target.closest(".popup__button-small")) {
+    const button = document.querySelector(".popup__button-small");
 
-    const total = popupTotal.textContent;
+    increaseValue(0);
 
-    let price = parseFloat(total.replace("$", ""));
-    add();
-
-    function add() {
-      counterSmall++;
-
-      const addprice = 0;
-
-      if (counterSmall % 2 === 0) {
-        price = price - addprice;
-      } else {
-        price = price + addprice;
-      }
-
-      console.log(counterSmall);
-
-      if (counterMedium !== 0) {
-        price = price - 0.5;
-        counterMedium = 0;
-      } else if (counterLarge !== 0) {
-        price = price - 1;
-        counterLarge = 0;
-      }
-
-      const finalTotal = "$" + price.toFixed(2);
-
-      popupTotal.textContent = finalTotal;
-    }
-
-    if (
-      document
-        .querySelector(".popup__button-medium")
-        .classList.contains("menu-selected")
-    ) {
-      document
-        .querySelector(".popup__button-small")
-        .classList.toggle("menu-selected");
-
-      document
-        .querySelector(".popup__button-medium")
-        .classList.toggle("menu-selected");
-    } else if (
-      document
-        .querySelector(".popup__button-large")
-        .classList.contains("menu-selected")
-    ) {
-      document
-        .querySelector(".popup__button-small")
-        .classList.toggle("menu-selected");
-
-      document
-        .querySelector(".popup__button-large")
-        .classList.toggle("menu-selected");
-    }
+    ChangeSelected(button);
   }
 
-  if (
-    button.target.classList.contains("popup__button-medium") ||
-    button.target.classList.contains("button-medium-active") ||
-    button.target.classList.contains("button-medium-size")
-  ) {
-    const popupTotal = document.querySelector(".total__price");
+  if (button.target.closest(".popup__button-medium")) {
+    const button = document.querySelector(".popup__button-medium");
 
-    const total = popupTotal.textContent;
+    increaseValue(0.5);
 
-    let price = parseFloat(total.replace("$", ""));
-    add();
-
-    function add() {
-      counterMedium++;
-
-      const addprice = 0.5;
-
-      if (counterMedium % 2 === 0) {
-        price = price - addprice;
-      } else {
-        price = price + addprice;
-      }
-
-      console.log(counterMedium);
-
-      if (counterSmall !== 0) {
-        price = price - 0;
-        counterSmall = 0;
-      } else if (counterLarge !== 0) {
-        price = price - 1;
-        counterLarge = 0;
-      }
-
-      const finalTotal = "$" + price.toFixed(2);
-
-      popupTotal.textContent = finalTotal;
-    }
-
-    if (
-      document
-        .querySelector(".popup__button-small")
-        .classList.contains("menu-selected")
-    ) {
-      document
-        .querySelector(".popup__button-small")
-        .classList.toggle("menu-selected");
-
-      document
-        .querySelector(".popup__button-medium")
-        .classList.toggle("menu-selected");
-    } else if (
-      document
-        .querySelector(".popup__button-large")
-        .classList.contains("menu-selected")
-    ) {
-      document
-        .querySelector(".popup__button-medium")
-        .classList.toggle("menu-selected");
-
-      document
-        .querySelector(".popup__button-large")
-        .classList.toggle("menu-selected");
-    }
+    ChangeSelected(button);
   }
 
-  if (
-    button.target.classList.contains("popup__button-large") ||
-    button.target.classList.contains("button-large-active") ||
-    button.target.classList.contains("button-large-size")
-  ) {
-    const popupTotal = document.querySelector(".total__price");
+  if (button.target.closest(".popup__button-large")) {
+    const button = document.querySelector(".popup__button-large");
 
-    const total = popupTotal.textContent;
+    increaseValue(1);
 
-    let price = parseFloat(total.replace("$", ""));
-    add();
-
-    function add() {
-      counterLarge++;
-
-      const addprice = 1;
-
-      if (counterLarge % 2 === 0) {
-        price = price - addprice;
-      } else {
-        price = price + addprice;
-      }
-
-      console.log(counterLarge);
-
-      if (counterSmall !== 0) {
-        price = price - 0;
-        counterSmall = 0;
-      } else if (counterMedium !== 0) {
-        price = price - 0.5;
-        counterMedium = 0;
-      }
-
-      const finalTotal = "$" + price.toFixed(2);
-
-      popupTotal.textContent = finalTotal;
-    }
-
-    if (
-      document
-        .querySelector(".popup__button-small")
-        .classList.contains("menu-selected")
-    ) {
-      document
-        .querySelector(".popup__button-small")
-        .classList.toggle("menu-selected");
-
-      document
-        .querySelector(".popup__button-large")
-        .classList.toggle("menu-selected");
-    } else if (
-      document
-        .querySelector(".popup__button-medium")
-        .classList.contains("menu-selected")
-    ) {
-      document
-        .querySelector(".popup__button-medium")
-        .classList.toggle("menu-selected");
-
-      document
-        .querySelector(".popup__button-large")
-        .classList.toggle("menu-selected");
-    }
+    ChangeSelected(button);
   }
 
-  if (
-    button.target.classList.contains("popup__button-first") ||
-    button.target.classList.contains("button-first-active") ||
-    button.target.classList.contains("button-first-size")
-  ) {
-    const popupTotal = document.querySelector(".total__price");
-
-    const total = popupTotal.textContent;
-
-    let price = parseFloat(total.replace("$", ""));
-    add();
-
-    function add() {
-      counterFirst++;
-
-      const addprice = 0.5;
-
-      if (counterFirst % 2 === 0) {
-        price = price - addprice;
-        document
-          .querySelector(".popup__button-first")
-          .classList.toggle("menu-selected");
-      } else {
-        price = price + addprice;
-        document
-          .querySelector(".popup__button-first")
-          .classList.toggle("menu-selected");
-      }
-
-      console.log(counterFirst);
-
-      const finalTotal = "$" + price.toFixed(2);
-
-      popupTotal.textContent = finalTotal;
-    }
+  if (button.target.closest(".popup__button-first")) {
+    const buttonselect = document.querySelector(".popup__button-first");
+    add(buttonselect);
   }
 
-  if (
-    button.target.classList.contains("popup__button-second") ||
-    button.target.classList.contains("button-second-active") ||
-    button.target.classList.contains("button-second-size")
-  ) {
-    const popupTotal = document.querySelector(".total__price");
-
-    const total = popupTotal.textContent;
-
-    let price = parseFloat(total.replace("$", ""));
-    add();
-
-    function add() {
-      counterSecond++;
-
-      const addprice = 0.5;
-
-      if (counterSecond % 2 === 0) {
-        price = price - addprice;
-        document
-          .querySelector(".popup__button-second")
-          .classList.toggle("menu-selected");
-      } else {
-        price = price + addprice;
-        document
-          .querySelector(".popup__button-second")
-          .classList.toggle("menu-selected");
-      }
-
-      console.log(counterSecond);
-
-      const finalTotal = "$" + price.toFixed(2);
-
-      popupTotal.textContent = finalTotal;
-    }
+  if (button.target.closest(".popup__button-second")) {
+    const buttonselect = document.querySelector(".popup__button-second");
+    add(buttonselect);
   }
 
-  if (
-    button.target.classList.contains("popup__button-third") ||
-    button.target.classList.contains("button-third-active") ||
-    button.target.classList.contains("button-third-size")
-  ) {
-    const popupTotal = document.querySelector(".total__price");
-
-    const total = popupTotal.textContent;
-
-    let price = parseFloat(total.replace("$", ""));
-    add();
-
-    function add() {
-      counterThird++;
-
-      const addprice = 0.5;
-
-      if (counterThird % 2 === 0) {
-        price = price - addprice;
-        document
-          .querySelector(".popup__button-third")
-          .classList.toggle("menu-selected");
-      } else {
-        price = price + addprice;
-        document
-          .querySelector(".popup__button-third")
-          .classList.toggle("menu-selected");
-      }
-
-      console.log(counterThird);
-
-      const finalTotal = "$" + price.toFixed(2);
-
-      popupTotal.textContent = finalTotal;
-    }
+  if (button.target.closest(".popup__button-third")) {
+    const buttonselect = document.querySelector(".popup__button-third");
+    add(buttonselect);
   }
 });
+
+function ChangeSelected(selected) {
+  const buttonSize = document.querySelector(".popup__button-size");
+  if (buttonSize) {
+    const selectedButton = buttonSize.querySelector(".menu-selected");
+
+    if (selectedButton) {
+      selectedButton.classList.toggle("menu-selected");
+      selected.classList.toggle("menu-selected");
+    }
+  }
+}
+
+function add(button) {
+  const popupTotal = document.querySelector(".total__price");
+  const total = popupTotal.textContent;
+  let price = parseFloat(total.replace("$", ""));
+
+  const addprice = 0.5;
+
+  if (button.classList.contains("menu-selected")) {
+    price = price - addprice;
+    button.classList.toggle("menu-selected");
+  } else {
+    price = price + addprice;
+    button.classList.toggle("menu-selected");
+  }
+
+  const finalTotal = "$" + price.toFixed(2);
+
+  popupTotal.textContent = finalTotal;
+}
+
+function increaseValue(valuePrice) {
+  const popupTotal = document.querySelector(".total__price");
+
+  const total = popupTotal.textContent;
+
+  let price = parseFloat(total.replace("$", ""));
+
+  const container = document.querySelector(".popup__button-size");
+
+  const selectSize = container.querySelector(".menu-selected");
+
+  price += valuePrice;
+
+  if (selectSize.classList[0] === "popup__button-small") {
+    price = price - 0;
+  } else if (selectSize.classList[0] === "popup__button-medium") {
+    price = price - 0.5;
+  } else if (selectSize.classList[0] === "popup__button-large") {
+    price = price - 1;
+  }
+
+  const finalTotal = "$" + price.toFixed(2);
+
+  popupTotal.textContent = finalTotal;
+}
+
+function resetPopupState() {
+  const buttonSize = document.querySelector(".popup__button-size");
+  const buttonSizeChildren = buttonSize.children;
+
+  for (let i = 0; i < buttonSizeChildren.length; i++) {
+    buttonSizeChildren[i].classList.remove("menu-selected");
+  }
+
+  const primeSize = document.querySelector(".popup__button-small");
+  primeSize.classList.add("menu-selected");
+
+  const activeButton = document.querySelector(".popup__button-additives");
+  const activeButtonChildren = activeButton.children;
+
+  for (let i = 0; i < activeButtonChildren.length; i++) {
+    activeButtonChildren[i].classList.remove("menu-selected");
+  }
+
+  const popupTotal = document.querySelector(".total__price");
+  const initialPrice = arrProduct[currentPopupIndex].price;
+  popupTotal.textContent = "$" + initialPrice;
+}

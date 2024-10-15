@@ -140,7 +140,7 @@
   height: 40px;
 }
 
-.burger-link {
+.header__burger-link {
   font-size: 32px;
   color: #403F3D;
   font-family: "Inter", sans-serif;
@@ -211,7 +211,7 @@
 
 .about {
   height: 644px;
-  background-image: url(/coffee-house/assests/video/videoCoffee.gif);
+  background-image: url(/coffee-house/assests/video/video-coffee.gif);
   background-size: cover;
   border-radius: 40px;
   margin: 0px 40px;

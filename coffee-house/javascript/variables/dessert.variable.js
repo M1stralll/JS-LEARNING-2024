@@ -1,6 +1,6 @@
 export const arrDessert = [
   {
-    img: "/coffee-house/menu/imageMenu/dessert/dessert-1.png",
+    img: "/coffee-house/menu/image/dessert/dessert-1.png",
     name: "Marble cheesecake",
     description: "Philadelphia cheese with lemon zest on a light sponge cake and red currant jam",
     price: "3.50",
@@ -36,7 +36,7 @@ export const arrDessert = [
   },
 
   {
-    img: "/coffee-house/menu/imageMenu/dessert/dessert-2.png",
+    img: "/coffee-house/menu/image/dessert/dessert-2.png",
     name: "Red velvet",
     description: "Layer cake with cream cheese frosting",
     price: "4.00",
@@ -72,7 +72,7 @@ export const arrDessert = [
   },
 
   {
-    img: "/coffee-house/menu/imageMenu/dessert/dessert-3.png",
+    img: "/coffee-house/menu/image/dessert/dessert-3.png",
     name: "Cheesecakes",
     description: "Soft cottage cheese pancakes with sour cream and fresh berries and sprinkled with powdered sugar",
     price: "4.50",
@@ -108,7 +108,7 @@ export const arrDessert = [
   },
 
   {
-    img: "/coffee-house/menu/imageMenu/dessert/dessert-4.png",
+    img: "/coffee-house/menu/image/dessert/dessert-4.png",
     name: "Creme brulee",
     description: "Delicate creamy dessert in a caramel basket with wild berries",
     price: "4.00",
@@ -144,7 +144,7 @@ export const arrDessert = [
   },
 
   {
-    img: "/coffee-house/menu/imageMenu/dessert/dessert-5.png",
+    img: "/coffee-house/menu/image/dessert/dessert-5.png",
     name: "Pancakes",
     description: "Tender pancakes with strawberry jam and fresh strawberries",
     price: "4.50",
@@ -180,7 +180,7 @@ export const arrDessert = [
   },
 
   {
-    img: "/coffee-house/menu/imageMenu/dessert/dessert-6.png",
+    img: "/coffee-house/menu/image/dessert/dessert-6.png",
     name: "Honey cake",
     description: "Classic honey cake with delicate custard",
     price: "4.50",
@@ -216,7 +216,7 @@ export const arrDessert = [
   },
 
   {
-    img: "/coffee-house/menu/imageMenu/dessert/dessert-7.png",
+    img: "/coffee-house/menu/image/dessert/dessert-7.png",
     name: "Chocolate cake",
     description: "Cake with hot chocolate filling and nuts with dried apricots",
     price: "5.50",
@@ -252,7 +252,7 @@ export const arrDessert = [
   },
 
   {
-    img: "/coffee-house/menu/imageMenu/dessert/dessert-8.png",
+    img: "/coffee-house/menu/image/dessert/dessert-8.png",
     name: "Black forest",
     description: "A combination of thin sponge cake with cherry jam and light chocolate mousse",
     price: "6.50",
