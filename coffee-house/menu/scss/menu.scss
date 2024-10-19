@@ -264,7 +264,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    display: none;
 
 }
 
@@ -315,7 +314,7 @@
     margin-top: 20px;
 }
 
-.button-small-active {
+.button-active {
     width: 30px;
     height: 30px;
     background-color: #C1B6AD;
@@ -329,13 +328,13 @@
     font-family: "Inter", sans-serif;
 }
 
-.button-small-size {
+.button-size {
     font-size: 16px;
     font-family: "Inter", sans-serif;
 
 }
 
-.popup__button-small {
+.popup__button {
     width: 108px;
     height: 46px;
     border-radius: 100px;
@@ -355,90 +354,6 @@
         border: 1px solid #665F55;
         color: #C1B6AD;
     }
-
-}
-
-.popup__button-medium {
-    width: 108px;
-    height: 46px;
-    border-radius: 100px;
-    background-color: #E1D4C9;
-    border: 1px solid #C1B6AD;
-    display: flex;
-    justify-content: start;
-    padding-left: 5px;
-    align-items: center;
-    gap: 8px;
-    color: #403F3D;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #665F55;
-        border: 1px solid #665F55;
-        color: #C1B6AD;
-    }
-
-}
-
-.button-medium-active {
-    width: 30px;
-    height: 30px;
-    background-color: #C1B6AD;
-    border: 1px solid #C1B6AD;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    color: #403F3D;
-    font-family: "Inter", sans-serif;
-}
-
-.button-medium-size {
-    font-size: 16px;
-    font-family: "Inter", sans-serif;
-
-}
-
-.popup__button-large {
-    width: 108px;
-    height: 46px;
-    border-radius: 100px;
-    background-color: #E1D4C9;
-    border: 1px solid #C1B6AD;
-    display: flex;
-    justify-content: start;
-    padding-left: 5px;
-    align-items: center;
-    gap: 8px;
-    color: #403F3D;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #665F55;
-        border: 1px solid #665F55;
-        color: #C1B6AD;
-    }
-
-}
-
-.button-large-active {
-    width: 30px;
-    height: 30px;
-    background-color: #C1B6AD;
-    border: 1px solid #C1B6AD;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    color: #403F3D;
-    font-family: "Inter", sans-serif;
-}
-
-.button-large-size {
-    font-size: 16px;
-    font-family: "Inter", sans-serif;
 
 }
 
@@ -449,7 +364,7 @@
     margin-top: 20px;
 }
 
-.button-first-active {
+.button-active {
     width: 30px;
     height: 30px;
     background-color: #C1B6AD;
@@ -463,13 +378,13 @@
     font-family: "Inter", sans-serif;
 }
 
-.button-first-additives {
+.button-additives {
     font-size: 16px;
     font-family: "Inter", sans-serif;
 
 }
 
-.popup__button-first {
+.popup__button {
     width: 108px;
     height: 46px;
     border-radius: 100px;
@@ -490,93 +405,6 @@
     }
 
 }
-
-.popup__button-second {
-    width: 130px;
-    height: 46px;
-    border-radius: 100px;
-    background-color: #E1D4C9;
-    border: 1px solid #C1B6AD;
-    display: flex;
-    justify-content: start;
-    padding-left: 5px;
-    align-items: center;
-    color: #403F3D;
-    cursor: pointer;
-    gap: 6px;
-
-    &:hover {
-        background-color: #665F55;
-        border: 1px solid #665F55;
-        color: #C1B6AD;
-    }
-}
-
-.button-second-active {
-    width: 30px;
-    height: 30px;
-    background-color: #C1B6AD;
-    border: 1px solid #C1B6AD;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    color: #403F3D;
-    font-family: "Inter", sans-serif;
-}
-
-.button-second-additives {
-    font-size: 16px;
-    font-family: "Inter", sans-serif;
-
-}
-
-.button-third-additives {
-    font-size: 16px;
-    font-family: "Inter", sans-serif;
-}
-
-.popup__button-third {
-    width: 108px;
-    height: 46px;
-    border-radius: 100px;
-    background-color: #E1D4C9;
-    border: 1px solid #C1B6AD;
-    display: flex;
-    justify-content: start;
-    padding-left: 5px;
-    align-items: center;
-    gap: 8px;
-    color: #403F3D;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #665F55;
-        border: 1px solid #665F55;
-        color: #C1B6AD;
-    }
-
-    @include tablet {
-        width: 95px;
-    }
-
-}
-
-.button-third-active {
-    width: 30px;
-    height: 30px;
-    background-color: #C1B6AD;
-    border: 1px solid #C1B6AD;
-    border-radius: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    color: #403F3D;
-    font-family: "Inter", sans-serif;
-}
-
 
 
 .popup__total-title {
@@ -606,7 +434,7 @@
     }
 }
 
-.info_description {
+.info__description {
     max-width: 440px;
     font-size: 10px;
     color: #403F3D;

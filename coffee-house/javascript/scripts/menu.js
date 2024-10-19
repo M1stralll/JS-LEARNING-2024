@@ -7,39 +7,19 @@ const categoryTea = document.querySelector(".menu__tea");
 const categoryDessert = document.querySelector(".menu__dessert");
 let currentCategory = "coffee";
 const container = document.querySelector(".menu__products");
-container.innerHTML = "";
 let cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
 const more = document.querySelector(".menu__more");
 
 buttonSelected("coffee");
 
 for (let i = 0; i < arrCoffee.length; i++) {
-  const card = document.createElement("div");
-  card.className = `menu-card`;
-  card.innerHTML = `
-        <img class="menu-card-img" src="${arrCoffee[i].img}" alt="menuCoffee">
-
-                    <h2 class="menu-item">
-                        ${arrCoffee[i].name}
-                    </h2>
-
-                    <h3 class="menu-description">
-                        ${arrCoffee[i].description}
-                    </h3>
-
-                    <p class="menu-price">
-                        $${arrCoffee[i].price}
-                    </p>
-
-        `;
-
-  container.appendChild(card);
+  container.appendChild(createDishCard(arrCoffee[i]));
 }
 
 categoryCoffee.addEventListener("click", () => generateCoffee(currentCategory));
 categoryTea.addEventListener("click", () => generateTea(currentCategory));
 categoryDessert.addEventListener("click", () =>
-  generateDessert(currentCategory),
+  generateDessert(currentCategory)
 );
 
 more.addEventListener("click", () => moreProduct());
@@ -49,35 +29,14 @@ function generateTea(category) {
     return;
   }
 
-  container.innerHTML = "";
+  removeDishCard();
 
   buttonSelected("tea");
 
   currentCategory = `tea`;
 
-  const innerElements = container.querySelectorAll("*");
-
   for (let i = 0; i < arrTea.length; i++) {
-    const card = document.createElement("div");
-    card.className = `menu-card`;
-    card.innerHTML = `
-            <img class="menu-card-img" src="${arrTea[i].img}" alt="menuCoffee">
-    
-                        <h2 class="menu-item">
-                            ${arrTea[i].name}
-                        </h2>
-    
-                        <h3 class="menu-description">
-                            ${arrTea[i].description}
-                        </h3>
-    
-                        <p class="menu-price">
-                            $${arrTea[i].price}
-                        </p>
-    
-            `;
-
-    container.appendChild(card);
+    container.appendChild(createDishCard(arrTea[i]));
   }
 
   more.style.display = "none";
@@ -96,35 +55,14 @@ function generateDessert(category) {
     more.style.display = "none";
   }
 
-  container.innerHTML = "";
+  removeDishCard();
 
   buttonSelected("dessert");
 
   currentCategory = `dessert`;
 
-  const innerElements = container.querySelectorAll("*");
-
   for (let i = 0; i < arrDessert.length; i++) {
-    const card = document.createElement("div");
-    card.className = `menu-card`;
-    card.innerHTML = `
-            <img class="menu-card-img" src="${arrDessert[i].img}" alt="menuCoffee">
-    
-                        <h2 class="menu-item">
-                            ${arrDessert[i].name}
-                        </h2>
-    
-                        <h3 class="menu-description">
-                            ${arrDessert[i].description}
-                        </h3>
-    
-                        <p class="menu-price">
-                            $${arrDessert[i].price}
-                        </p>
-    
-            `;
-
-    container.appendChild(card);
+    container.appendChild(createDishCard(arrDessert[i]));
   }
 
   cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
@@ -145,35 +83,14 @@ function generateCoffee(category) {
     more.style.display = "none";
   }
 
-  container.innerHTML = "";
+  removeDishCard();
 
   buttonSelected("coffee");
 
   currentCategory = `coffee`;
 
-  const innerElements = container.querySelectorAll("*");
-
   for (let i = 0; i < arrCoffee.length; i++) {
-    const card = document.createElement("div");
-    card.className = `menu-card`;
-    card.innerHTML = `
-            <img class="menu-card-img" src="${arrCoffee[i].img}" alt="menuCoffee">
-    
-                        <h2 class="menu-item">
-                            ${arrCoffee[i].name}
-                        </h2>
-    
-                        <h3 class="menu-description">
-                            ${arrCoffee[i].description}
-                        </h3>
-    
-                        <p class="menu-price">
-                            $${arrCoffee[i].price}
-                        </p>
-    
-            `;
-
-    container.appendChild(card);
+    container.appendChild(createDishCard(arrCoffee[i]));
   }
 
   cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
@@ -192,7 +109,9 @@ function buttonSelected(product) {
   const categories = ["coffee", "tea", "dessert"];
 
   categories.forEach((category) => {
-    document.querySelector(`.menu__${category}`).classList.remove("menu-selected");
+    document
+      .querySelector(`.menu__${category}`)
+      .classList.remove("menu-selected");
     document
       .querySelector(`.menu__${category}-active`)
       .classList.remove("menu-active-selected");
@@ -207,4 +126,37 @@ function buttonSelected(product) {
   document
     .querySelector(`.menu__${product}-categories`)
     .classList.toggle("menu-categories-selected");
+}
+
+function createDishCard(item) {
+  const card = document.createElement("div");
+  card.className = "menu-card";
+
+  const cardImg = document.createElement("img");
+  cardImg.setAttribute("src", item.img);
+  cardImg.setAttribute("alt", "Product");
+  cardImg.classList.add("menu-card-img");
+
+  const cardName = document.createElement("h2");
+  cardName.classList.add("menu-item");
+  cardName.textContent = item.name;
+
+  const cardDescription = document.createElement("h3");
+  cardDescription.classList.add("menu-description");
+  cardDescription.textContent = item.description;
+
+  const cardPrice = document.createElement("p");
+  cardPrice.classList.add("menu-price");
+  cardPrice.textContent = `$${item.price}`;
+
+  card.appendChild(cardImg);
+  card.appendChild(cardName);
+  card.appendChild(cardDescription);
+  card.appendChild(cardPrice);
+
+  return card;
+}
+
+function removeDishCard() {
+  container.replaceChildren();
 }
