@@ -45,14 +45,14 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  color: #403f3d;
 }
 .menu__coffee:hover {
   background-color: #665f55;
   border: 1px solid #665f55;
-}
-.menu__coffee:hover h3 {
   color: #e1d4c9;
 }
+
 
 .menu__tea {
   width: 90px;
@@ -71,13 +71,13 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  color: #403f3d;
 }
 .menu__tea:hover {
   background-color: #665f55;
   border: 1px solid #665f55;
-}
-.menu__tea:hover h3 {
   color: #e1d4c9;
+
 }
 
 .menu__dessert {
@@ -97,30 +97,26 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  color: #403f3d;
 }
 .menu__dessert:hover {
   background-color: #665f55;
   border: 1px solid #665f55;
-}
-.menu__dessert:hover h3 {
   color: #e1d4c9;
 }
 
 .menu__coffee-categories {
   font-size: 16px;
-  color: #403f3d;
   font-family: "Inter", sans-serif;
 }
 
 .menu__tea-categories {
   font-size: 16px;
-  color: #403f3d;
   font-family: "Inter", sans-serif;
 }
 
 .menu__dessert-categories {
   font-size: 16px;
-  color: #403f3d;
   font-family: "Inter", sans-serif;
 }
 
@@ -305,6 +301,10 @@
   }
 }
 
+.menu_more-display {
+  display: none;
+}
+
 .menu__popup {
   position: fixed;
   left: 0;
@@ -325,6 +325,10 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+.overflow {
+  overflow: hidden;
 }
 
 .popup__block {

@@ -6,6 +6,10 @@
   height: 60px;
 }
 
+.header__logo-display{
+  display: none;
+}
+
 .header__pages {
   font-size: 16px;
   font-family: "Inter", sans-serif;
@@ -69,6 +73,8 @@
   background-color: #E1D4C9;
   display: none;
 }
+
+
 @media (max-width: 767px) {
   .header__burger {
     width: 44px;
@@ -178,6 +184,11 @@
   display: flex;
   -webkit-animation: 1s page ease;
           animation: 1s page ease;
+}
+
+
+.header__burger-display {
+  display: none;
 }
 
 @-webkit-keyframes page {
@@ -1038,4 +1049,8 @@ ul {
 
 body {
   background-color: #E1D4C9;
+}
+
+.burger-visuble {
+  display: none;
 }

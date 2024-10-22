@@ -1,32 +1,8 @@
 import { arrProduct } from "../variables/product.variable.js";
 
-let currentPopupIndex;
 let sizeWindow = window.matchMedia("(max-width: 767px)");
 const container = document.querySelector(".popup");
 const popupCard = document.createElement("div");
-
-document
-  .querySelector(".menu__products")
-  .addEventListener("click", function (event) {
-    createPopupForProduct(event.target.closest(".menu-card"));
-  });
-
-function createPopupForProduct(menuCard) {
-  const productCardElement = menuCard.closest("div");
-
-  const menuItem = productCardElement.querySelector(".menu-item");
-  const productTitle = menuItem.textContent.trim().toLowerCase();
-
-  const productData = arrProduct.find(
-    (product) => product.name.toLowerCase() === productTitle
-  );
-
-  currentPopupIndex = arrProduct.findIndex(
-    (product) => product.name.toLowerCase() === productTitle
-  );
-
-  createPopup(productData);
-}
 
 function removeSelected(buttonContainer) {
   buttonContainer.querySelectorAll("button.menu-selected").forEach((child) => {
@@ -74,7 +50,7 @@ function increaseValue(valuePrice, buttonContainer) {
   popupTotal.textContent = finalTotal;
 }
 
-function createButton(text) {
+function createButton(text, size) {
   const button = document.createElement("button");
   button.className = `popup__button `;
 
@@ -83,7 +59,8 @@ function createButton(text) {
   buttonActive.textContent = text;
 
   const buttonSize = document.createElement("span");
-  buttonSize.className = `button-size`;
+  buttonSize.className = "button-size";
+  buttonSize.textContent = size;
 
   button.appendChild(buttonActive);
   button.appendChild(buttonSize);
@@ -91,7 +68,7 @@ function createButton(text) {
   return button;
 }
 
-function createPopup(productData) {
+export function createPopup(productData) {
   const popupCard = document.createElement("div");
   popupCard.className = "menu__popup";
 
@@ -124,16 +101,9 @@ function createPopup(productData) {
   const popupButtonSize = document.createElement("div");
   popupButtonSize.className = "popup__button-size";
 
-  const buttonSmall = createButton("S");
-  const buttonMedium = createButton("M");
-  const buttonLarge = createButton("L");
-
-  buttonSmall.querySelector(".button-size").textContent =
-    productData.sizes.s.size;
-  buttonMedium.querySelector(".button-size").textContent =
-    productData.sizes.m.size;
-  buttonLarge.querySelector(".button-size").textContent =
-    productData.sizes.l.size;
+  const buttonLarge = createButton("L", productData.sizes.s.size);
+  const buttonSmall = createButton("S", productData.sizes.s.size);
+  const buttonMedium = createButton("M", productData.sizes.s.size);
 
   buttonSmall.addEventListener("click", () => {
     increaseValue(Number(productData.sizes.s.addPrice), popupButtonSize);
@@ -170,16 +140,9 @@ function createPopup(productData) {
   const popupButtonAdditives = document.createElement("div");
   popupButtonAdditives.className = "popup__button-additives";
 
-  const buttonFirst = createButton("1");
-  const buttonSecond = createButton("2");
-  const buttonThird = createButton("3");
-
-  buttonFirst.querySelector(".button-size").textContent =
-    productData.additives[0].name;
-  buttonSecond.querySelector(".button-size").textContent =
-    productData.additives[1].name;
-  buttonThird.querySelector(".button-size").textContent =
-    productData.additives[2].name;
+  const buttonFirst = createButton("1", productData.additives[0].name);
+  const buttonSecond = createButton("2", productData.additives[1].name);
+  const buttonThird = createButton("3", productData.additives[2].name);
 
   buttonFirst.addEventListener("click", () => {
     buttonFirst.classList.toggle("menu-selected");
@@ -255,26 +218,18 @@ function createPopup(productData) {
 
   container.appendChild(popupCard);
 
-  document.body.style.overflow = "hidden";
+  document.body.classList.toggle("overflow");
 
   buttonSmall.classList.toggle("menu-selected");
 
-  document.body.style.overflow = "hidden";
-
-  const popup = document.querySelector(".menu__popup");
   const burger = document.querySelector(".header__burger");
   const logo = document.querySelector(".header__logo");
-  if (popup) {
-    popup.style.display = "flex";
-    if (sizeWindow.matches !== false) {
-      burger.style.display = "none";
-      logo.style.display = "none";
-    }
+  if (sizeWindow.matches) {
+    burger.classList.toggle("header__burger-display");
+    logo.classList.toggle("header__logo-display");
   }
 
-  document
-    .querySelector(".popup__buttoncancel")
-    .addEventListener("click", () => closePopup());
+  buttonCancel.addEventListener("click", () => closePopup());
 
   document.querySelector(".menu__popup").addEventListener("click", (event) => {
     if (event.target === document.querySelector(".menu__popup")) {
@@ -288,15 +243,11 @@ function closePopup() {
   const burger = document.querySelector(".header__burger");
   const logo = document.querySelector(".header__logo");
 
-  if (popup) {
-    container.replaceChildren();
-    document.body.style.overflow = "auto";
+  popup.remove();
+  document.body.classList.toggle("overflow");
 
-    if (sizeWindow.matches !== false) {
-      burger.style.display = "flex";
-      logo.style.display = "flex";
-    }
+  if (sizeWindow.matches) {
+    burger.classList.toggle("header__burger-display");
+    logo.classList.toggle("header__logo-display");
   }
-
-  currentPopupIndex = null;
 }

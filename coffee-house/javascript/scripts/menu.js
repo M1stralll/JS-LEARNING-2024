@@ -1,6 +1,7 @@
 import { arrCoffee } from "../variables/coffee.variable.js";
 import { arrTea } from "../variables/tea.variable.js";
 import { arrDessert } from "../variables/dessert.variable.js";
+import { createPopup } from './popup.js';
 
 const categoryCoffee = document.querySelector(".menu__coffee");
 const categoryTea = document.querySelector(".menu__tea");
@@ -10,16 +11,20 @@ const container = document.querySelector(".menu__products");
 let cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
 const more = document.querySelector(".menu__more");
 
-buttonSelected("coffee");
+generateCoffee();
 
 for (let i = 0; i < arrCoffee.length; i++) {
-  container.appendChild(createDishCard(arrCoffee[i]));
+  const card = createDishCard(arrCoffee[i]);
+    container.appendChild(card);
+    card.addEventListener("click", () => {
+      createPopup(arrCoffee[i]);
+    })
 }
 
-categoryCoffee.addEventListener("click", () => generateCoffee(currentCategory));
-categoryTea.addEventListener("click", () => generateTea(currentCategory));
+categoryCoffee.addEventListener("click", () => generateCoffee());
+categoryTea.addEventListener("click", () => generateTea());
 categoryDessert.addEventListener("click", () =>
-  generateDessert(currentCategory)
+  generateDessert()
 );
 
 more.addEventListener("click", () => moreProduct());
@@ -31,15 +36,19 @@ function generateTea(category) {
 
   removeDishCard();
 
-  buttonSelected("tea");
+  selectCategoryButton("tea");
 
   currentCategory = `tea`;
 
   for (let i = 0; i < arrTea.length; i++) {
-    container.appendChild(createDishCard(arrTea[i]));
+    const card = createDishCard(arrTea[i]);
+    container.appendChild(card);
+    card.addEventListener("click", () => {
+      createPopup(arrTea[i]);
+    })
   }
 
-  more.style.display = "none";
+  more.classList.add("menu_more-display")
 }
 
 function generateDessert(category) {
@@ -49,20 +58,24 @@ function generateDessert(category) {
 
   let sizeWindow = window.matchMedia("(max-width: 1439px)");
 
-  if (sizeWindow.matches == true) {
-    more.style.display = "flex";
+  if (sizeWindow.matches) {
+    more.classList.remove("menu_more-display");
   } else {
-    more.style.display = "none";
+    more.classList.add("menu_more-display")
   }
 
   removeDishCard();
 
-  buttonSelected("dessert");
+  selectCategoryButton("dessert");
 
   currentCategory = `dessert`;
 
   for (let i = 0; i < arrDessert.length; i++) {
-    container.appendChild(createDishCard(arrDessert[i]));
+    const card = createDishCard(arrDessert[i]);
+    container.appendChild(card);
+    card.addEventListener("click", () => {
+      createPopup(arrDessert[i]);
+    })
   }
 
   cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
@@ -70,27 +83,28 @@ function generateDessert(category) {
   more.addEventListener("click", () => moreProduct());
 }
 
-function generateCoffee(category) {
-  if (category === "coffee") {
-    return;
-  }
+function generateCoffee() {
 
   let sizeWindow = window.matchMedia("(max-width: 1439px)");
 
   if (sizeWindow.matches == true) {
-    more.style.display = "flex";
+    more.classList.remove("menu_more-display")
   } else {
-    more.style.display = "none";
+    more.classList.add("menu_more-display")
   }
 
   removeDishCard();
 
-  buttonSelected("coffee");
+  selectCategoryButton("coffee");
 
   currentCategory = `coffee`;
 
   for (let i = 0; i < arrCoffee.length; i++) {
-    container.appendChild(createDishCard(arrCoffee[i]));
+    const card = createDishCard(arrCoffee[i]);
+    container.appendChild(card);
+    card.addEventListener("click", () => {
+      createPopup(arrCoffee[i]);
+    })
   }
 
   cards = document.querySelectorAll(".menu-card:nth-child(n+5)");
@@ -102,30 +116,17 @@ function moreProduct() {
   cards.forEach((card) => {
     card.style.display = "flex";
   });
-  more.style.display = "none";
+  more.classList.add("menu_more-display")
 }
 
-function buttonSelected(product) {
-  const categories = ["coffee", "tea", "dessert"];
+function selectCategoryButton(product) {
 
-  categories.forEach((category) => {
-    document
-      .querySelector(`.menu__${category}`)
-      .classList.remove("menu-selected");
-    document
-      .querySelector(`.menu__${category}-active`)
-      .classList.remove("menu-active-selected");
-    document
-      .querySelector(`.menu__${category}-categories`)
-      .classList.remove("menu-categories-selected");
+  document.querySelector('.menu__buttons').querySelectorAll("button.menu-selected").forEach((child) => {
+    child.classList.remove("menu-selected");
   });
-  document.querySelector(`.menu__${product}`).classList.toggle("menu-selected");
-  document
-    .querySelector(`.menu__${product}-active`)
-    .classList.toggle("menu-active-selected");
-  document
-    .querySelector(`.menu__${product}-categories`)
-    .classList.toggle("menu-categories-selected");
+
+
+  document.querySelector(`.menu__${product}`).classList.add("menu-selected");
 }
 
 function createDishCard(item) {
@@ -156,6 +157,8 @@ function createDishCard(item) {
 
   return card;
 }
+
+
 
 function removeDishCard() {
   container.replaceChildren();
