@@ -11,7 +11,7 @@ function toggleMobileMenu() {
     if (getComputedStyle(burger).display == "none") {
         document.querySelector(".line").classList.toggle("line-bottom");
         document.querySelector(".line:nth-child(2)").classList.toggle("line-top");
-        burger.style.display = "flex";
+        burger.classList.remove("burger-visuble");
         burger.classList.remove("header__burger-menu-noactive");
         document
             .querySelector(".header__burger-menu")
@@ -29,7 +29,7 @@ function toggleMobileMenu() {
             .classList.toggle("header__burger-menu-noactive");
 
         setTimeout(() => {
-            burger.style.display = "none";
+            burger.classList.add("burger-visuble");
         }, 900);
     }
 }

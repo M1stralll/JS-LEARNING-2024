@@ -6,69 +6,43 @@ let translate = 0;
 let startX = 0;
 let countX = 0;
 let isSwiping = false;
-container.innerHTML = "";
-const coffeCardFirst = document.createElement("div");
-const coffeCardSecond = document.createElement("div");
 
 selectCard();
+const cardFirst = createCard(arrFavoriteCoffe[0]);
+const cardSecond = createCard(arrFavoriteCoffe[1]);
+const cardThird = createCard(arrFavoriteCoffe[2]);
 
-coffeCardFirst.className = `favorite-coffee`;
-coffeCardFirst.innerHTML = `
-            <img class="favorite-picture" src="${arrFavoriteCoffe[0].img}" alt="favoriteCoffe">
+container.appendChild(cardFirst);
+container.appendChild(cardSecond);
+container.appendChild(cardThird);
 
-                        <h3 class="favorite-name">
-                            ${arrFavoriteCoffe[0].name}
-                        </h3>
+function createCard(card) {
+  const coffee = document.createElement("div");
+  coffee.className = "favorite-coffee";
+  const cardImg = document.createElement("img");
+  cardImg.className = "favorite-picture";
+  cardImg.setAttribute("alt", "card");
+  cardImg.src = card.img;
 
-                        <p class="favorite-description">
-                            ${arrFavoriteCoffe[0].description}
-                        </p>
+  const cardName = document.createElement("h3");
+  cardName.className = "favorite-name";
+  cardName.textContent = card.name;
 
-                        <h3 class="favorite-price">
-                            ${arrFavoriteCoffe[0].price}
-                        </h3>
-        `;
+  const cardDescription = document.createElement("p");
+  cardDescription.className = "favorite-description";
+  cardDescription.textContent = card.description;
 
-container.appendChild(coffeCardFirst);
+  const cardPrice = document.createElement("h3");
+  cardPrice.className = "favorite-price";
+  cardPrice.textContent = card.price;
 
-coffeCardSecond.className = `favorite-coffee`;
-coffeCardSecond.innerHTML = `
-            <img class="favorite-picture" src="${arrFavoriteCoffe[1].img}" alt="favoriteCoffe">
+  coffee.appendChild(cardImg);
+  coffee.appendChild(cardName);
+  coffee.appendChild(cardDescription);
+  coffee.appendChild(cardPrice);
 
-                        <h3 class="favorite-name">
-                            ${arrFavoriteCoffe[1].name}
-                        </h3>
-
-                        <p class="favorite-description">
-                            ${arrFavoriteCoffe[1].description}
-                        </p>
-
-                        <h3 class="favorite-price">
-                            ${arrFavoriteCoffe[1].price}
-                        </h3>
-        `;
-
-container.appendChild(coffeCardSecond);
-
-const coffeCardThird = document.createElement("div");
-coffeCardThird.className = `favorite-coffee`;
-coffeCardThird.innerHTML = `
-            <img class="favorite-picture" src="${arrFavoriteCoffe[2].img}" alt="favoriteCoffe">
-
-                        <h3 class="favorite-name">
-                            ${arrFavoriteCoffe[2].name}
-                        </h3>
-
-                        <p class="favorite-description">
-                            ${arrFavoriteCoffe[2].description}
-                        </p>
-
-                        <h3 class="favorite-price">
-                            ${arrFavoriteCoffe[2].price}
-                        </h3>
-        `;
-
-container.appendChild(coffeCardThird);
+  return coffee;
+}
 
 document.querySelector(".favorite__arrow-right").onclick = function () {
   if (count < 2) {
@@ -141,36 +115,18 @@ document.addEventListener("click", function (event) {
 });
 
 function selectCard() {
+  const controls = document.querySelector(".favorite__controls").children;
+
+  for (let i = 0; i < controls.length; i++) {
+    controls[i].classList.remove("controls-selected");
+  }
+
   if (count === 0) {
-    document
-      .querySelector(".controls-first")
-      .classList.add("controls-selected");
-    document
-      .querySelector(".controls-second")
-      .classList.remove("controls-selected");
-    document
-      .querySelector(".controls-third")
-      .classList.remove("controls-selected");
+    controls[0].classList.add("controls-selected");
   } else if (count === 1) {
-    document
-      .querySelector(".controls-first")
-      .classList.remove("controls-selected");
-    document
-      .querySelector(".controls-second")
-      .classList.add("controls-selected");
-    document
-      .querySelector(".controls-third")
-      .classList.remove("controls-selected");
-  } else {
-    document
-      .querySelector(".controls-first")
-      .classList.remove("controls-selected");
-    document
-      .querySelector(".controls-second")
-      .classList.remove("controls-selected");
-    document
-      .querySelector(".controls-third")
-      .classList.add("controls-selected");
+    controls[1].classList.add("controls-selected");
+  } else if (count === 2) {
+    controls[2].classList.add("controls-selected");
   }
 }
 
