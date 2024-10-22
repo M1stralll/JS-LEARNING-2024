@@ -1,0 +1,142 @@
+.footer {
+    background-color: #665F55;
+    border-radius: 40px;
+    margin: 0px 40px;
+    display: flex;
+    margin-bottom: 40px;
+    margin-top: 100px;
+
+
+    @include tablet {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    @include phone {
+        margin: 0px 16px;
+        margin-bottom: 40px;
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.footer__title {
+    font-size: 60px;
+    font-family: "Inter", sans-serif;
+    color: #E1D4C9;
+    max-width: 500px;
+
+    @include phone {
+        margin-left: -56px;
+        font-size: 28px;
+        max-width: 316px;
+    }
+}
+
+.footer__title-word {
+    color: #B0907A;
+    font-style: italic;
+}
+
+.footer__social-button {
+    background-color: #665F55;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    border: 1px solid hsl(27, 14%, 72%);
+    transition: background-color 0.3s linear;
+    cursor: pointer;
+    stroke: #E1D4C9;
+
+    &:hover {
+        background-color: #E1D4C9;
+        border: 1px solid #E1D4C9;
+        color: #C1B6AD;
+        stroke: #403F3D;
+    }
+}
+
+.footer__social {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 100px;
+
+    @include phone {
+        margin-left: -56px;
+        margin-bottom: 40px;
+    }
+}
+
+.connection__text {
+    font-size: 16px;
+    font-family: "Inter", sans-serif;
+    color: #E1D4C9;
+
+}
+
+.connection {
+    display: flex;
+    gap: 8px;
+    border-bottom: 2px solid #665F55;
+    cursor: pointer;
+
+    &:hover {
+        margin: auto;
+        margin-left: 0px;
+        border-bottom: 2px solid #E1D4C9;
+
+    }
+}
+
+.connection__title {
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+    color: #E1D4C9;
+
+}
+
+.connection__block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer__connection {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 100px;
+
+    @include tablet {
+        margin-left: -250px;
+    }
+
+    @include phone {
+        margin-left: -140px;
+    }
+}
+
+.footer__block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 100px;
+    margin-left: 100px;
+
+    @include phone {
+        margin-left: 80px;
+        max-width: 316px;
+    }
+}
+
+.footer__contact {
+    margin-top: 130px;
+    margin-left: 100px;
+
+    @include tablet {
+        margin-top: 0px;
+        margin-bottom: 100px;
+    }
+}
