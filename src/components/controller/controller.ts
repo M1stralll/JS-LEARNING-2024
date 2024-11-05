@@ -1,23 +1,24 @@
 import AppLoader from './appLoader';
 
-interface NewsData {
-    source: { name: string };
-    title: string;
-    description: string;
-    urlToImage?: string;
-    url: string;
-    author?: string | null;
-    publishedAt?: string;
-}
 
-interface SourceInfo {
+export interface SourceInfo {
     id: string;
     name: string;
+}
+interface NewsInfo {
+    source: { name: string };
+    title: string;
+    urlToImage: string;
+    author: string | null;
+    publishedAt: string;
+    description: string;
+    url: string;
 }
 
 
 class AppController extends AppLoader {
-    getSources(callback: (data: SourceInfo) => void) {
+    
+    public getSources(callback: (data: SourceInfo[]) => void) {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -27,7 +28,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(e: Event, callback: (data: NewsData) => void) {
+    public getNews(e: Event, callback: (data: NewsInfo[]) => void) {
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 

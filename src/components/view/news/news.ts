@@ -1,20 +1,17 @@
 import './news.css';
 
-interface NewsInfo {
-    urlToImage: string | null;
+export interface NewsInfo {
+    source: { name: string };
+    title: string;
+    urlToImage: string;
     author: string | null;
     publishedAt: string;
-    title: string;
-    source: {
-        name: string;
-    };
     description: string;
-    url: string
-
+    url: string;
 }
 
 class News {
-    draw(data: NewsInfo[]) {
+    public draw(data: NewsInfo[]) {
         const news = data.length >= 10 ? data.filter((_item, idx) => idx < 10) : data;
 
         const fragment = document.createDocumentFragment();
