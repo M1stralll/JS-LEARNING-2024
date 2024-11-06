@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const DotenvWebpackPlugin = require('dotenv-webpack');
+const { devtool } = require('./webpack.dev.config');
 
 const baseConfig = {
     entry: path.resolve(__dirname, './src/index.ts'),
@@ -35,6 +36,7 @@ const baseConfig = {
         }),
         new CleanWebpackPlugin(),
     ],
+    devtool: "inline-source-map",
 };
 
 module.exports = ({ mode }) => {
