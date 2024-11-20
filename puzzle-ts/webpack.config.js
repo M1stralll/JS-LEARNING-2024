@@ -1,6 +1,8 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development', // Устанавливаем режим разработки
   entry: './src/scripts/main.ts', // Ваш основной файл TypeScript
   output: {
     filename: 'bundle.js', // Имя выходного файла
@@ -18,4 +20,10 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html', // Путь к вашему шаблону HTML
+      filename: 'index.html', // Имя выходного HTML файла
+    }),
+  ],
 };
