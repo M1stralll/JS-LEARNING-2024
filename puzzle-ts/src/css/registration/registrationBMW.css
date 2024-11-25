@@ -3,16 +3,16 @@
 }
 
 .main__enter-section-BMW {
-  background-color: rgba(0, 0, 0, 0.8); /* полупрозрачный тёмный фон */
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .main__enter-title-BMW {
   margin-top: 70px;
-  color: #81C4FF;
+  color: #81c4ff;
 }
 
 .main__enter-input-BMW {
-  background-color: #16588E;
+  background-color: #16588e;
   color: white;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .main__enter-button-BMW {
-  background-color: #E7222E;
+  background-color: #e7222e;
   color: rgb(157, 157, 157);
 }
 

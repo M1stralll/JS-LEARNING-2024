@@ -5,10 +5,9 @@
 
 button:focus,
 button:active {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
 }
-
 
 h1,
 h2,
@@ -76,8 +75,8 @@ ul {
   color: black;
 }
 .main__enter-input:hover {
-    background-color: rgb(225, 217, 255);
-  }
+  background-color: rgb(225, 217, 255);
+}
 
 .main__enter-button {
   font-family: "Roboto", sans-serif;
@@ -96,7 +95,7 @@ ul {
 
 .main__enter-button:hover {
   font-family: "Roboto", sans-serif;
-  font-size: 22px;
+  font-size: 21px;
   background-color: rgb(225, 217, 255);
   border: none;
   color: rgb(0, 0, 0);
@@ -114,9 +113,9 @@ ul {
 }
 
 .main__style:hover {
-    color: #0e74c8;
-    font-family: "Roboto", sans-serif;
-    font-size: 14px;
-    border: none;
-    background-color: none;
-  }
+  color: #0e74c8;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  border: none;
+  background-color: none;
+}

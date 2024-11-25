@@ -1,0 +1,88 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.start__img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.start__title {
+  font-size: 42px;
+  color: white;
+  letter-spacing: 4px;
+  transition: all 0.3s ease;
+}
+
+.start__description {
+  margin-top: 30px;
+  font-size: 21px;
+  color: white;
+  text-align: center;
+  max-width: 500px;
+  transition: all 0.3s ease;
+}
+
+.start__title:hover {
+  color: rgb(116, 103, 139);
+}
+
+.start__description:hover {
+  color: rgb(116, 103, 139);
+}
+
+.start__section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  z-index: 5;
+}
+
+.start__button {
+  font-family: "Roboto", sans-serif;
+  margin-top: 40px;
+  width: 230px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: rgb(176, 158, 241);
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  text-align: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.start__button:hover {
+  font-family: "Roboto", sans-serif;
+  color: rgb(0, 0, 0);
+  background-color: rgb(116, 103, 139);
+  font-size: 21px;
+}
