@@ -1,5 +1,8 @@
 node_modules
 dist
 package-lock.json
-tsconfig.json]
+tsconfig.json
 package.json
+data
+imagesGame
+sounds

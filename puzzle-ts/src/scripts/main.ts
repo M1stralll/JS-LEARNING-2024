@@ -1,25 +1,17 @@
 import { StyleChanger } from "./registration/changeStyle";
-import { registrationPage } from "./registration/registrationPage";
-import { startaPage } from "./start/startPage";
+import { RegistrationPage } from "./registration/registrationPage";
+import { StartPage } from "./start/startPage";
+import { GamePage } from "./game/gamePage";
+import { Header } from "./header/header";
 
-const pageBuilder = new registrationPage();
+const pageBuilder = new RegistrationPage();
+const header = new Header();
 
-pageBuilder.addBacroundIMG(
-  "/puzzle-ts/src/assets/images/mountin.jpg",
-  "Background"
-);
+header.renderHeader();
 
-pageBuilder.addText("What is your name?");
+export const regestration:HTMLElement = pageBuilder.renderRegistration();
 
-pageBuilder.addInput();
-
-pageBuilder.addButtonLogin("Let's go");
-
-pageBuilder.addEventListeners();
-
-pageBuilder.addButtonStyle("BMW mode");
-
-pageBuilder.renderRegistration();
+document.querySelector("main")!.appendChild(regestration);
 
 window.onload = () => {
   new StyleChanger();

@@ -1,14 +1,14 @@
-import { startaPage } from "../start/startPage";
+import { StartPage } from "../start/startPage";
 
-export class registrationPage {
+export class RegistrationPage {
   private mainRegestration: HTMLDivElement;
   private mainEnter: HTMLDivElement;
   private mainEnterSection: HTMLDivElement;
-  private changePageStart: startaPage;
+  private changePageStart: StartPage;
   private buttonLogin: HTMLButtonElement | null = null;
 
   constructor() {
-    this.changePageStart = new startaPage();
+    this.changePageStart = new StartPage();
 
     this.mainRegestration = document.createElement("div");
     this.mainRegestration.className = "main";
@@ -21,7 +21,7 @@ export class registrationPage {
     this.mainEnter.append(this.mainEnterSection);
   }
 
-  public addBacroundIMG(srcContent: string, altContent: string): void {
+  public addBackgroundIMG(srcContent: string, altContent: string): void {
     const bacgroundIMG: HTMLImageElement = document.createElement("img");
     bacgroundIMG.className = "main__img";
     bacgroundIMG.src = srcContent;
@@ -38,37 +38,70 @@ export class registrationPage {
   }
 
   public addInput(): void {
-    const inputLogin: HTMLInputElement = document.createElement("input");
-    inputLogin.className = "main__enter-input";
-    inputLogin.placeholder = "Enter your name";
-    inputLogin.type = "text";
-    this.mainEnterSection.append(inputLogin);
+    const inputName: HTMLInputElement = document.createElement("input");
+    const inputSecondName: HTMLInputElement = document.createElement("input");
+
+    inputName.className = "main__enter-input";
+    inputSecondName.className = "main__enter-input";
+
+    inputName.placeholder = "Введите ваше имя";
+    inputSecondName.placeholder = "Введите ваше фамилию";
+
+    inputName.type = "text";
+    inputSecondName.type = "text";
+
+    this.mainEnterSection.append(inputName);
+    this.mainEnterSection.append(inputSecondName);
+
+    const validation = (): void => {
+      const nameValid = inputName.value.match(/^[A-ZА-Я][a-zA-Zа-яА-Я]{1,29}$/);
+      const secondNameValid = inputSecondName.value.match(
+        /^[A-ZА-Я][a-zA-Zа-яА-Я]{1,29}$/
+      );
+
+      if (nameValid && secondNameValid) {
+        this.buttonLogin?.classList.remove("main__enter-button-error");
+        this.buttonLogin?.removeAttribute("disabled");
+      } else {
+        this.buttonLogin?.classList.add("main__enter-button-error");
+        this.buttonLogin?.setAttribute("disabled", "true");
+      }
+    };
+
+    inputName.addEventListener("input", () => {
+      validation();
+    });
+
+    inputSecondName.addEventListener("input", () => {
+      validation();
+    });
   }
 
   public addButtonLogin(textButton: string): void {
     this.buttonLogin = document.createElement("button");
     this.buttonLogin.className = "main__enter-button";
     this.buttonLogin.textContent = textButton;
+    this.buttonLogin?.setAttribute("disabled", "true");
     this.mainEnterSection.append(this.buttonLogin);
   }
 
   public addEventListeners(): void {
+    this.changePageStart.addBackgroundIMG(
+      "/puzzle-ts/src/assets/images/start/startPage.jpg",
+      "Background"
+    );
+
+    this.changePageStart.addTitle("ENGLISH PUZZLE");
+
+    this.changePageStart.addDescription(
+      "Click on words, collect phrases. Words can be drag and drop. Select tooltips in the menu"
+    );
+
+    this.changePageStart.addButton("Start");
+
+    this.changePageStart.addButtonEvent();
     this.buttonLogin!.addEventListener("click", () => {
-      this.changePageStart.addBacroundIMG(
-        "/puzzle-ts/src/assets/images/startPage.jpg",
-        "Background"
-      );
-
-      this.changePageStart.addTitle("ENGLISH PUZZLE");
-
-      this.changePageStart.addDescription(
-        "Click on words, collect phrases. Words can be drag and drop. Select tooltips in the menu"
-      );
-
-      this.changePageStart.addButton("Start");
-
       this.changePageStart.renderStart();
-      console.log("I work");
     });
   }
 
@@ -79,8 +112,24 @@ export class registrationPage {
     this.mainEnterSection.append(buttonStyle);
   }
 
-  public renderRegistration(): void {
+  public renderRegistration() {
+    this.addBackgroundIMG(
+      "/puzzle-ts/src/assets/images/login/mountin.jpg",
+      "Background"
+    );
+    
+    this.addText("What is your name?");
+    
+    this.addInput();
+    
+    this.addButtonLogin("Let's go");
+    
+    this.addEventListeners();
+    
+    this.addButtonStyle("BMW mode");
+
     document.querySelector("main")!.replaceChildren();
     document.querySelector("main")!.appendChild(this.mainRegestration);
+    return this.mainRegestration;
   }
 }
