@@ -19,16 +19,23 @@ export class Header {
   }
 
   private addLinks() {
-    const link: HTMLAnchorElement = document.createElement("a");
-    link.className = "header__link-word";
-    link.textContent = "Login";
-    this.linkSection.append(link);
-    
-    let styleChangedHeader: boolean = false;
+    const linkAuth: HTMLAnchorElement = document.createElement("a");
+    const linkExit: HTMLAnchorElement = document.createElement("a");
+    linkAuth.className = "header__link-word";
+    linkExit.className = "header__link-word";
+    linkAuth.textContent = "Login";
+    linkExit.textContent = "Exit";
+    this.linkSection.append(linkAuth);
+    this.linkSection.append(linkExit);
 
-    link.addEventListener("click", async () => {
+    linkAuth.addEventListener("click", async () => {
       document.querySelector("main")!.replaceChildren();
       document.querySelector("main")!.appendChild(regestration);
+    });
+    
+    linkExit.addEventListener("click", async () => {
+      localStorage.clear();
+      location.reload();
     });
   }
 

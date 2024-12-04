@@ -1,4 +1,5 @@
 import { StartPage } from "../start/startPage";
+import { SavingData } from "../registration/localSavingData";
 
 export class RegistrationPage {
   private mainRegestration: HTMLDivElement;
@@ -6,9 +7,11 @@ export class RegistrationPage {
   private mainEnterSection: HTMLDivElement;
   private changePageStart: StartPage;
   private buttonLogin: HTMLButtonElement | null = null;
+  private savingLogin: SavingData;
 
   constructor() {
     this.changePageStart = new StartPage();
+    this.savingLogin = new SavingData();
 
     this.mainRegestration = document.createElement("div");
     this.mainRegestration.className = "main";
@@ -50,6 +53,13 @@ export class RegistrationPage {
     inputName.type = "text";
     inputSecondName.type = "text";
 
+    if (localStorage.getItem("User")) {
+      const dataEntranceString: string | null = localStorage.getItem("User");
+      const dataEntrance: string[] = dataEntranceString!.split(" ");
+      inputName.value = dataEntrance[0];
+      inputSecondName.value = dataEntrance[1];
+    }
+
     this.mainEnterSection.append(inputName);
     this.mainEnterSection.append(inputSecondName);
 
@@ -60,8 +70,27 @@ export class RegistrationPage {
       );
 
       if (nameValid && secondNameValid) {
-        this.buttonLogin?.classList.remove("main__enter-button-error");
-        this.buttonLogin?.removeAttribute("disabled");
+        const userData: string | null = localStorage.getItem("User");
+        let storedName: string;
+        let storedSecondName: string;
+
+        if (userData !== null) {
+          [storedName, storedSecondName] = userData.split(" ");
+
+          if (
+            inputName.value === storedName &&
+            inputSecondName.value === storedSecondName
+          ) {
+            this.buttonLogin?.classList.remove("main__enter-button-error");
+            this.buttonLogin?.removeAttribute("disabled");
+          } else {
+            this.buttonLogin?.classList.add("main__enter-button-error");
+            this.buttonLogin?.setAttribute("disabled", "true");
+          }
+        } else {
+          this.buttonLogin?.classList.remove("main__enter-button-error");
+          this.buttonLogin?.removeAttribute("disabled");
+        }
       } else {
         this.buttonLogin?.classList.add("main__enter-button-error");
         this.buttonLogin?.setAttribute("disabled", "true");
@@ -81,7 +110,9 @@ export class RegistrationPage {
     this.buttonLogin = document.createElement("button");
     this.buttonLogin.className = "main__enter-button";
     this.buttonLogin.textContent = textButton;
-    this.buttonLogin?.setAttribute("disabled", "true");
+    if(localStorage.getItem("User") == null){
+      this.buttonLogin?.setAttribute("disabled", "true");
+    }
     this.mainEnterSection.append(this.buttonLogin);
   }
 
@@ -101,6 +132,7 @@ export class RegistrationPage {
 
     this.changePageStart.addButtonEvent();
     this.buttonLogin!.addEventListener("click", () => {
+      this.savingLogin.savingData();
       this.changePageStart.renderStart();
     });
   }
@@ -117,15 +149,15 @@ export class RegistrationPage {
       "/puzzle-ts/src/assets/images/login/mountin.jpg",
       "Background"
     );
-    
+
     this.addText("What is your name?");
-    
+
     this.addInput();
-    
+
     this.addButtonLogin("Let's go");
-    
+
     this.addEventListeners();
-    
+
     this.addButtonStyle("BMW mode");
 
     document.querySelector("main")!.replaceChildren();
