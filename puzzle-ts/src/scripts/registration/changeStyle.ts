@@ -14,10 +14,10 @@ export class StyleChanger {
     this.inputElement = document.querySelectorAll(".main__enter-input");
     this.buttonElement = document.querySelector(".main__enter-button");
 
-    this.addEventListeners();
+    this.switchStyle();
   }
 
-  private addEventListeners(): void {
+  private switchStyle(): void {
     if (this.bmwButton) {
       this.bmwButton.addEventListener("click", this.toggleStyles.bind(this));
     }

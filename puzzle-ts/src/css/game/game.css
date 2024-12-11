@@ -4,7 +4,8 @@
   }
   
   button:focus,
-  button:active {
+  button:active,
+  button:hover {
     outline: none;
     box-shadow: none;
   }
@@ -29,4 +30,76 @@
     position: absolute;
     width: 100%;
     height: 100%;
+  }
+
+  .game__support {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .game__support-button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game__support-img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .game__list {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game__aunction {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 120px;
+  }
+
+  .game__list-title {
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-size: 20px;
+  }
+
+  .game__list-select {
+    width: 68px;
+    height: 28px;
+  }
+
+  .game__support-button:hover {
+    background-color: rgb(219, 157, 42);
+    border: none;
+  }
+
+  .game__generation {
+    width: 1085px;
+    height: 350px;
+    background-color: rgb(208, 208, 208);
+  }
+
+  .game__numbering {
+    width: 55px;
+    height: 350px;
+    background-color: rgb(233, 158, 61);
+  }
+
+  .game_gameplay {
+    display: flex;
+    padding-top: 38px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .game__field { 
+    position: relative;
+    z-index: 10;
   }

@@ -128,9 +128,9 @@ export class RegistrationPage {
       "Click on words, collect phrases. Words can be drag and drop. Select tooltips in the menu"
     );
 
-    this.changePageStart.addButton("Start");
+    this.changePageStart.addButtonStart("Start");
 
-    this.changePageStart.addButtonEvent();
+    this.changePageStart.addButtonChangeStyle();
     this.buttonLogin!.addEventListener("click", () => {
       this.savingLogin.savingData();
       this.changePageStart.renderStart();

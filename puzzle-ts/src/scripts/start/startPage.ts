@@ -39,14 +39,16 @@ export class StartPage {
     this.startPageSection.append(startDescription);
   }
 
-  public addButton(buttonContent: string): void {
+  public addButtonStart(buttonContent: string): void {
     this.buttonStart = document.createElement("button");
     this.buttonStart.className = "start__button";
     this.buttonStart.textContent = buttonContent;
     this.startPageSection.append(this.buttonStart);
   }
 
-  public addButtonEvent(): void {
+  public addButtonChangeStyle(): void {
+    this.changePageGame.addАunctionMenu();
+    this.changePageGame.addGameFunction();
     this.changePageGame.addBackgroundIMG(
       "/puzzle-ts/src/assets/images/start/startPage.jpg",
       "Background"
