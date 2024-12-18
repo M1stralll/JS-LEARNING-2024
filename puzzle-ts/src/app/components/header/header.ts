@@ -1,6 +1,5 @@
-import { StyleChanger } from "../registration/changeStyle";
-import { RegistrationPage } from "../registration/registrationPage";
-import { regestration } from "../main";
+import { RegistrationPage } from "../../modules/registration/registrationPage";
+import { registration } from "../../../index";
 
 export class Header {
   private headerSection: HTMLDivElement;
@@ -30,7 +29,7 @@ export class Header {
 
     linkAuth.addEventListener("click", async () => {
       document.querySelector("main")!.replaceChildren();
-      document.querySelector("main")!.appendChild(regestration);
+      document.querySelector("main")!.appendChild(registration);
     });
     
     linkExit.addEventListener("click", async () => {

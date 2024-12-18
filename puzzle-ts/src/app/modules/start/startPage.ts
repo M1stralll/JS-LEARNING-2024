@@ -47,8 +47,8 @@ export class StartPage {
   }
 
   public addButtonChangeStyle(): void {
-    this.changePageGame.addАunctionMenu();
     this.changePageGame.addGameFunction();
+    this.changePageGame.addАunctionMenu();
     this.changePageGame.addBackgroundIMG(
       "/puzzle-ts/src/assets/images/start/startPage.jpg",
       "Background"

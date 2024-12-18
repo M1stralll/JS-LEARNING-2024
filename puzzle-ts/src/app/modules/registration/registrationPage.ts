@@ -1,5 +1,5 @@
 import { StartPage } from "../start/startPage";
-import { SavingData } from "../registration/localSavingData";
+import { SavingData } from "../../utilits/localSavingData";
 
 export class RegistrationPage {
   private mainRegestration: HTMLDivElement;

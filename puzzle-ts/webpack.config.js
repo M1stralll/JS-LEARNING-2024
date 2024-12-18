@@ -1,9 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   mode: 'development', // Устанавливаем режим разработки
-  entry: './src/scripts/main.ts', // Ваш основной файл TypeScript
+  entry: './src/index.ts', // Ваш основной файл TypeScript
   output: {
     filename: 'bundle.js', // Имя выходного файла
     path: path.resolve(__dirname, 'dist'), // Путь к папке для выходного файла
@@ -25,5 +26,6 @@ module.exports = {
       template: './src/index.html', // Путь к вашему шаблону HTML
       filename: 'index.html', // Имя выходного HTML файла
     }),
+    new ForkTsCheckerWebpackPlugin(), // Плагин для проверки ошибок TypeScript
   ],
 };

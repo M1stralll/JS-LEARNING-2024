@@ -61,7 +61,8 @@
   .game__aunction {
     display: flex;
     justify-content: space-around;
-    padding-top: 120px;
+    margin-top: 120px;
+    width: 1080px;
   }
 
   .game__list-title {
@@ -81,7 +82,7 @@
   }
 
   .game__generation {
-    width: 1085px;
+    width: 1080px;
     height: 350px;
     background-color: rgb(208, 208, 208);
   }
@@ -102,4 +103,32 @@
   .game__field { 
     position: relative;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .game__line {
+    margin-top: 50px;
+    width: 900px;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    gap: 20px;
+  }
+
+  .game__block {
+    height: 30px;
+  }
+
+  .gmae__line-array {
+    width: 1080px;
+    height: 35px;
+    background-color: red;
+  }
+
+  .game__block-word {
+    height: 30px;
+    cursor: pointer;
   }
